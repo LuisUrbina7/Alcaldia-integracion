@@ -1,0 +1,1118 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Open+Sans:wght@300;400;500&family=Oswald:wght@200;300;400&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    line-height: 1.3;
+}
+
+:root {
+    --color-primario: #f10017;
+    --color-secundario: #ffc107;
+    --color-titulo: rgb(26, 26, 26);
+    --fuente-secundaria: 'Oswald', sans-serif;
+}
+
+/* ------cargando-------- */
+
+.contenedor-cargando {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 101;
+    background-color: #ffffff;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    transition: clip-path 1s;
+
+}
+
+.contenedor-cargando-efecto {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    transition: clip-path 1s;
+}
+
+.lds-facebook {
+    display: inline-block;
+    position: relative;
+}
+
+.lds-facebook div {
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    width: 10px;
+    background: var(--color-primario);
+    animation: lds-facebook 1.2s cubic-bezier(0, 0.5, 0.5, 1) infinite;
+}
+
+.lds-facebook div:nth-child(1) {
+    left: -16px;
+    animation-delay: -0.24s;
+}
+
+.lds-facebook div:nth-child(2) {
+    left: 8px;
+    animation-delay: -0.12s;
+}
+
+.lds-facebook div:nth-child(3) {
+    left: 32px;
+    animation-delay: 0;
+}
+
+@keyframes lds-facebook {
+    0% {
+        top: 8px;
+        height: 64px;
+    }
+
+    50%,
+    100% {
+        top: 24px;
+        height: 32px;
+    }
+}
+
+/* 
+-----------generales---------- */
+
+header {
+    position: relative;
+}
+
+header svg:first-child {
+    position: absolute;
+    top: 0;
+    z-index: -1;
+}
+
+header svg:last-child {
+    position: absolute;
+    bottom: 0;
+    z-index: -1;
+}
+
+h3 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 25px;
+    color: var(--color-secundario);
+    margin-bottom: 0;
+}
+
+.color-primario {
+    color: var(--color-primario);
+}
+
+.color-oscuro {
+    color: var(--color-titulo);
+}
+
+#membrete {
+    font-size: 61px;
+    font-family: 'Oswald', sans-serif;
+    padding: 2px 10px;
+    line-height: 0.4;
+    font-weight: 900;
+    text-shadow: 4px 1px 6px #6c757d3d;
+    margin: 0;
+}
+
+#membrete small {
+    letter-spacing: 11px;
+    color: var(--color-primario);
+    margin: 0;
+    font-weight: 700;
+}
+
+#membreteLuisMendoza {
+    width: 173px;
+    right: 0;
+}
+
+h2 {
+    font-family: 'Lobster', cursive;
+    font-size: 55px;
+    position: relative;
+    display: flex;
+    color: var(--color-titulo);
+    justify-content: center;
+    margin: 0;
+    padding-bottom: 10px;
+}
+
+.instagram {
+    background-color: #ff419d;
+    color: #f8f9fa;
+}
+
+.facebook {
+    background-color: #4664a5;
+    color: #f8f9fa;
+}
+
+.twitter {
+    background-color: #1c96e9;
+    color: #f8f9fa;
+}
+
+.textos {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+}
+
+.sub-raya::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    height: 3px;
+    background-color: var(--color-secundario);
+    width: 50px;
+}
+
+
+marquee {
+    background-color: var(--color-primario);
+    color: #ffffff;
+    font-size: 11px;
+}
+
+nav {
+    background-color: #ffffff;
+    transition: position 2s;
+    position: relative;
+    letter-spacing: 1px;
+    padding: 0px 0;
+}
+
+nav a {
+    font-size: 17px;
+}
+
+.menu-fijo {
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+    top: 0;
+    box-shadow: 0 .3rem 1rem rgba(0, 0, 0, .15) !important;
+    transition: position 2s;
+}
+
+.nav-item {
+    position: relative;
+    padding: 3px 10px;
+}
+
+.nav-item a {
+    color: var(--color-primario);
+}
+
+.nav li:first-child {
+    background-color: var(--color-primario);
+    color: white;
+}
+
+.nav-item::before {
+    content: '';
+    bottom: 4px;
+    left: 0;
+    background-color: var(--color-primario);
+    position: absolute;
+    height: 4px;
+    width: 0;
+    transition: width 1s;
+}
+
+.nav-item:hover::before {
+    width: 100%;
+    transition: width 1s;
+}
+
+.nav .dropdown-menu {
+    background-color: rgba(0, 0, 0, 0.87);
+    border-radius: 0;
+    transition: all 0.5s ease;
+}
+
+.nav .dropdown-menu .dropdown-item {
+    color: white;
+}
+
+
+/* Menu lateral */
+.offcanvas-body ul {
+    flex-wrap: wrap;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+}
+
+.offcanvas-body ul li {
+    padding: 14px 2px;
+}
+
+.offcanvas-body ul li:hover {
+    background-color: #f0f4f7;
+}
+
+.offcanvas-body ul li a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.offcanvas-body ul li:hover a {
+    color: black;
+}
+
+.lista-redes {
+    position: fixed;
+    right: -77px;
+    bottom: 40%;
+    z-index: 100;
+    padding: 0;
+}
+
+.lista-redes li {
+    list-style: none;
+
+}
+
+.lista-redes li a {
+    text-decoration: none;
+    position: relative;
+    left: 0;
+    transition: left 1s;
+    display: flex;
+    align-items: center;
+}
+
+.lista-redes li a:hover {
+    color: white;
+}
+
+.lista-redes li:hover a {
+
+    left: -80px;
+    transition: left 1s, border-radius 1s;
+    border-radius: 4px;
+}
+
+
+
+/* carrouser */
+.carrusel-foto img {
+    height: 600px;
+    object-fit: cover;
+}
+
+.carousel-indicators [data-bs-target] {
+    background-color: #ffffff;
+    border-radius: 50%;
+    height: 14px;
+    width: 14px;
+}
+
+.carrusel-foto .carousel-caption {
+    bottom: 35%;
+    backdrop-filter: grayscale(100);
+    width: 100%;
+    left: 0px;
+    right: 0;
+}
+
+.carrusel-foto .carousel-caption a {
+    text-decoration: none;
+    padding: 7px 30px;
+    font-weight: 700;
+    font-size: 15px;
+    border: 1px solid var(--color-secundario);
+    color: var(--color-secundario);
+    transition: background-color 0.5s, color 1s;
+}
+
+.carrusel-foto .carousel-caption a:hover {
+    background-color: var(--color-secundario);
+    color: var(--color-titulo);
+    transition: background-color 0.5s, color 1s;
+}
+
+/* -------publicidad---------- */
+.img-publicidad {
+    background-image: url('../publicidad/gifuno.gif');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #1780c5;
+    width:65%;
+    height:150px; 
+    animation-name: banner;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: linear;;
+
+}
+
+@keyframes banner {
+    0% {
+        background-image: url('../publicidad/gifuno.gif');
+    }
+
+    20% {
+        background-image: url('../publicidad/gifcuatro.gif');
+    }
+
+    40% {
+        background-image: url('../publicidad/download.png');
+    }
+
+    60% {
+        background-image: url('../publicidad/cocacola.jpg');
+    }
+
+    80% {
+        background-image: url('../publicidad/giftres.gif');
+    }
+
+    100% {
+        background-image: url('../publicidad/gifuno.gif');
+    }
+}
+
+/* Figuras de seccion alcade */
+.alcalde {
+
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+}
+
+.alcalde img {
+    left: -137px;
+    z-index: 99;
+}
+
+
+.alcalde span:first-child {
+    width: 140px;
+    height: 50px;
+    top: 140px;
+    left: 0;
+    z-index: 3;
+    position: absolute;
+    background-color: var(--color-secundario);
+    transition: width 1s;
+}
+
+.alcalde:hover span:first-child {
+    transition: width 1s;
+    width: 300px;
+}
+
+.alcalde span:last-child {
+    width: 100px;
+    height: 50px;
+    bottom: 60px;
+    right: 0;
+    z-index: 3;
+    position: absolute;
+    transition: width 1s;
+    background-color: var(--color-secundario)
+}
+
+.alcalde:hover span:last-child {
+    transition: width 1s;
+    width: 300px;
+}
+
+.al-contenedor {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+    z-index: 5;
+
+}
+
+#al-figura-1 {
+    clip-path: polygon(100% 0, 0% 100%, 100% 100%);
+    background: rgb(121, 9, 9);
+    background: linear-gradient(97deg, rgba(121, 9, 9, 0.8125) 43%, rgba(223, 19, 19, 1) 69%);
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: 1;
+    margin: 0;
+}
+
+.al-figura-2 {
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    background-color: #ffffff;
+    position: relative;
+    width: 456px;
+    height: 420px;
+    z-index: 2;
+}
+
+.al-figura-2::before {
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    content: '';
+    height: 94%;
+    width: 90%;
+    position: absolute;
+    top: 8px;
+    background-color: #f1f1f1;
+    z-index: -1;
+}
+
+.cuadro {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+.cuadro img {
+    filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.2));
+}
+
+/* Seccon servicios */
+
+.servicios {
+    width: 100%;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('../img/Capacho\ Nuevo_0.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: scroll;
+    position: relative;
+
+}
+
+.servicios .container .row col {
+    padding: 2px 4px;
+}
+
+.carta {
+    border: 1px solid rgba(147, 142, 142, 0.2);
+    border-radius: 2px;
+    backdrop-filter: blur(5px);
+}
+
+.carta:hover {
+    cursor: pointer;
+    border: 1px solid var(--color-primario);
+}
+
+.servicios-figura {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 100px;
+    background-color: aliceblue;
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+
+}
+
+.servicios-figura i {
+    font-size: 39px;
+}
+
+.saber-mas {
+    font-family: 'Oswald', sans-serif;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.saber-mas::before {
+    content: '';
+    clip-path: polygon(50% 100%, 0 0, 100% 0);
+    padding-top: 5px;
+    width: 25px;
+    height: 25px;
+    bottom: 0;
+
+    position: absolute;
+    background-color: var(--color-secundario);
+}
+
+/* 
+entes */
+
+/* .entes img {
+ 
+} */
+
+.entes .servicios-entes-figura {
+    position: relative;
+
+}
+
+.entes .servicios-entes-figura::before {
+    content: '';
+    width: 55%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    background-color: var(--color-secundario);
+    position: absolute;
+    z-index: -1;
+    clip-path: polygon(100% 0, 100% 50%, 100% 100%, 0% 100%, 25% 50%, 0% 0%);
+
+}
+
+/* datos */
+.datos {
+    background-color: var(--color-primario);
+}
+
+.datos hr {
+    height: 3px;
+    background-color: #f8f9fa;
+    opacity: 1;
+}
+
+.datos h3 ul {
+
+    width: 100%;
+    font-size: 15px;
+    background-color: rgb(17, 17, 17);
+}
+
+.datos h3 ul li {
+    list-style: none;
+    padding: 5px 0;
+
+}
+
+.datos h3 {
+    position: relative;
+}
+
+.datos h3:hover ul {
+    padding: 0;
+    display: block !important;
+    position: absolute;
+    width: 100%;
+    z-index: 99;
+    transition: all 0.5s;
+}
+
+/* Seccion Noticias */
+
+.carta-noticia {
+    position: relative;
+}
+.carta-noticia img{
+    object-fit: contain;
+}
+.carta-noticia span:first-child {
+    position: absolute;
+    font-family: var(--fuente-secundaria);
+    font-size: 20px;
+    left: 0;
+    top: 80px;
+    width: 0px;
+    height: 68px;
+    color: var(--color-secundario);
+    background-color: var(--color-secundario);
+    overflow: hidden;
+    transition: width 1s;
+}
+
+.carta-noticia span:last-child {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 0;
+    height: 34px;
+    color: var(--color-primario);
+    background-color: var(--color-primario);
+    overflow: hidden;
+}
+
+.carta-noticia:hover span:first-child {
+    width: 100%;
+    color: white;
+    transition: width 1s, color 2s;
+}
+
+.carta-noticia:hover span:last-child {
+    width: 250px;
+    color: white;
+    transition: width 1s, color 2s;
+}
+
+/* Mapa */
+
+.mapa iframe {
+    padding: 0;
+    line-height: 0;
+}
+
+.mapa .row .col-12 {
+    line-height: 0;
+}
+
+/* Pie de pagina */
+footer {
+    background-color: var(--color-primario);
+
+}
+
+footer h5 {
+    font-family: var(--fuente-secundaria);
+
+}
+
+/* ----Pagina de Noticias-------- */
+
+.pagina-noticias aside {
+
+    border-top: 5px solid var(--color-primario);
+    padding: 10px 10px;
+    box-shadow: -9px 0px 12px 0px #f3f3f3f5;
+
+}
+
+.card-title {
+    font-family: var(--fuente-secundaria);
+    color: var(--color-titulo);
+}
+
+.ventana-twitter div {
+    height: 450px;
+    overflow-x: hidden;
+}
+
+.card:hover img {
+    filter: blur(1px);
+}
+
+.card:hover .card-title {
+    color: var(--color-secundario);
+}
+
+.img-noticias-item {
+    height: 158px !important;
+    object-fit: cover;
+}
+
+.noticias-recientes a {
+    background-color: #1a1a1a21;
+    color: #3f464c;
+    padding: 8px;
+    text-decoration: none;
+    font-size: 13px;
+    border-radius: 5px;
+    margin-bottom: 1px;
+}
+
+.noticias-recientes a:hover {
+    background-color: #1a1a1a;
+    color: white;
+
+}
+
+/* -------vista noticias------- */
+
+.vista-titulo-noticia span:first-child {
+    width: 10%;
+    height: 78px;
+    background-color: var(--color-primario);
+}
+
+.noticias-enlaces .whatsapp {
+    background-color: #25D366;
+    color: white;
+}
+
+.noticias-enlaces .whatsapp:hover {
+    background-color: #128c7e;
+    color: white;
+}
+
+.noticias-enlaces .facebook {
+    background-color: #4664a5;
+    color: white;
+}
+
+.noticias-enlaces .facebook:hover {
+    background-color: #3b5388;
+}
+
+.noticias-enlaces .twitter {
+    background-color: #1c96e9;
+    color: white;
+}
+
+.noticias-enlaces .twitter:hover {
+    background-color: #1780c5;
+}
+
+/* ------comentarios------- */
+.comentarios {
+    border-top: 1px solid rgba(0, 0, 0, .125);
+}
+
+.contenedor-ancho {
+    max-width: 702px;
+}
+
+/* ------Pagina servicio--------- */
+.servicios-carta-cuerpo {
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: height 1s;
+    background-color: var(--color-primario);
+}
+
+.carta-servicios:hover .servicios-carta-cuerpo {
+    height: 100%;
+    transition: height 1s, display 2s;
+}
+
+.carta-servicios h3 {
+    display: none;
+    transition: display 1s;
+}
+
+.carta-servicios :hover h3 {
+    display: block;
+    transition: display 1s;
+}
+
+.servicios-carta-cuerpo .col-3 {
+    background-color: var(--color-secundario);
+}
+
+/* -------pagina servicios vista------------- */
+.accordion-button:not(.collapsed) {
+    color: #b70a0a;
+    background-color: #ff314b40;
+    box-shadow: inset 0 -1px 0 rgba(0, 0, 0, .125);
+}
+
+.accordion-body p {
+    color: black;
+    line-height: 25px;
+    font-size: 14px;
+}
+
+
+/*   --------Municipio Pagina--------- */
+.municipio-limites {
+    background-color: var(--color-primario);
+
+}
+
+.municipio-limites img {
+
+    box-shadow: rgba(255, 255, 255, 0.4) 5px 5px, rgba(255, 255, 255, 0.85) 10px 10px, rgba(255, 255, 255, 0.2) 15px 15px, rgba(255, 255, 255, 0.1) 20px 20px, rgba(255, 255, 255, 0.18) 25px 25px;
+}
+
+.municipio-himno p {
+    font-size: 16px;
+    padding: 0 15px;
+    border-left: 3px solid rgba(0, 0, 0, .125);
+}
+
+
+
+/* -------pagina turismo---------------- */
+
+.turismo-informacion .container p{
+    font-family: 'Oswald', sans-serif;
+    color: #f0c440e3;
+}
+.turismo-informacion .container a{
+    text-decoration: none;
+    display: inline-block;
+    width: 100%;
+    padding: 25px 0;
+    border-radius: 5px;
+    box-shadow: 1px 1px 11px 0px #f9bd07cf;
+ 
+}
+.turismo-informacion .container a:hover{
+    cursor: pointer;
+    color: #ffffff;
+    background: #f0c440e3;
+}
+.turismo-informacion .container a i{
+    font-size: 50px;
+    color: #f0c440e3;
+
+}
+.turismo-informacion .container a:hover i{
+    color: #ffffff;
+}
+.turismo-informacion .container a:hover p{
+    color: #ffffff;
+}
+.turismo {
+    background-color: #f0f4f7;
+}
+
+.turismo-galeria {
+    position: relative;
+    display: grid;
+
+    max-width: 100%;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-rows: minmax(250px, auto);
+    grid-auto-flow: dense;
+    grid-gap: 10px;
+}
+
+.turismo-galeria .caja-galeria {
+    max-width: 100%;
+    height: 100%;
+}
+
+.turismo-galeria .caja-galeria:nth-child(3) {
+    grid-row: span 2;
+}
+
+.turismo-galeria .caja-galeria:nth-child(4) {
+    grid-column: span 2;
+}
+
+.turismo-galeria img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+}
+
+.turismo-galeria img:hover {
+    filter: saturate(0);
+    transition: filter 0.5s;
+
+}
+
+/* 
+------Pagina alcaldia----------
+*/
+.normas .list-group{
+    height: 80%;
+    overflow-y: scroll;
+}
+.organigrama {
+    background-color: #f0f4f7;
+}
+
+.contenedor-organigrama {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+
+.contenedor-organigrama img {
+    width: 100%;
+    height: 100%;
+}
+
+.mv-cuerpo {
+    position: relative;
+}
+
+.mv-cuerpo p {
+    background-color: var(--color-primario);
+    color: #ffffff;
+}
+
+.mv-cuerpo h2 {
+    font-size: 50px;
+    -webkit-text-stroke: 1px var(--color-primario);
+    color: white;
+}
+
+.mv-cuerpo .figura {
+    position: absolute;
+    left: 0;
+    background-color: var(--color-primario);
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+}
+
+#espacio-alcaldia {
+    width: 100%;
+    height: 30vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-image: linear-gradient(rgb(0 0 0 / 0%), rgb(0 0 0 / 35%)), url('../img/fijas/Capacho\ Nuevo_15a.JPG');
+}
+
+/* ----------------Pagina entes--------------- */
+
+.entes-cartas ol li {
+    margin: 8px 0;
+
+}
+
+.entes-barra {
+    width: 50px;
+    height: 272px;
+    background-color: var(--color-titulo);
+    position: relative;
+}
+
+#primera {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 0%;
+    background-color: var(--color-secundario);
+    animation-name: primera-barra;
+    animation-duration: 4s;
+    animation-timing-function: linear;
+    animation-delay: 2s;
+    animation-direction: alternate;
+    animation-fill-mode: forwards;
+}
+
+#segunda {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 0%;
+    background-color: var(--color-secundario);
+    animation-name: segunda-barra;
+    animation-duration: 4s;
+    animation-timing-function: ease;
+    animation-delay: 6s;
+    animation-fill-mode: forwards;
+}
+
+#tercera {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 0%;
+    background-color: var(--color-secundario);
+    animation-name: tercera-barra;
+    animation-duration: 4s;
+    animation-timing-function: ease;
+    animation-delay: 11s;
+    animation-fill-mode: forwards;
+}
+
+#entes-efecto-titulo {
+    animation-name: efecto-titulo;
+    animation-duration: 1s;
+    animation-delay: 10s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+}
+
+
+@keyframes primera-barra {
+
+    0% {
+        height: 0%;
+    }
+
+    100% {
+
+        height: 100%;
+    }
+
+}
+
+@keyframes segunda-barra {
+
+    0% {
+        height: 0%;
+    }
+
+    100% {
+        height: 100%;
+    }
+
+}
+
+@keyframes efecto-titulo {
+
+    0% {}
+
+    100% {
+        color: var(--color-secundario);
+    }
+
+}
+
+@keyframes tercera-barra {
+
+    0% {
+        height: 0%;
+    }
+
+    100% {
+        height: 100%;
+    }
+
+}
+
+@media(max-width:520px) {
+    .entes .servicios-entes-figura::before {
+        display: none;
+    }
+
+    #membrete {
+        font-size: 20px;
+        line-height: 0.7;
+        padding: 2px 2px;
+    }
+
+    #membrete small {
+        font-size: 12px;
+        letter-spacing: 1px;
+        padding: 2px 2px;
+    }
+
+    header svg:first-child {
+        height: 90px;
+        width: 100%;
+    }
+
+    .entes-barra {
+        width: 19px;
+    }
+
+    .nav {
+        display: none;
+    }
+
+    #pagina-inicial-escudo {
+        width: 60px;
+    }
+
+    .municipio-galeria {
+
+        grid-template-columns: repeat(50%, minmax(300px, 1fr));
+        grid-template-rows: minmax(auto, auto);
+    }
+
+    .municipio-galeria .caja-galeria {
+        grid-row: unset !important;
+        grid-column: unset !important;
+    }
+}
