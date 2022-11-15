@@ -30,12 +30,8 @@
                 <div class="col-md-4">
                     <h3 class="text-dark">Ultimos Decretos...</h3>
 
-                    <ul class="list-group">
-
+                    <ul class="list-group"
                     </ul>
-
-
-
                 </div>
                 <div class="col-md-8">
                     <iframe src="" frameborder="0" width="100%" height="450px" id="visor-pdf"></iframe>

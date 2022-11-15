@@ -57,4 +57,10 @@ class CategoriasController extends Controller
             return response()->json(['msg'=>'Paso algo en la actualizacion']);
         }
     }
+    public function cargar_categorias(){
+        $categorias = Categoria::all();
+       /*  dd($categorias); */
+
+        return response()->json($categorias);
+    }
 }

@@ -385,6 +385,12 @@ nav a {
     }
 }
 
+/* -----modal de bienvenida------ */
+.modal-bienvenida{
+background-color: transparent;
+border: 0;
+}
+
 /* Figuras de seccion alcade */
 .alcalde {
 

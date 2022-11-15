@@ -16,6 +16,9 @@
                         </div>
                     </div>
                     <div class="vista-cuerpo-noticia">
+                        <div class="w-100 text-center mb-3">
+                        <img src="../{{$articulo->img}}" alt="foto" width="50%">
+                        </div>
                         {!!$articulo->detalles!!}
                         <div class="noticias-enlaces text-center mb-3">
                             <a href="" class="btn rounded-circle whatsapp shadow"><span class="fs-3 "><i class="lab la-whatsapp "></i></span></a>
@@ -33,25 +36,20 @@
                     <div class="contenedor-aside">
                         <div class="noticias-recientes">
                             <h3>Recientes</h3>
-                            <div class="d-flex justify-content-center">
-                                <div class="spinner-border" role="status" id="cargando-noticias">
-                                </div>
-                            </div>
                             <div class="noticias-recientes-caja">
-                                <a href="" class="link fs-5 d-block">Titulo 1</a>
-                                <a href="" class="link fs-5 d-block">Titulo 2</a>
-                                <a href="" class="link fs-5 d-block">Titulo 2</a>
+                                @foreach($recientes as $reciente )
+
+                                <a href="{{route('noticias.articulo',$reciente->id)}}" class="link d-block">{{$reciente->titulo}}</a>
+                                @endforeach
                             </div>
 
                         </div>
                         <div class="ventana-categorias">
                             <h3>Categorias</h3>
                             <div>
-
                                 <a href="" class="link fs-6 text-decoration-none px-1 rounded bg-warning text-light m-1">Categoria 1</a>
                                 <a href="" class="link fs-6 text-decoration-none px-1 rounded bg-warning text-light m-1">Categoria 2</a>
                                 <a href="" class="link fs-6 text-decoration-none px-1 rounded bg-warning text-light m-1">Categoria 3</a>
-
                             </div>
                         </div>
 
@@ -125,25 +123,26 @@
 @endsection
 @section('js')
 <script>
-
     $(document).ready(function(){
-        cargar_noticias_recientes();
-    })
-    function cargar_noticias_recientes() {
-        $.ajax({
-            type: 'GET',
-            url: "{{route('noticias.recientes')}}",
-            success: function(response) {
-                $('#cargando-noticias').toggleClass('spinner-border');
-                let contenido_lista = '';
-                $(response).each(function(index, item) {
-                    contenido_lista += '  <a href="{{route("noticias.articulo")}}/2" class="link fs-5 d-block">'+item['titulo']+'</a>';
-                });
-                $('.noticias-recientes-caja').html(contenido_lista);
-                console.log(response);
+cargar_categorias();
+});
 
-            }
-        });
-    }
+
+function cargar_categorias() {
+    $.ajax({
+        type: 'GET',
+        url: "{{route('cargar.categorias')}}",
+        success: function(response) {
+            $('#cargando-publicidad').toggleClass('spinner-border');
+            let contenido_categorias = '';
+            $(response).each(function(index, item) {
+                contenido_categorias += '<a href="../articulo/'+item['id']+'" class="link fs-6 text-decoration-none px-1 rounded bg-warning text-light m-1">'+item['nombre'] +'</a>';
+              
+            });
+            $('.ventana-categorias div').html(contenido_categorias);
+            console.log(response);
+        }
+    });
+}
 </script>
 @endsection

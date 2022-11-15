@@ -8,7 +8,7 @@
     <section class="turismo-informacion">
         <div class="container">
             <div class="row text-center py-5">
-                <h2>Guía del Municipio.</h2>
+                <h2>Guía del Turista</h2>
                 <div class="col-md-3">
                     <a href="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d31621.78798237714!2d-72.30630101739727!3d7.819064167097333!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sposadas%20capacho%20nuevo!5e0!3m2!1ses-419!2sve!4v1668458122152!5m2!1ses-419!2sve" onclick="seleccionar(this)" >
 

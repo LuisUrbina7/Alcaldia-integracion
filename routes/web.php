@@ -39,10 +39,10 @@ Route::get('/registro-civil', function () {
     return view('paginas.servicios-registro-civil');
 })->name('registro.civil');
 Route::get('/hacienda-municipal', function () {
-    return view('paginas.servicios');
+    return view('paginas.servicios-hacienda');
 })->name('hacienda.municipal');
 Route::get('/sindicatura', function () {
-    return view('paginas.servicios');
+    return view('paginas.servicios-sindicatura');
 })->name('sindicatura');
 
 Auth::routes();
@@ -62,6 +62,7 @@ Route::post('/categoria/formulario', [CategoriasController::class, 'insertar'])-
 Route::get('/categoria/formulario/{id}', [CategoriasController::class, 'actualizarFormulario'])->name('categoria.actualizar.formulario');
 Route::post('/categoria/modificacion/{id}', [CategoriasController::class, 'actualizar'])->name('categoria.actualizar.insertar');
 Route::get('/categoria/borrar/{id}', [CategoriasController::class, 'borrar'])->name('categoria.borrar');
+Route::get('/cargar-categorias', [CategoriasController::class, 'cargar_categorias'])->name('cargar.categorias');
 
 Route::get('/perfil', [UsuariosController::class, 'index'])->name('perfil');
 Route::post('/perfil/actualizar/{id}', [UsuariosController::class, 'actualizarPerfil'])->name('perfil.actualizar');
@@ -78,6 +79,7 @@ Route::post('/publicidad/crear', [PublicidadController::class, 'insertar'])->nam
 Route::get('/publicidad/actualizar/vista/{id}', [PublicidadController::class, 'actualizar_vista'])->name('publicidad.actualizar.formulario');
 Route::post('/publicidad/actualizar/insertar/{id}', [PublicidadController::class, 'actualizar'])->name('publicidad.actualizar.insertar');
 Route::get('/publicidad/borrar/{id}', [PublicidadController::class, 'borrar'])->name('publicidad.borrar');
+Route::get('/cargar-publicidad', [PublicidadController::class, 'cargar_publicidad'])->name('cargar.publicidad');
 
 
 Route::get('/normativas', [NormasController::class, 'index'])->name('normativas');

@@ -221,13 +221,6 @@
         </div>
         <aside class="col-md-3 ">
           <div class="contenedor-aside">
-            <div class="noticias-recientes">
-              <h3>Recientes</h3>
-              <a href="" class="link d-block">El Alcalde Luis Mendoza realiza dialogo con los comerciantes.</a>
-              <a href="" class="link d-block">Programa Radial La Tertulia.</a>
-              <a href="" class="link d-block">Recaudaciòn de impuesto.</a>
-
-            </div>
             <div class="ventana-twitter">
               <h3>twitter</h3>
               <div>

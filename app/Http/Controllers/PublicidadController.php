@@ -97,4 +97,10 @@ class PublicidadController extends Controller
         }
        
     }
+
+    public function cargar_publicidad(){
+        $publicidad = Publicidad::select('enlace','banner')->get();
+            /* dd($publicidad); */
+            return response()->json($publicidad);
+    }
 }

@@ -10,10 +10,10 @@
             <div class="row p-md-5">
                 <h2> <span>+</span> Noticias</h2>
                 <div class="col-md-9">
-           <!--      'titulo',  'sinopsis','detalles', 'img','fecha','categoria','idUsuario',
+                    <!--      'titulo',  'sinopsis','detalles', 'img','fecha','categoria','idUsuario',
     ]; -->
-                @foreach ($noticias as $noticia )
-                <a href="{{route('noticias.articulo',$noticia->id)}}" class="text-decoration-none">
+                    @foreach ($noticias as $noticia )
+                    <a href="{{route('noticias.articulo',$noticia->id)}}" class="text-decoration-none">
                         <div class="card mb-3">
                             <div class="row g-0">
                                 <div class="col-md-4 d-flex justify-content-center align-items-center">
@@ -31,11 +31,11 @@
                             </div>
                         </div>
                     </a>
-                @endforeach
-                <div class="d-flex justify-content-center">
+                    @endforeach
+                    <div class="d-flex justify-content-center">
                         {{ $noticias->links() }}
                     </div>
-                  <!--   <a href="noticia-vista-01.php" class="text-decoration-none">
+                    <!--   <a href="noticia-vista-01.php" class="text-decoration-none">
                         <div class="card mb-3">
                             <div class="row g-0">
                                 <div class="col-md-4 d-flex justify-content-center align-items-center">
@@ -125,17 +125,17 @@
                             </li>
                         </ul>
                     </div> -->
-                   
+
                 </div>
                 <aside class="col-md-3 ">
                     <div class="contenedor-aside">
                         <div class="noticias-recientes">
                             <h3>Recientes</h3>
-                            <a href="" class="link d-block">El Alcalde Luis Mendoza realiza dialogo con los comerciantes.</a>
-                            <a href="" class="link d-block">Programa Radial La Tertulia.</a>
-                            <a href="" class="link d-block">Recaudaciòn de impuesto.</a>
-                            <a href="" class="link d-block">Peribeca en total normalidad y en cumplimiento del Decreto</a>
-                            <a href="" class="link d-block">Apoyo de la Dirección de Protección Civil del municipio Capacho Nuevo</a>
+                            @foreach($recientes as $reciente )
+
+                            <a href="{{route('noticias.articulo',$reciente->id)}}" class="link d-block">{{$reciente->titulo}}</a>
+                            
+                            @endforeach
                         </div>
                         <div class="ventana-twitter">
                             <h3>twitter</h3>

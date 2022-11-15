@@ -12,7 +12,10 @@
 </head>
 
 <body>
+<div class="contenedor-cargando">
+    <div class="lds-facebook"><div></div><div></div><div></div></div>
 
+</div>
     <!--  -->
     <header>
         <div class=" d-flex align-items-center" style="background: #f6f8ff;">
@@ -111,12 +114,12 @@
     <footer class="py-2">
         <div class="container ">
             <div class="row p-5 pb-4">
-                <div class="col-6">
+                <div class="col-8">
                     <h5 class="text-light">Lema</h5>
                     <h2 class="text-light lh-sm h3">En Capacho Nuevo... Renace la Esperanza!!!</h2>
 
                 </div>
-                <div class="col-6">
+                <div class="col-4">
                     <h5 class="text-light">Horarios de atencion al ciudadano.</h5>
                     <p class="text-light lh-sm"> Lunes - Viernes. <br> <strong class="text-light"> 8:00 AM - 01:00
                             PM</strong></p>
@@ -131,7 +134,7 @@
 
     <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    <script src="../js/cargando.js"></script>
+    <script src="{{asset('js/cargando.js')}}"></script>
     <script>
         $(document).ready(function() {
             var menu = $('.menu-pegajoso-inicio').offset().top;
