@@ -18,7 +18,7 @@ class PaginasController extends Controller
     public function noticias(){
         $noticias = Publicacion::select('id','titulo','sinopsis','slug','fecha','img')->orderby('id', 'desc')->paginate(4);
    
-        $recientes = Publicacion::select('id','titulo')->orderby('id','desc')->limit(5)->get();
+        $recientes = Publicacion::select('id','titulo','slug')->orderby('id','desc')->limit(5)->get();
         return view('paginas.noticias',compact('noticias','recientes'));
     }
     public function noticias_articulo($slug){
@@ -28,6 +28,12 @@ class PaginasController extends Controller
         $comentarios = Comentario::select('id','nombre','correo','fecha','mensaje','idPublicacion')->where('idPublicacion',$articulo->id)->get();
         $recientes = Publicacion::select('id','titulo','slug')->orderby('id','desc')->limit(5)->get();
         return view('paginas.noticia-vista',compact('articulo','comentarios','recientes'));
+    }
+    public function noticias_categoria($id){
+        $noticias = Publicacion::where('categoria',$id)->orderby('id','desc')->paginate(4);
+      /*   dd($noticias); */
+        $recientes = Publicacion::select('id','titulo','slug')->orderby('id','desc')->limit(5)->get();
+        return view('paginas.noticias',compact('noticias','recientes'));
     }
     public function alcaldia(){
         return view('paginas.alcaldia');

@@ -28,7 +28,7 @@
         <nav class="menu-pegajoso-inicio">
             <!--   -----Menu Horizontal---- -->
             <div class="container navegador">
-                <button class="navbar-toggler d-md-none d-block" type="button" data-bs-toggle="offcanvas" data-bs-target="#ejemplo" aria-controls="ejemplo"><i class="las la-ellipsis-v"></i></button>
+                <button class="navbar-toggler d-md-none d-block" type="button" data-bs-toggle="offcanvas" data-bs-target="#ejemplo" aria-controls="ejemplo"><i class="las la-bars"></i></button>
                 <ul class="nav justify-content-center ">
                     <li class="nav-item"><a href="{{ route('inicio')}}" class="nav-link text-light">Inicio</a></li>
                     <li class="nav-item"><a href="{{route('noticias')}}" class="nav-link">Noticias</a></li>
@@ -61,16 +61,16 @@
             <!--   -----Menu lateral---- -->
             <div class="offcanvas offcanvas-start bg-dark" tabindex="-1" id="ejemplo" aria-labelledby="offcanvasExampleLabel">
                 <div class="offcanvas-header">
-                    <h5 class="text-light">Menù</h5>
+                    <h5 class="text-light">Menú</h5>
                     <a type="button" data-bs-dismiss="offcanvas" aria-label="close">
-                        <i class="las la-times text-light fs-1"></i></a>
+                        <i class="las la-bars"></i></a>
                 </div>
                 <div class="offcanvas-body">
                     <ul>
                         <li><a href="{{ route('inicio')}}">Inicio</a></li>
-                        <li><a href="../Paginas/noticias.php">Noticias</a></li>
+                        <li><a href="{{route('noticias')}}">Noticias</a></li>
                         <div>
-                            <a class="collapsed  w-100 btn btn-danger" type="button" data-bs-toggle="collapse" data-bs-target="#uno" aria-expanded="false">Alcaldia</a>
+                            <a class="collapsed  btn btn-danger" type="button" data-bs-toggle="collapse" data-bs-target="#uno" aria-expanded="false">Alcaldia</a>
                             <div id="uno" class="collapse">
                                 <ul>
                                     <li><a class="dropdown-item" href="{{route('alcaldia')}}">+ Nostros - Decretos</a></li>
@@ -79,18 +79,17 @@
                                 </ul>
                             </div>
                         </div>
-                        <li><a href="../Paginas/Alcaldia.php">Alcaldia</a></li>
-                        <li><a href="../Paginas/Municipio.php">Municipio</a></li>
+                        
+                        <li><a href="{{route('municipio')}}">Municipio</a></li>
                         <li><a href="{{route('turismo')}}">Turismo</a></li>
-                        <li><a href="../Paginas/Entes.php">Entes</a></li>
                         <div>
                             <a class=" collapsed w-100 btn btn-danger" type="button" data-bs-toggle="collapse" data-bs-target="#dos" aria-expanded="false">Planillas de Solictud</a>
                             <div id="dos" class="collapse">
                                 <ul>
-                                    <li><a class="dropdown-item" href="../Paginas/Servicios-vista.php">+ Catastro</a></li>
-                                    <li><a class="dropdown-item" href="../Paginas/Servicios-vista.php">+ Registro Civil</a></li>
-                                    <li><a class="dropdown-item" href="../Paginas/servicios-hacienda.php">+ Hacienda Municipal</a></li>
-                                    <li><a class="dropdown-item" href="../Paginas/servicios-sindicatura.php">+ Sindicatura</a></li>
+                                    <li><a class="dropdown-item" href="{{route('catastro')}}">+ Catastro</a></li>
+                                    <li><a class="dropdown-item" href="{{route('registro.civil')}}">+ Registro Civil</a></li>
+                                    <li><a class="dropdown-item" href="{{route('hacienda.municipal')}}">+ Hacienda Municipal</a></li>
+                                    <li><a class="dropdown-item" href="{{route('sindicatura')}}">+ Sindicatura</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -104,8 +103,8 @@
         </div>
         <ul class="lista-redes d-none d-md-block">
             <li><a class="instagram" href="https://www.instagram.com/alcaldia_capachonuevo/"><i class="lab la-instagram fs-2 text-light p-2"></i> Instagram</a></li>
-            <li> <a class="facebook" href=""><i class="lab la-facebook-f fs-2 text-light p-2"></i> Facebook</a></li>
-            <li><a class="twitter" href=""><i class="lab la-twitter fs-2 text-light p-2"></i> twitter</a> </li>
+            <li> <a class="facebook" href="https://www.facebook.com/AlcaldiaCapachoNuevo2022/?ref=py_c"><i class="lab la-facebook-f fs-2 text-light p-2"></i> Facebook</a></li>
+            <li><a class="twitter" href="https://twitter.com/luismendozach?lang=es"><i class="lab la-twitter fs-2 text-light p-2"></i> twitter</a> </li>
         </ul>
     </header>
 
@@ -114,12 +113,12 @@
     <footer class="py-2">
         <div class="container ">
             <div class="row p-5 pb-4">
-                <div class="col-8">
+                <div class="col-md-8">
                     <h5 class="text-light">Lema</h5>
                     <h2 class="text-light lh-sm h3">En Capacho Nuevo... Renace la Esperanza!!!</h2>
 
                 </div>
-                <div class="col-4">
+                <div class="col-md-4">
                     <h5 class="text-light">Horarios de atencion al ciudadano.</h5>
                     <p class="text-light lh-sm"> Lunes - Viernes. <br> <strong class="text-light"> 8:00 AM - 01:00
                             PM</strong></p>

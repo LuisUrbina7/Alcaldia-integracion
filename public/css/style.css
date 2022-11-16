@@ -212,6 +212,9 @@ nav a {
 .nav-item a {
     color: var(--color-primario);
 }
+.nav-item a:hover {
+    color: var(--color-primario);
+}
 
 .nav li:first-child {
     background-color: var(--color-primario);
@@ -359,31 +362,6 @@ nav a {
 
 }
 
-@keyframes banner {
-    0% {
-        background-image: url('../publicidad/gifuno.gif');
-    }
-
-    20% {
-        background-image: url('../publicidad/gifcuatro.gif');
-    }
-
-    40% {
-        background-image: url('../publicidad/download.png');
-    }
-
-    60% {
-        background-image: url('../publicidad/cocacola.jpg');
-    }
-
-    80% {
-        background-image: url('../publicidad/giftres.gif');
-    }
-
-    100% {
-        background-image: url('../publicidad/gifuno.gif');
-    }
-}
 
 /* -----modal de bienvenida------ */
 .modal-bienvenida{

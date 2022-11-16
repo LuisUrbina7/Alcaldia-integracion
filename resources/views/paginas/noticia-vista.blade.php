@@ -21,15 +21,9 @@
                         </div>
                         {!!$articulo->detalles!!}
                         <div class="noticias-enlaces text-center mb-3">
-                            <a href="https://api.whatsapp.com/send?text=Aprendiendo a compartir desde https://parzibyte.me/blog">Compartir en WhatsApp</a>
-                            <a  class="btn rounded-circle whatsapp shadow" href="https://api.whatsapp.com/send?text={{$articulo->titulo}} http://municipiocapachonuevo.000webhostapp.com/Paginas/alcaldia.php">ccc</a>
-                            <a href="" class="btn rounded-circle whatsapp shadow"><span class="fs-3 "><i class="lab la-whatsapp "></i></span></a>
-                            <a href="" class="btn rounded-circle mx-3 facebook shadow"><span class="fs-3 ">
-                                    <i class="lab la-facebook-f "></i>
-                                </span></a>
-                            <a href="" class="btn rounded-circle twitter shadow"><span class="fs-3 ">
-                                    <i class="lab la-twitter"></i>
-                                </span></a>
+                            <a href="https://api.whatsapp.com/send?text=Aprendiendo a compartir desde https://parzibyte.me/blog" class="btn rounded-circle whatsapp shadow"><i class="lab la-whatsapp fs-3"></i></a>
+                            <a href="https://www.facebook.com/sharer/sharer.php?u=http://municipiocapachonuevo.000webhostapp.com/Paginas/alcaldia.php" class="btn rounded-circle mx-3 facebook shadow"> <i class="lab la-facebook-f fs-3"></i></a>
+                            <a href="https://twitter.com/intent/tweet?url=https://parzibyte.me/blog&text=Prueba" class="btn rounded-circle twitter shadow"><i class="lab la-twitter fs-3"></i></a>
                         </div>
 
                     </div>
@@ -40,7 +34,6 @@
                             <h3>Recientes</h3>
                             <div class="noticias-recientes-caja">
                                 @foreach($recientes as $reciente )
-
                                 <a href="{{route('noticias.articulo',$reciente->slug)}}" class="link d-block">{{$reciente->titulo}}</a>
                                 @endforeach
                             </div>
@@ -129,7 +122,6 @@
         cargar_categorias();
     });
 
-
     function cargar_categorias() {
         $.ajax({
             type: 'GET',
@@ -138,8 +130,7 @@
                 $('#cargando-publicidad').toggleClass('spinner-border');
                 let contenido_categorias = '';
                 $(response).each(function(index, item) {
-                    contenido_categorias += '<a href="../articulo/' + item['id'] + '" class="link fs-6 text-decoration-none px-1 rounded bg-warning text-light m-1">' + item['nombre'] + '</a>';
-
+                    contenido_categorias += '<a href="../noticias/categorias/' + item['id'] + '" class="link fs-6 text-decoration-none px-1 rounded bg-warning text-light m-1">' + item['nombre'] + '</a>';
                 });
                 $('.ventana-categorias div').html(contenido_categorias);
                 console.log(response);

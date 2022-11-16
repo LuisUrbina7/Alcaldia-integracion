@@ -7,7 +7,7 @@
 <title>Publicacion</title>
 @endsection
 @section('contenido')
-<section class="p-3">
+<section class="py-3">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
@@ -56,7 +56,7 @@
                         </div>
                         <div class="row m-12">
                             <div class="col-md-12 text-center">
-                                <img src="http://localhost/AlcaldiaBack/public/{{$busqueda->img}}" alt="Foto" width="231px" height="200px">
+                                <img src="{{asset($busqueda->img)}}" alt="Foto" width="231px" height="200px">
                             </div>
                         </div>
                         <div class="row m-3">
@@ -77,7 +77,7 @@
     </div>
 </section>
 
-
+<a href="" onclick="boton()">ejemplo</a>
 
 
 
@@ -85,7 +85,10 @@
 @endsection
 
 @section('js')
+
 <script>
+  
+
     ClassicEditor
         .create(document.querySelector('#editor'))
         .catch(error => {
@@ -95,6 +98,10 @@
 
 <script>
     $(document).ready(function() {
+        function boton(){
+    /*     alert('hola'); */
+    location.href('../perfil');
+    }
         $('#btn-publicacion-borrar').on('click', function() {
             let borrar_id = $('#input-publicacion-borrar').val();
             Swal.fire({
@@ -121,7 +128,8 @@
                                     'Actualizado Correctamente',
                                     'success'
                                 )
-                                location.reload('/publicacion');
+                                window.location.replace('/publicidad')
+                                /* location.reload('/publicacion'); */
                             } else {
                                 Swal.fire(
                                     'Algo ocurrió',

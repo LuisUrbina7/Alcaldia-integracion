@@ -33,7 +33,7 @@
                     <div class="carousel-caption d-md-block">
                         <h3 class="fs-1">{{$recientes->titulo}}</h3>
                         <p class="text-light fs-5">{{$recientes->sinopsis}}</p>
-                        <a href="{{route('noticias.articulo',$recientes->id)}}"> Visualizar</a>
+                        <a href="{{route('noticias.articulo',$recientes->slug)}}"> Visualizar</a>
                     </div>
                 </div>
                 @endif
@@ -78,16 +78,9 @@
             <div class="spinner-border" role="status" id="cargando-publicidad">
             </div>
         </div>
-        <div class="espacio-publicitario text-center justify-content-center d-flex">
-
-            <!-- <div  class="img-publicidad" style="object-fit: cover;"> </div> -->
-           <!--  <img src="publicidad_img/giftres.gif" alt="gid" width="14.3%" height="120px">
-            <img src="publicidad_img/gifcuatro.gif" alt="gid" width="14.3%" height="120px">
-            <img src="publicidad_img/download.png" alt="gid" width="14.3%" height="120px">
-            <img src="publicidad_img/cocacola.jpg" alt="gid" width="14.3%" height="120px">
-            <img src="publicidad_img/cocacola.jpg" alt="gid" width="14.3%" height="120px">
-            <img src="publicidad_img/download.png" alt="gid" width="14.3%" height="120px"> -->
-        </div>
+        <div class="row espacio-publicitario text-center justify-content-center g-0">
+           
+        </div><a href=""></a>
     </section>
     <section class="alcalde">
         <span></span>
@@ -304,7 +297,7 @@
 </main>
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog  modal-dialog-centered">
+    <div class="modal-dialog  modal-dialog-centered" style="max-width: 600px;">
         <div class="modal-content modal-bienvenida">
             <div class="text-end">
 

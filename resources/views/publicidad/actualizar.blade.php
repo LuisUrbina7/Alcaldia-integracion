@@ -7,7 +7,7 @@
 @endsection
 @section('contenido')
 
-<section class="p-3">
+<section class="py-3">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
@@ -60,7 +60,7 @@
                                 @enderror
                             </div>
                             <div class="col-12 text-center py-3">
-                                <img src="http://localhost/AlcaldiaBack/public/{{ $publicidad->banner}}" alt="foto" width="200px" height="200px">
+                                <img src="{{asset($publicidad->banner)}}" alt="foto" width="200px" height="200px">
                             </div>
                         </div>
                         <div class="row m-3">

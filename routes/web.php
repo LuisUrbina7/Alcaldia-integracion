@@ -21,8 +21,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
 Route::get('/', [PaginasController::class,'inicio'])->name('inicio');
 Route::get('/noticias',[PaginasController::class,'noticias'])->name('noticias');
+Route::get('/noticias/categorias/{id}',[PaginasController::class,'noticias_categoria'])->name('noticias.categoria');
 Route::get('/articulo/{slug}',[PaginasController::class,'noticias_articulo'])->name('noticias.articulo');
 Route::get('/alcaldia',[PaginasController::class,'alcaldia'])->name('alcaldia');
 Route::get('/concejo-municipal',[PaginasController::class,'concejo_municipal'])->name('concejo.municipal');
@@ -45,55 +47,58 @@ Route::get('/sindicatura', function () {
     return view('paginas.servicios-sindicatura');
 })->name('sindicatura');
 
-Auth::routes();
 /* 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
- */
-Route::get('/publicacion', [PublicacionController::class, 'index'])->name('publicaciones');
-Route::get('/publicacion/formulario', [PublicacionController::class, 'insertarVista'])->name('publicaciones.formulario');
-Route::post('/publicacion/formulario/insertar', [PublicacionController::class, 'insertar'])->name('publicaciones.insertar');
-Route::get('/publicacion/actualizar/{id}', [PublicacionController::class, 'actualizarVista'])->name('publicaciones.actualizar.vista');
-Route::post('/publicacion/modificacion/{id}', [PublicacionController::class, 'actualizar'])->name('publicaciones.actualizar.insertar');
-Route::get('/publicacion/borrar/{id}', [PublicacionController::class, 'borrar'])->name('publicar.borrar');
+*/
+
+Auth::routes();
+Route::group(['middleware'=>'auth'],function(){
+     Route::get('/publicacion', [PublicacionController::class, 'index'])->name('publicaciones');
+     Route::get('/publicacion/formulario', [PublicacionController::class, 'insertarVista'])->name('publicaciones.formulario');
+     Route::post('/publicacion/formulario/insertar', [PublicacionController::class, 'insertar'])->name('publicaciones.insertar');
+     Route::get('/publicacion/actualizar/{id}', [PublicacionController::class, 'actualizarVista'])->name('publicaciones.actualizar.vista');
+     Route::post('/publicacion/modificacion/{id}', [PublicacionController::class, 'actualizar'])->name('publicaciones.actualizar.insertar');
+     Route::get('/publicacion/borrar/{id}', [PublicacionController::class, 'borrar'])->name('publicar.borrar')->middleware('adm');
+   /*  -----rutas categorias---- */
+     Route::get('/categoria', [CategoriasController::class, 'index'])->name('categorias');
+     Route::post('/categoria/formulario', [CategoriasController::class, 'insertar'])->name('categoria.insertar');
+     Route::get('/categoria/formulario/{id}', [CategoriasController::class, 'actualizarFormulario'])->name('categoria.actualizar.formulario');
+     Route::post('/categoria/modificacion/{id}', [CategoriasController::class, 'actualizar'])->name('categoria.actualizar.insertar');
+     Route::get('/categoria/borrar/{id}', [CategoriasController::class, 'borrar'])->name('categoria.borrar')->middleware('adm');
+ /*  -----rutas perfil---- */
+     Route::get('/perfil', [UsuariosController::class, 'index'])->name('perfil');
+     Route::post('/perfil/actualizar/{id}', [UsuariosController::class, 'actualizarPerfil'])->name('perfil.actualizar');
+     Route::get('/usuarios', [UsuariosController::class, 'usuarios'])->name('usuarios')->middleware('adm');
+     Route::get('/usuarios/crear', [UsuariosController::class, 'crear_formulario'])->name('usuarios.crear.formulario')->middleware('adm');
+     Route::post('/usuarios/guardar', [UsuariosController::class, 'crear'])->name('usuarios.crear')->middleware('adm');
+     Route::get('/usuarios/vista/{id}', [UsuariosController::class, 'usuarios_vista'])->name('usuarios.actualizar.formulario')->middleware('adm');
+     Route::post('/usuarios/actualizar/{id}', [UsuariosController::class, 'actualizar_usuario'])->name('usuarios.actualizar')->middleware('adm');
+     Route::get('/usuarios/borrar/{id}', [UsuariosController::class, 'borrar_usuario'])->name('usuarios.borrar')->middleware('adm');
+     /*  -----rutas publicidad---- */
+     Route::get('/publicidad', [PublicidadController::class, 'index'])->name('publicidad');
+     Route::get('/publicidad/formulario', [PublicidadController::class, 'insertar_vista'])->name('publicidad.formulario');
+     Route::post('/publicidad/crear', [PublicidadController::class, 'insertar'])->name('publicidad.insertar');
+     Route::get('/publicidad/actualizar/vista/{id}', [PublicidadController::class, 'actualizar_vista'])->name('publicidad.actualizar.formulario');
+     Route::post('/publicidad/actualizar/insertar/{id}', [PublicidadController::class, 'actualizar'])->name('publicidad.actualizar.insertar');
+     Route::get('/publicidad/borrar/{id}', [PublicidadController::class, 'borrar'])->name('publicidad.borrar')->middleware('adm');
+   /*  -----rutas normativas---- */
+   Route::get('/normativas', [NormasController::class, 'index'])->name('normativas');
+   Route::get('/normativas/formulario', [NormasController::class, 'insertar_vista'])->name('normas.formulario');
+   Route::post('/normativas/crear', [NormasController::class, 'insertar'])->name('normas.insertar');
+   Route::get('/normativas/actualizar/vista/{id}', [NormasController::class, 'actualizar_vista'])->name('normas.actualizar.formulario');
+   Route::post('/normativas/actualizar/insertar/{id}', [NormasController::class, 'actualizar'])->name('normas.actualizar.insertar');
+   Route::get('/normativas/borrar/{id}', [NormasController::class, 'borrar'])->name('normas.borrar')->middleware('adm');
+    });
+
+    /* ----cargar recientes de noticias---- */
 Route::get('/noticias-recientes', [PublicacionController::class, 'noticias_recientes'])->name('noticias.recientes');
-
-Route::get('/categoria', [CategoriasController::class, 'index'])->name('categorias');
-Route::post('/categoria/formulario', [CategoriasController::class, 'insertar'])->name('categoria.insertar');
-Route::get('/categoria/formulario/{id}', [CategoriasController::class, 'actualizarFormulario'])->name('categoria.actualizar.formulario');
-Route::post('/categoria/modificacion/{id}', [CategoriasController::class, 'actualizar'])->name('categoria.actualizar.insertar');
-Route::get('/categoria/borrar/{id}', [CategoriasController::class, 'borrar'])->name('categoria.borrar');
+/* ----cargar categorias pagina de noticias---- */
 Route::get('/cargar-categorias', [CategoriasController::class, 'cargar_categorias'])->name('cargar.categorias');
-
-Route::get('/perfil', [UsuariosController::class, 'index'])->name('perfil');
-Route::post('/perfil/actualizar/{id}', [UsuariosController::class, 'actualizarPerfil'])->name('perfil.actualizar');
-Route::get('/usuarios', [UsuariosController::class, 'usuarios'])->name('usuarios');
-Route::get('/usuarios/crear', [UsuariosController::class, 'crear_formulario'])->name('usuarios.crear.formulario');
-Route::post('/usuarios/guardar', [UsuariosController::class, 'crear'])->name('usuarios.crear');
-Route::get('/usuarios/vista/{id}', [UsuariosController::class, 'usuarios_vista'])->name('usuarios.actualizar.formulario');
-Route::post('/usuarios/actualizar/{id}', [UsuariosController::class, 'actualizar_usuario'])->name('usuarios.actualizar');
-Route::get('/usuarios/borrar/{id}', [UsuariosController::class, 'borrar_usuario'])->name('usuarios.borrar');
-
-Route::get('/publicidad', [PublicidadController::class, 'index'])->name('publicidad');
-Route::get('/publicidad/formulario', [PublicidadController::class, 'insertar_vista'])->name('publicidad.formulario');
-Route::post('/publicidad/crear', [PublicidadController::class, 'insertar'])->name('publicidad.insertar');
-Route::get('/publicidad/actualizar/vista/{id}', [PublicidadController::class, 'actualizar_vista'])->name('publicidad.actualizar.formulario');
-Route::post('/publicidad/actualizar/insertar/{id}', [PublicidadController::class, 'actualizar'])->name('publicidad.actualizar.insertar');
-Route::get('/publicidad/borrar/{id}', [PublicidadController::class, 'borrar'])->name('publicidad.borrar');
+/* ----cargar publicidad pagina principal---- */
 Route::get('/cargar-publicidad', [PublicidadController::class, 'cargar_publicidad'])->name('cargar.publicidad');
-
-
-Route::get('/normativas', [NormasController::class, 'index'])->name('normativas');
-Route::get('/normativas/formulario', [NormasController::class, 'insertar_vista'])->name('normas.formulario');
-Route::post('/normativas/crear', [NormasController::class, 'insertar'])->name('normas.insertar');
-Route::get('/normativas/actualizar/vista/{id}', [NormasController::class, 'actualizar_vista'])->name('normas.actualizar.formulario');
-Route::post('/normativas/actualizar/insertar/{id}', [NormasController::class, 'actualizar'])->name('normas.actualizar.insertar');
-Route::get('/normativas/borrar/{id}', [NormasController::class, 'borrar'])->name('normas.borrar');
+/* ----cargar decrectos---- */
 Route::get('/cargar-decretos', [NormasController::class, 'cargar_decretos'])->name('cargar.decretos');
+/* ----cargar Normas---- */
 Route::get('/cargar-normas', [NormasController::class, 'cargar_normas'])->name('cargar.normas');
-
+/* ----Insertar los comentarios en la pagina pricipal---- */
 Route::post('/comentario', [ComentariosController::class, 'insertar'])->name('comentario.insertar');
-
-/* Route::get('/categoria/formulario/{id}', [CategoriasController::class, 'actualizarFormulario'])->name('categoria.actualizar.formulario');
-Route::post('/categoria/modificacion/{id}', [CategoriasController::class, 'actualizar'])->name('categoria.actualizar.insertar');
-Route::get('/categoria/borrar/{id}', [CategoriasController::class, 'borrar'])->name('categoria.borrar');
- */

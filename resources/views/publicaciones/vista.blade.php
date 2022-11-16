@@ -9,9 +9,10 @@
     
     <div class="container">
         <h3>Todas las Publicaciones.. </h3>
+        <p class="text-muted">Nota : Solo los usuarios con permisos de administrador puede agregar, modificar y borrar otros usuarios, ademàs sòlo ellos pueden borrar cualquier contenido subido al servidor. Aquellos con permisos de editor dispondràn de agregar contenido y poder editarlos pero no podràn borrar nada.</p>
         <div class="publicaciones-todos bg-light border">
             <h3 class="text-muted text-center pt-4 h5">Vista</h3>
-            <div class="row p-md-4">
+            <div class="row py-md-4 g-2">
                 <div class="col-md-3  p-md-1 border rounded">
                     <a href="{{route('publicaciones.formulario')}}">
 

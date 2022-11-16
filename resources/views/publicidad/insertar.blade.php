@@ -7,7 +7,7 @@
 @endsection
 @section('contenido')
 
-<section class="p-3">
+<section class="py-3">
     <div class="container">
         <div class="row">
             <div class="col-md-12">

@@ -7,16 +7,16 @@
 <main>
     <section class="turismo-informacion">
         <div class="container">
-            <div class="row text-center py-5">
+            <div class="row text-center py-5 g-2">
                 <h2>Guía del Turista</h2>
-                <div class="col-md-3">
+                <div class="col-md-3 col-6">
                     <a href="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d31621.78798237714!2d-72.30630101739727!3d7.819064167097333!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sposadas%20capacho%20nuevo!5e0!3m2!1ses-419!2sve!4v1668458122152!5m2!1ses-419!2sve" onclick="seleccionar(this)" >
 
                         <p class="h5">Posadas</p>
                         <i class="las la-hotel"></i>
                     </a>
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-3 col-6">
                 
                     <a href="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d31621.828532459025!2d-72.30629869545122!3d7.818529106778097!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1srestauranes%20capacho%20nuevo!5e0!3m2!1ses-419!2sve!4v1668457982394!5m2!1ses-419!2sve" onclick="seleccionar(this)">
 
@@ -24,7 +24,7 @@
                         <i class="las la-utensils"></i>
                     </a>
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-3 col-6">
                 
                     <a href="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d31621.333941732853!2d-72.33870460708009!3d7.825052772889697!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sgasolineras%20capacho%20nuevo!5e0!3m2!1ses-419!2sve!4v1668457839284!5m2!1ses-419!2sve" onclick="seleccionar(this)">
 
@@ -32,7 +32,7 @@
                         <i class="las la-gas-pump"></i>
                     </a>
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-3 col-6">
                 
                     <a href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1976.3406818951132!2d-72.3158110394363!3d7.8235104418519645!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e666a110ef6c27f%3A0xef55d8307e89ce03!2sParque%20zool%C3%B3gico%20La%20Laguna!5e0!3m2!1ses-419!2sve!4v1668461129288!5m2!1ses-419!2sve" onclick="seleccionar(this)">
 
@@ -41,7 +41,7 @@
                     </a>
                 </div>
                 
-                <div class="col-12 mt-3">
+                <div class="col-12 mt-3 col-6">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d31621.33812043979!2d-72.25016320888365!3d7.824997678262976!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sgasolineras%20capacho%20nuevo!5e0!3m2!1ses-419!2sve!4v1668456877959!5m2!1ses-419!2sve" width="100%" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" id="visor-map"></iframe>
                 </div>
             </div>

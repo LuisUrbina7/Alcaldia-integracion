@@ -7,7 +7,7 @@
 @endsection
 @section('contenido')
 
-<section class="p-3">
+<section class="py-3">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
@@ -55,7 +55,7 @@
                         <div class="row m-3">
                             <div class="col-md-12">
                                 <label for="detalles" class="form-label">Descripcion:</label>
-                                <textarea name="detalles" id="editor"  ></textarea>
+                                <textarea name="detalles" id="editor" class="form-control"  ></textarea>
                             </div>
                         </div>
                         <div class="row mb-3">

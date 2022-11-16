@@ -7,7 +7,7 @@
 @endsection
 @section('contenido')
 
-<section class="p-3">
+<section class="py-3">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
@@ -45,7 +45,7 @@
                                 <select id="tipo" class="form-select" name="tipo" required>
                                     <option selected>---seleccione---.</option>
                                     <option value="Decreto">Decreto</option>
-                                    <option value="Norma">Norma</option>
+                                    <option value="Ordenanza">Ordenanza</option>
                                 </select>
                                 @error('tipo')
                                     <span class="invalid-feedback" role="alert">

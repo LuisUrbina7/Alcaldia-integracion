@@ -15,8 +15,8 @@ class CreatePublicidadesTable extends Migration
     {
         Schema::create('publicidades', function (Blueprint $table) {
             $table->id();
-            $table->string('responsable',20);
-            $table->string('enlace',100);
+            $table->string('responsable',40);
+            $table->string('enlace');
             $table->string('banner',100);
             $table->date('fecha');
             $table->foreignId('idUsuario')->constrained('users')->cascadeOnUpdate()->cascadeOnDelete();  

@@ -105,7 +105,7 @@ class NormasController extends Controller
         return response()->json($decretos);
     }
     public function cargar_normas(){
-        $normas = Normas::where('tipo','Norma')->get();
+        $normas = Normas::where('tipo','Ordenanza')->get();
         /* dd($normas); */
 
         return response()->json($normas);

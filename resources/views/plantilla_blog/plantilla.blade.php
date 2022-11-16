@@ -23,7 +23,7 @@
       <div class="opciones-menu">
         <ul class="px-4">
           <h4 class="h6  pt-2 text-center text-muted fw-bold">Usuario</h4>
-          <li class="opciones-item"> <a href="{{route('perfil')}}" class="text-decoration-none "><i class="las la-user"></i> Perfil</a> </li>
+          <li class="opciones-item"> <a href="{{route('perfil')}}" class="text-decoration-none "><i class="las la-user"></i> Perfil  <span class="text-muted">usuario:  {{ Auth::user()->rol }}</span>     </a> </li>
           <h4 class="h6  pt-2 text-center text-muted fw-bold">Publicaciones</h4>
           <li class="opciones-item"> <a href="{{route('publicaciones')}}" class="text-decoration-none "><i class="lab la-buffer"></i> Publicaciones</a> </li>
           <li class="opciones-item"> <a href="{{route('publicaciones.formulario')}}" class="text-decoration-none "><i class="las la-plus"></i> Nueva Publicacion</a> </li>
@@ -34,8 +34,7 @@
           <li class="opciones-item"> <a href="{{route('publicidad.formulario')}}" class="text-decoration-none "><i class="las la-plus"></i> Nuevo Banner</a> </li>
           <h4 class="h6  pt-2 text-center text-muted fw-bold">Normativas</h4>
           <li class="opciones-item"> <a href="{{route('normativas')}}" class="text-decoration-none "><i class="las la-play"></i> Normas</a> </li>
-         
-
+        
         </ul>
       </div>
     </div>
@@ -50,7 +49,7 @@
       <div class="offcanvas-body">
         <ul>
           <h4 class="h6  pt-2 text-center text-muted fw-bold">Usuario</h4>
-          <li class="opciones-item"> <a href="{{route('perfil')}}" class="text-decoration-none "><i class="las la-user"></i> Perfil</a> </li>
+          <li class="opciones-item"> <a href="{{route('perfil')}}" class="text-decoration-none "><i class="las la-user"></i> Perfil</a>  </li>
           <h4 class="h6  pt-2 text-center text-muted fw-bold">Publicaciones</h4>
           <li class="opciones-item"> <a href="{{route('publicaciones')}}" class="text-decoration-none "><i class="lab la-buffer"></i> Publicaciones</a> </li>
           <li class="opciones-item"> <a href="{{route('publicaciones.formulario')}}" class="text-decoration-none "><i class="las la-plus"></i> Nueva Publicacion</a> </li>
@@ -67,7 +66,8 @@
       <nav class="bg-dark">
         <div class="container d-flex d-md-block justify-content-between">
         <button class="navbar-toggler d-md-none d-block" type="button" data-bs-toggle="offcanvas" data-bs-target="#ejemplo" aria-controls="ejemplo"><i class="las la-ellipsis-v text-light"></i></button>
-          <ul class="nav justify-content-end ">
+        <ul class="nav justify-content-end ">
+            
             <li class="nav-item dropdown">
               <a id="navbarDropdown" class="nav-link dropdown-toggle text-light" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                 {{ Auth::user()->name }}
@@ -89,61 +89,7 @@
 
     </div>
   </div>
-  <!-- <div id="app">
-    <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
-      <div class="container">
-        <a class="navbar-brand" href="{{ url('/') }}">
-          {{ config('app.name', 'Laravel') }}
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-
-          <ul class="navbar-nav ms-auto">
-          
-            @guest
-
-            @if (Route::has('login'))
-            <li class="nav-item">
-              <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-            </li>
-            @endif
-
-            @if (Route::has('register'))
-            <li class="nav-item">
-              <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-            </li>
-            @endif
-            @else
-            <li class="nav-item dropdown">
-              <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                {{ Auth::user()->name }}
-              </a>
-
-              <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                  {{ __('Logout') }}
-                </a>
-
-                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                  @csrf
-                </form>
-              </div>
-            </li>
-            @endguest
-          </ul>
-        </div>
-      </div>
-    </nav>
-
-    <main class="py-4">
-      @yield('content')
-    </main> -->
   </div>
- 
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
   @yield('js')

@@ -15,8 +15,8 @@ class CreateNormasTable extends Migration
     {
         Schema::create('normas', function (Blueprint $table) {
             $table->id();
-            $table->string('titulo',100);
-            $table->string('enlace',60);
+            $table->string('titulo');
+            $table->string('enlace');
             $table->date('fecha');
             $table->char('tipo',20);
             $table->foreignId('idUsuario')->constrained('users')->cascadeOnUpdate()->cascadeOnDelete();
