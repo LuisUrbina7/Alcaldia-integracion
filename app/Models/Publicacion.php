@@ -10,7 +10,7 @@ class Publicacion extends Model
     use HasFactory;
     protected $table = 'publicaciones';
     protected $fillable = [
-        'titulo',  'sinopsis','detalles', 'img','fecha','categoria','idUsuario',
+        'titulo',  'sinopsis','slug','detalles', 'img','fecha','categoria','idUsuario',
     ];
     public function Categoria(){
         return $this->belongsTo(Categoria::class,'idCategoria');
@@ -21,5 +21,10 @@ class Publicacion extends Model
     public function Comentarios(){
         return $this->hasMany(Comentario::class);
     }
+    /* public function getRouteKeyName()
+    {
+        return 'slup';
+    } */
+
   
 }

@@ -24,7 +24,7 @@
                     <div class="carousel-caption d-md-block">
                         <h3 class="fs-1">{{$recientes->titulo}}</h3>
                         <p class="text-light fs-5">{{$recientes->sinopsis}}</p>
-                        <a href="{{route('noticias.articulo',$recientes->id)}}"> Visualizar</a>
+                        <a href="{{route('noticias.articulo',$recientes->slug)}}"> Visualizar</a>
                     </div>
                 </div>
                 @else
@@ -81,12 +81,12 @@
         <div class="espacio-publicitario text-center justify-content-center d-flex">
 
             <!-- <div  class="img-publicidad" style="object-fit: cover;"> </div> -->
-            <img src="publicidad_img/giftres.gif" alt="gid" width="14.3%" height="120px">
+           <!--  <img src="publicidad_img/giftres.gif" alt="gid" width="14.3%" height="120px">
             <img src="publicidad_img/gifcuatro.gif" alt="gid" width="14.3%" height="120px">
             <img src="publicidad_img/download.png" alt="gid" width="14.3%" height="120px">
             <img src="publicidad_img/cocacola.jpg" alt="gid" width="14.3%" height="120px">
             <img src="publicidad_img/cocacola.jpg" alt="gid" width="14.3%" height="120px">
-            <img src="publicidad_img/download.png" alt="gid" width="14.3%" height="120px">
+            <img src="publicidad_img/download.png" alt="gid" width="14.3%" height="120px"> -->
         </div>
     </section>
     <section class="alcalde">
@@ -284,7 +284,7 @@
 
                 @foreach($noticias_proyectos as $proyecto)
                 <div class="col-md-4 mb-2">
-                    <a href="{{route('noticias.articulo',$proyecto->id)}}">
+                    <a href="{{route('noticias.articulo',$proyecto->slug)}}">
                         <div class="carta-noticia text-center shadow">
                             <span class="noticia-figura-1 pt-2">{{$proyecto->titulo}}</span>
                             <img src="{{$proyecto->img}}" alt="proyecto" width="100%" height="237px">
@@ -293,37 +293,7 @@
                     </a>
                 </div>
                 @endforeach
-                <!--  <div class="col-md-4 mb-2">
-                        <a href="#">
-                            <div class="carta-noticia text-center shadow">
-                                <span class="noticia-figura-1 pt-2">Embellecimiento de las instalaciones</span>
-                                <img src="img/fijas/proyecto-01.jpg" alt="proyecto" width="100%" height="237px">
-                                <span class="noticia-figura-2 pt-2">#Proyectos.</span>
-
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-md-4 mb-2">
-                        <a href="#">
-                            <div class="carta-noticia text-center shadow">
-                                <span class="noticia-figura-1 pt-2">Registro de Chamba Juvenil</span>
-                                <img src="img/fijas/proyecto-02.jpg" alt="" width="100%" height="237px">
-                                <span class="noticia-figura-2 pt-2">#Proyectos.</span>
-
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-md-4 mb-2">
-                        <a href="#">
-                            <div class="carta-noticia text-center shadow">
-                                <span class="noticia-figura-1 pt-2">Trabajo de mantenimiento de los diferentes espacios públicos.</span>
-                                <img src="img/fijas/proyecto-03.jpg" alt="" width="100%" height="237px">
-                                <span class="noticia-figura-2 pt-2">#Proyectos.</span>
-
-                            </div>
-                        </a>
-                    </div>
- -->
+               
             </div>
     </section>
     <section class="mapa">
@@ -332,11 +302,6 @@
         </div>
     </section>
 </main>
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-    Launch demo modal
-</button>
-
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog  modal-dialog-centered">
@@ -353,6 +318,7 @@
 </div>
 @endsection
 @section('js')
+
 <script src="{{asset('js/publicidad.js')}}">
 </script>
 @endsection

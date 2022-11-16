@@ -17,10 +17,12 @@
                     </div>
                     <div class="vista-cuerpo-noticia">
                         <div class="w-100 text-center mb-3">
-                        <img src="../{{$articulo->img}}" alt="foto" width="50%">
+                            <img src="../{{$articulo->img}}" alt="foto" width="50%">
                         </div>
                         {!!$articulo->detalles!!}
                         <div class="noticias-enlaces text-center mb-3">
+                            <a href="https://api.whatsapp.com/send?text=Aprendiendo a compartir desde https://parzibyte.me/blog">Compartir en WhatsApp</a>
+                            <a  class="btn rounded-circle whatsapp shadow" href="https://api.whatsapp.com/send?text={{$articulo->titulo}} http://municipiocapachonuevo.000webhostapp.com/Paginas/alcaldia.php">ccc</a>
                             <a href="" class="btn rounded-circle whatsapp shadow"><span class="fs-3 "><i class="lab la-whatsapp "></i></span></a>
                             <a href="" class="btn rounded-circle mx-3 facebook shadow"><span class="fs-3 ">
                                     <i class="lab la-facebook-f "></i>
@@ -39,7 +41,7 @@
                             <div class="noticias-recientes-caja">
                                 @foreach($recientes as $reciente )
 
-                                <a href="{{route('noticias.articulo',$reciente->id)}}" class="link d-block">{{$reciente->titulo}}</a>
+                                <a href="{{route('noticias.articulo',$reciente->slug)}}" class="link d-block">{{$reciente->titulo}}</a>
                                 @endforeach
                             </div>
 
@@ -123,26 +125,26 @@
 @endsection
 @section('js')
 <script>
-    $(document).ready(function(){
-cargar_categorias();
-});
-
-
-function cargar_categorias() {
-    $.ajax({
-        type: 'GET',
-        url: "{{route('cargar.categorias')}}",
-        success: function(response) {
-            $('#cargando-publicidad').toggleClass('spinner-border');
-            let contenido_categorias = '';
-            $(response).each(function(index, item) {
-                contenido_categorias += '<a href="../articulo/'+item['id']+'" class="link fs-6 text-decoration-none px-1 rounded bg-warning text-light m-1">'+item['nombre'] +'</a>';
-              
-            });
-            $('.ventana-categorias div').html(contenido_categorias);
-            console.log(response);
-        }
+    $(document).ready(function() {
+        cargar_categorias();
     });
-}
+
+
+    function cargar_categorias() {
+        $.ajax({
+            type: 'GET',
+            url: "{{route('cargar.categorias')}}",
+            success: function(response) {
+                $('#cargando-publicidad').toggleClass('spinner-border');
+                let contenido_categorias = '';
+                $(response).each(function(index, item) {
+                    contenido_categorias += '<a href="../articulo/' + item['id'] + '" class="link fs-6 text-decoration-none px-1 rounded bg-warning text-light m-1">' + item['nombre'] + '</a>';
+
+                });
+                $('.ventana-categorias div').html(contenido_categorias);
+                console.log(response);
+            }
+        });
+    }
 </script>
 @endsection

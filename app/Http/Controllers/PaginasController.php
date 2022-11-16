@@ -10,20 +10,23 @@ class PaginasController extends Controller
 {
 
     public function inicio(){
-        $noticias = Publicacion::select('id','titulo','sinopsis','img')->orderby('id', 'desc')->limit(3)->get();
-        $noticias_proyectos = Publicacion::select('id','titulo','sinopsis','img')->where('categoria','2')->orderby('id', 'desc')->limit(3)->get();
+        $noticias = Publicacion::select('id','titulo','sinopsis','img','slug')->orderby('id', 'desc')->limit(3)->get();
+        $noticias_proyectos = Publicacion::select('id','titulo','sinopsis','img','slug')->where('categoria','1')->orderby('id', 'desc')->limit(3)->get();
        /*  dd($noticias_proyectos); */
         return view('home',compact('noticias','noticias_proyectos'));
     }
     public function noticias(){
-        $noticias = Publicacion::select('id','titulo','sinopsis','fecha','img')->orderby('id', 'desc')->paginate(4);
+        $noticias = Publicacion::select('id','titulo','sinopsis','slug','fecha','img')->orderby('id', 'desc')->paginate(4);
+   
         $recientes = Publicacion::select('id','titulo')->orderby('id','desc')->limit(5)->get();
         return view('paginas.noticias',compact('noticias','recientes'));
     }
-    public function noticias_articulo(int $id){
-        $articulo = Publicacion::find($id);
-        $comentarios = Comentario::select('id','nombre','correo','fecha','mensaje','idPublicacion')->where('idPublicacion',$id)->get();
-        $recientes = Publicacion::select('id','titulo')->orderby('id','desc')->limit(5)->get();
+    public function noticias_articulo($slug){
+
+        $articulo = Publicacion::where('slug',$slug)->firstOrFail();
+      /*   dd($articulo->id); */
+        $comentarios = Comentario::select('id','nombre','correo','fecha','mensaje','idPublicacion')->where('idPublicacion',$articulo->id)->get();
+        $recientes = Publicacion::select('id','titulo','slug')->orderby('id','desc')->limit(5)->get();
         return view('paginas.noticia-vista',compact('articulo','comentarios','recientes'));
     }
     public function alcaldia(){

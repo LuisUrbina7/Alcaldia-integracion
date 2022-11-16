@@ -17,6 +17,7 @@ class CreatePublicacionesTable extends Migration
             $table->id();
              $table->string('titulo',100);
             $table->string('sinopsis');             
+            $table->string('slug')->unique();             
             $table->longText('detalles');             
             $table->string('img',100);             
             $table->date('fecha');             

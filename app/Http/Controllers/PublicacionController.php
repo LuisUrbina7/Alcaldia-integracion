@@ -7,6 +7,7 @@ use App\Models\Publicacion;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Str;
 
 class PublicacionController extends Controller
 {
@@ -46,6 +47,7 @@ class PublicacionController extends Controller
                 Publicacion::create([
                     'titulo' => $request->input('titulo'),
                     'sinopsis' => $request->input('sinopsis'),
+                    'slug' => Str::slug($request->input('titulo'), '-'),
                     'detalles' => $request->input('detalles'),
                     'img' => $destino . $fotoNombre,
                     'fecha' => date('y-m-d'),
@@ -71,6 +73,7 @@ class PublicacionController extends Controller
         try {
             $actualizar = Publicacion::find($id);
             $actualizar->titulo = $request->input('titulo');
+            $actualizar->slug = Str::slug($request->input('titulo'), '-');
             $actualizar->sinopsis = $request->input('sinopsis');
             $actualizar->detalles = $request->input('detalles');
             if ($request->hasFile('foto')) {
@@ -105,9 +108,10 @@ class PublicacionController extends Controller
             return response()->json(['msg' => 'Mal']);
         }
     }
-    public function noticias_recientes(){
-        $recientes = Publicacion::select('id','titulo')->orderby('id','desc')->get();
-    /*     dd($decretos); */
+    public function noticias_recientes()
+    {
+        $recientes = Publicacion::select('id', 'titulo')->orderby('id', 'desc')->get();
+        /*     dd($decretos); */
 
         return response()->json($recientes);
     }

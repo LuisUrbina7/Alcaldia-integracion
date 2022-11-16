@@ -23,7 +23,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [PaginasController::class,'inicio'])->name('inicio');
 Route::get('/noticias',[PaginasController::class,'noticias'])->name('noticias');
-Route::get('/articulo/{id}',[PaginasController::class,'noticias_articulo'])->name('noticias.articulo');
+Route::get('/articulo/{slug}',[PaginasController::class,'noticias_articulo'])->name('noticias.articulo');
 Route::get('/alcaldia',[PaginasController::class,'alcaldia'])->name('alcaldia');
 Route::get('/concejo-municipal',[PaginasController::class,'concejo_municipal'])->name('concejo.municipal');
 Route::get('/municipio',[PaginasController::class,'municipio'])->name('municipio');

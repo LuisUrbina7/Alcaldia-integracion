@@ -13,7 +13,7 @@
                     <!--      'titulo',  'sinopsis','detalles', 'img','fecha','categoria','idUsuario',
     ]; -->
                     @foreach ($noticias as $noticia )
-                    <a href="{{route('noticias.articulo',$noticia->id)}}" class="text-decoration-none">
+                    <a href="{{route('noticias.articulo',$noticia->slug)}}" class="text-decoration-none">
                         <div class="card mb-3">
                             <div class="row g-0">
                                 <div class="col-md-4 d-flex justify-content-center align-items-center">
@@ -31,6 +31,7 @@
                             </div>
                         </div>
                     </a>
+                  
                     @endforeach
                     <div class="d-flex justify-content-center">
                         {{ $noticias->links() }}
