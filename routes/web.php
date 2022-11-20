@@ -59,6 +59,7 @@ Route::group(['middleware'=>'auth'],function(){
      Route::get('/publicacion/actualizar/{id}', [PublicacionController::class, 'actualizarVista'])->name('publicaciones.actualizar.vista');
      Route::post('/publicacion/modificacion/{id}', [PublicacionController::class, 'actualizar'])->name('publicaciones.actualizar.insertar');
      Route::get('/publicacion/borrar/{id}', [PublicacionController::class, 'borrar'])->name('publicar.borrar')->middleware('adm');
+     Route::post('/ckeditor', [PublicacionController::class, 'ckeditor_imagen'])->name('ckeditor.imagen')->middleware('adm');
    /*  -----rutas categorias---- */
      Route::get('/categoria', [CategoriasController::class, 'index'])->name('categorias');
      Route::post('/categoria/formulario', [CategoriasController::class, 'insertar'])->name('categoria.insertar');

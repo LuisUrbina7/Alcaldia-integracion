@@ -108,6 +108,23 @@ class PublicacionController extends Controller
             return response()->json(['msg' => 'Mal']);
         }
     }
+
+
+    public function ckeditor_imagen(Request $request)
+    {
+        if ($request->hasFile('upload')) {
+            $Original = $request->file('upload')->getClientOriginalName();
+            $Info = pathinfo($Original,PATHINFO_FILENAME);
+            $extension =  $request->file('upload')->getClientOriginalExtension();
+            $Info=$Info.'-'.time().'.'.$extension;
+            $destino = 'img/noticias/';
+            $request->file('upload')->move(public_path($destino), $Info);
+            $url= asset('img/noticias/'.$Info);
+
+            return response()->json(['fileName'=>$Info,'uploaded'=>1,'url'=>$url]);
+        }
+
+    }
     public function noticias_recientes()
     {
         $recientes = Publicacion::select('id', 'titulo')->orderby('id', 'desc')->get();

@@ -88,12 +88,15 @@
 
 <script>
   
-
-    ClassicEditor
-        .create(document.querySelector('#editor'))
-        .catch(error => {
-            console.error(error);
-        });
+  ClassicEditor
+        .create( document.querySelector( '#editor' ),{
+            ckfinder:{
+                uploadUrl:"{{route('ckeditor.imagen').'?_token='.csrf_token()}}",
+            }
+        } )
+        .catch( error => {
+            console.error( error );
+        } );
 </script>
 
 <script>
