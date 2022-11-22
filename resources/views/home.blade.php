@@ -7,70 +7,41 @@
     <!--  -----obras publicas, proteccion civil, desarrollo social, Novedades, cultura y turismo, Deporte y recreación,servicios generales---- -->
 
     <section class="deslizador">
+ <!--    @foreach($noticias as $recientes)
 
-        <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-            </div>
-            <div class="carousel-inner carrusel-foto">
-
-                @foreach($noticias as $recientes)
-
-                @if($noticias[0]['id']==$recientes->id)
-                <div class="carousel-item active">
-                    <img src="{{$recientes->img}}" class="d-block w-100" alt="foto">
-                    <div class="carousel-caption d-md-block">
-                        <h3 class="fs-1">{{$recientes->titulo}}</h3>
-                        <p class="text-light fs-5">{{$recientes->sinopsis}}</p>
+@if($noticias[0]['id']==$recientes->id)
+<div class="carousel-item active">
+    <img src="{{$recientes->img}}" class="d-block w-100" alt="foto">
+    <div class="carousel-caption d-md-block">
+        <h3 class="fs-1">{{$recientes->titulo}}</h3>
+        <p class="text-light fs-5">{{$recientes->sinopsis}}</p>
+        <a href="{{route('noticias.articulo',$recientes->slug)}}"> Visualizar</a>
+    </div>
+</div>
+@else
+<div class="carousel-item">
+    <img src="{{$recientes->img}}" class="d-block w-100" alt="foto">
+    <div class="carousel-caption d-md-block">
+        <h3 class="fs-1">{{$recientes->titulo}}</h3>
+        <p class="text-light fs-5">{{$recientes->sinopsis}}</p>
+        <a href="{{route('noticias.articulo',$recientes->slug)}}"> Visualizar</a>
+    </div>
+</div>
+@endif
+@endforeach -->
+        <div class="contenedor-noticia-vista px-md-4">
+        @foreach($noticias as $recientes)
+            <div class="noticia-carta img-noticia"><img src="{{asset($recientes->img)}}" alt="foto" width="100%" height="100%">
+                <div class="carta-cuerpo">
+                    <div class="carta-texto w-100">
+                        <h1 class="text-white">{{$recientes->titulo}}</h1>
+                        <p class="text-light fs-5">{{$recientes->sinopsis}}.</p>
                         <a href="{{route('noticias.articulo',$recientes->slug)}}"> Visualizar</a>
                     </div>
                 </div>
-                @else
-                <div class="carousel-item">
-                    <img src="{{$recientes->img}}" class="d-block w-100" alt="foto">
-                    <div class="carousel-caption d-md-block">
-                        <h3 class="fs-1">{{$recientes->titulo}}</h3>
-                        <p class="text-light fs-5">{{$recientes->sinopsis}}</p>
-                        <a href="{{route('noticias.articulo',$recientes->slug)}}"> Visualizar</a>
-                    </div>
-                </div>
-                @endif
-                @endforeach
-                <!--<div class="carousel-item active">
-                        <img src="img/fijas/prueba-03.jpg" class="d-block w-100" alt="...">
-                        <div class="carousel-caption d-md-block">
-                            <h3 class="fs-1">El Alcalde Luis Mendoza realiza dialogo con los comerciantes.</h3>
-                            <p class="text-light fs-5">Luis mendoza alcalde bolivariano del Municipio, estableciò...</p>
-                            <a href="Paginas/noticia-vista-01.php"> Visualizar</a>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="img/fijas/prueba-06.jpg" class="d-block w-100" alt="...">
-                        <div class="carousel-caption  d-md-block">
-                            <h3 class="fs-1">Programa Radial La Tertulia Comunera por Armonía Stereo 102.5 fm invitada especial Lcda. Clari Useche.</h3>
-                            <p class="text-light fs-5">La directora de desarrollo social y el alcalde luis mendoza...</p>
-                            <a href="Paginas/noticia-vista-02.php"> Visualizar</a>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="img/fijas/prueba-07.jpg" class="d-block w-100" alt="...">
-                        <div class="carousel-caption d-md-block">
-                            <h3 class="fs-1">Sintoníza todos los miércoles el programa de radio.</h3>
-                            <p class="text-light fs-5">Por Radio Nacional de Venezuela (RNV) 105.7 fm desde las 07:00 a.m.</p>
-                            <a href="Paginas/noticia-vista-03.php"> Visualizar</a>
-                        </div>
-                    </div> -->
             </div>
-            <button class="carousel-control-prev d-none" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next d-none" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
+           
+            @endforeach
         </div>
     </section>
     <section>
@@ -79,8 +50,7 @@
             </div>
         </div>
         <div class="row espacio-publicitario text-center justify-content-center g-0">
-           
-        </div><a href=""></a>
+        </div>
     </section>
     <section class="alcalde">
         <span></span>
@@ -95,13 +65,13 @@
                     <div class="al-figura-2 d-flex justify-content-center align-items-center">
                         <div class="px-5">
                             <h3 class="h4">Luis Mendoza</h3>
-                            <p class="textos ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi dolorum, nemo saepe id ut asperiores. </p>
-                            <a href="Paginas/Alcaldia.php" class="btn btn-danger">Leer mas</a>
+                            <p class="textos ">Alcalde electo del municipio Capacho Nuevo del Estado Táchira partidario del PSUV </p>
+                            <a href="{{route('alcaldia')}}" class="btn btn-danger">Leer mas</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-5  p-0 position-relative">
-                    <img src="img/fijas/alcalde02.png" alt="foto" class="d-none d-md-block position-absolute" width="450px" height="450px">
+                    <img src="img/fijas/alcalde02.webp" alt="foto" class="d-none d-md-block position-absolute" width="450px" height="450px">
                 </div>
             </div>
         </div>
@@ -118,8 +88,7 @@
                     <div class="carta p-4 ">
                         <p class="d-flex justify-content-center align-items-center"><span class="servicios-figura"><i class="las la-universal-access"></i></span></p>
                         <h3 class="h5">Catastro</h3>
-                        <p class="textos text-light">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsu
-                        </p>
+                        <p class="textos text-light">La Dirección de Catastro está encargada del censo estadístico de todos los bienes inmuebles de la población,</p>
                         <a href="Paginas/Servicios-vista.php" class="btn btn-danger">ver</a>
                     </div>
                 </div>
@@ -127,7 +96,7 @@
                     <div class="carta p-4 ">
                         <p class="d-flex justify-content-center align-items-center"><span class="servicios-figura"><i class="las la-sign-language"></i></span></p>
                         <h3 class="h5">Registro Civil</h3>
-                        <p class="textos text-light">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsu</p>
+                        <p class="textos text-light">Dirección mediante el cual se materializa el derecho constitucional a la identidad de todas las personas.</p>
                         <a href="Paginas/Servicios-vista.php" class="btn btn-danger">ver</a>
                     </div>
                 </div>
@@ -135,7 +104,7 @@
                     <div class="carta p-4 ">
                         <p class="d-flex justify-content-center align-items-center"><span class="servicios-figura"><i class="las la-city"></i></span></p>
                         <h3 class="h5">Hacienda</h3>
-                        <p class="textos text-light">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsu</p>
+                        <p class="textos text-light">Registra y controla los bienes del dominio público municipal, así como mantiene actualizado el inventario de los mismos.</p>
                         <a href="Paginas/servicios-hacienda.php" class="btn btn-danger">ver</a>
                     </div>
                 </div>
@@ -160,7 +129,7 @@
                             <div class="carta-carrusel d-flex justify-content-center mb-3">
                                 <div class="row w-75  p-md-3 mb-dm-3 shadow-sm servicios-entes-figura">
                                     <div class="col-md-7 text-center">
-                                        <img src="img/fijas/FUNDAINDEPENDENCIA.png" alt="foto" width="270px" height="244px">
+                                        <img src="img/fijas/FUNDAINDEPENDENCIA.webp" alt="logo" width="270px" height="auto">
                                     </div>
 
                                     <div class="col-md-5 d-flex align-items-center">
@@ -178,7 +147,7 @@
                             <div class="carta-carrusel d-flex justify-content-center  mb-3">
                                 <div class="row w-75 p-md-3 mb-dm-3 shadow-sm servicios-entes-figura">
                                     <div class="col-md-7 text-end">
-                                        <img src="img/fijas/Logo-planificacion-publica.png" alt="foto" width="100%" height="244px">
+                                        <img src="img/fijas/Logo-planificacion-publica.webp" alt="logo" width="100%" height="auto">
 
                                     </div>
                                     <div class="col-md-5 d-flex align-items-center">
@@ -194,7 +163,7 @@
                             <div class="carta-carrusel d-flex justify-content-center  mb-3">
                                 <div class="row w-75 p-md-3 mb-dm-3 shadow-sm servicios-entes-figura">
                                     <div class="col-md-7 text-end">
-                                        <img src="img/fijas/logo-nuevo-deporte.png" alt="" width="100%" height="244px">
+                                        <img src="img/fijas/logo-nuevo-deporte.webp" alt="logo" width="100%" height="auto">
                                     </div>
                                     <div class="col-md-5 d-flex align-items-center">
                                         <div>
@@ -202,7 +171,7 @@
                                             <p>Teléfono: 0424-7243816 <br> Correo electrónico:
                                                 <small>nrichardomar@gmail.com</small>
                                             </p>
-                                            <a href="https://www.instagram.com/direcciondeportecapachonuevo/" target="_blank"><i class="lab la-instagram fs-1 text-light"></i> direcciondeportecapachonuevo</a>
+                                            <a href="https://www.instagram.com/direcciondeportecapachonuevo/" target="_blank"><i class="lab la-instagram fs-1 text-light"></i></a>
                                         </div>
                                     </div>
                                 </div>
@@ -286,7 +255,7 @@
                     </a>
                 </div>
                 @endforeach
-               
+
             </div>
     </section>
     <section class="mapa">
@@ -304,7 +273,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <img src="{{asset('img/fijas/Foto-bienvenida.png')}}" alt="bienvenida" width="100%">
+                <img src="{{asset('img/fijas/Foto-bienvenida.webp')}}" alt="bienvenida" width="100%">
             </div>
         </div>
     </div>

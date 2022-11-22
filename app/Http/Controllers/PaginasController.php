@@ -16,7 +16,7 @@ class PaginasController extends Controller
         return view('home',compact('noticias','noticias_proyectos'));
     }
     public function noticias(){
-        $noticias = Publicacion::select('id','titulo','sinopsis','slug','fecha','img')->orderby('id', 'desc')->paginate(4);
+        $noticias = Publicacion::select('id','titulo','sinopsis','slug','fecha','img','categoria')->orderby('id', 'desc')->paginate(4);
    
         $recientes = Publicacion::select('id','titulo','slug')->orderby('id','desc')->limit(5)->get();
         return view('paginas.noticias',compact('noticias','recientes'));

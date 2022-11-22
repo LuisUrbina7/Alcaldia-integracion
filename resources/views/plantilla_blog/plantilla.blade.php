@@ -23,7 +23,7 @@
       <div class="opciones-menu">
         <ul class="px-4">
           <h4 class="h6  pt-2 text-center text-muted fw-bold">Usuario</h4>
-          <li class="opciones-item"> <a href="{{route('perfil')}}" class="text-decoration-none "><i class="las la-user"></i> Perfil  <span class="text-muted">usuario:  {{ Auth::user()->rol }}</span>     </a> </li>
+          <li class="opciones-item"> <a href="{{route('perfil')}}" class="text-decoration-none "><i class="las la-user"></i> Perfil  <span class="text-muted">usuario:{{ Auth::user()->rol }} </span>     </a> </li>
           <h4 class="h6  pt-2 text-center text-muted fw-bold">Publicaciones</h4>
           <li class="opciones-item"> <a href="{{route('publicaciones')}}" class="text-decoration-none "><i class="lab la-buffer"></i> Publicaciones</a> </li>
           <li class="opciones-item"> <a href="{{route('publicaciones.formulario')}}" class="text-decoration-none "><i class="las la-plus"></i> Nueva Publicacion</a> </li>
@@ -70,7 +70,7 @@
             
             <li class="nav-item dropdown">
               <a id="navbarDropdown" class="nav-link dropdown-toggle text-light" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                {{ Auth::user()->name }}
+              {{ Auth::user()->name }}
               </a>
               <ul class="dropdown-menu " aria-labelledby="navbarDropdown">
                 <li><a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();

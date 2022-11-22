@@ -24,7 +24,7 @@ class PublicacionController extends Controller
     }
     public function insertar(Request $request)
     {
-        /* dd($request->all()); */
+       /*  dd($request->all()); */
         $validado = Validator::make($request->all(), [
             'idUsuario' =>  'required',
             'titulo' =>  'required',

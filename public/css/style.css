@@ -28,57 +28,51 @@
     background-color: #ffffff;
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-    transition: clip-path 1s;
+    transition: clip-path 1.2s;
 
 }
 
 .contenedor-cargando-efecto {
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
     clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
-    transition: clip-path 1s;
+    transition: clip-path 1.2s;
 }
-
-.lds-facebook {
+.lds-ring {
     display: inline-block;
     position: relative;
-}
-
-.lds-facebook div {
-    display: inline-block;
+    width: 80px;
+    height: 80px;
+  }
+  .lds-ring div {
+    box-sizing: border-box;
+    display: block;
     position: absolute;
-    left: 0;
-    width: 10px;
-    background: var(--color-primario);
-    animation: lds-facebook 1.2s cubic-bezier(0, 0.5, 0.5, 1) infinite;
-}
-
-.lds-facebook div:nth-child(1) {
-    left: -16px;
-    animation-delay: -0.24s;
-}
-
-.lds-facebook div:nth-child(2) {
-    left: 8px;
-    animation-delay: -0.12s;
-}
-
-.lds-facebook div:nth-child(3) {
-    left: 32px;
-    animation-delay: 0;
-}
-
-@keyframes lds-facebook {
+    width: 64px;
+    height: 64px;
+    margin: 8px;
+    border: 8px solid #fff;
+    border-radius: 50%;
+    animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    border-color: var(--color-primario) transparent transparent transparent;
+  }
+  .lds-ring div:nth-child(1) {
+    animation-delay: -0.45s;
+  }
+  .lds-ring div:nth-child(2) {
+    animation-delay: -0.3s;
+  }
+  .lds-ring div:nth-child(3) {
+    animation-delay: -0.15s;
+  }
+  @keyframes lds-ring {
     0% {
-        top: 8px;
-        height: 64px;
+      transform: rotate(0deg);
     }
-
-    50%,
     100% {
-        top: 24px;
-        height: 32px;
+      transform: rotate(360deg);
     }
-}
+  }
+
 
 /* 
 -----------generales---------- */
@@ -212,6 +206,7 @@ nav a {
 .nav-item a {
     color: var(--color-primario);
 }
+
 .nav-item a:hover {
     color: var(--color-primario);
 }
@@ -306,43 +301,56 @@ nav a {
     border-radius: 4px;
 }
 
+/* noticias-principal */
 
+.contenedor-noticia-vista {
 
-/* carrouser */
-.carrusel-foto img {
-    height: 600px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 250px 250px;
+}
+
+.noticia-carta {
+    position: relative;
+}
+
+.contenedor-noticia-vista .noticia-carta:nth-child(1) {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+.contenedor-noticia-vista img {
     object-fit: cover;
 }
 
-.carousel-indicators [data-bs-target] {
-    background-color: #ffffff;
-    border-radius: 50%;
-    height: 14px;
-    width: 14px;
-}
-
-.carrusel-foto .carousel-caption {
-    bottom: 35%;
-    backdrop-filter: grayscale(100);
+.carta-cuerpo {
+    overflow: hidden;
+    position: absolute;
+    top: 0;
     width: 100%;
-    left: 0px;
-    right: 0;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    background-color: black;
+    z-index: 99;
+    padding: 38px;
+    background: rgb(0, 0, 0);
+    background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(255, 255, 255, 0.05646008403361347) 66%, rgba(255, 255, 255, 0) 100%);
 }
-
-.carrusel-foto .carousel-caption a {
-    text-decoration: none;
-    padding: 7px 30px;
-    font-weight: 700;
-    font-size: 15px;
-    border: 1px solid var(--color-secundario);
-    color: var(--color-secundario);
-    transition: background-color 0.5s, color 1s;
+.carta-cuerpo h1 {
+    background: #f1001742;
+    padding-left: 16px;
 }
-
-.carrusel-foto .carousel-caption a:hover {
-    background-color: var(--color-secundario);
-    color: var(--color-titulo);
-    transition: background-color 0.5s, color 1s;
+.noticia-carta:nth-child(2) h1,.noticia-carta:nth-child(3) h1{
+    font-size: 1.5rem;
+}
+.carta-cuerpo a {
+   text-decoration: none;
+   padding: 9px 30px;
+   background: #fdfdfd;
+  
 }
 
 /* -------publicidad---------- */
@@ -352,21 +360,22 @@ nav a {
     background-repeat: no-repeat;
     background-position: center;
     background-color: #1780c5;
-    width:65%;
-    height:150px; 
+    width: 65%;
+    height: 150px;
     animation-name: banner;
     animation-duration: 20s;
     animation-iteration-count: infinite;
     animation-direction: alternate;
-    animation-timing-function: linear;;
+    animation-timing-function: linear;
+    ;
 
 }
 
 
 /* -----modal de bienvenida------ */
-.modal-bienvenida{
-background-color: transparent;
-border: 0;
+.modal-bienvenida {
+    background-color: transparent;
+    border: 0;
 }
 
 /* Figuras de seccion alcade */
@@ -470,7 +479,7 @@ border: 0;
 
 .servicios {
     width: 100%;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('../img/Capacho\ Nuevo_0.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('../img/fijas/Capacho\ Nuevo_0.webp');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -594,9 +603,11 @@ entes */
 .carta-noticia {
     position: relative;
 }
-.carta-noticia img{
+
+.carta-noticia img {
     object-fit: contain;
 }
+
 .carta-noticia span:first-child {
     position: absolute;
     font-family: var(--fuente-secundaria);
@@ -817,35 +828,41 @@ footer h5 {
 
 /* -------pagina turismo---------------- */
 
-.turismo-informacion .container p{
+.turismo-informacion .container p {
     font-family: 'Oswald', sans-serif;
     color: #f0c440e3;
 }
-.turismo-informacion .container a{
+
+.turismo-informacion .container a {
     text-decoration: none;
     display: inline-block;
     width: 100%;
     padding: 25px 0;
     border-radius: 5px;
     box-shadow: 1px 1px 11px 0px #f9bd07cf;
- 
+
 }
-.turismo-informacion .container a:hover{
+
+.turismo-informacion .container a:hover {
     cursor: pointer;
     color: #ffffff;
     background: #f0c440e3;
 }
-.turismo-informacion .container a i{
+
+.turismo-informacion .container a i {
     font-size: 50px;
     color: #f0c440e3;
 
 }
-.turismo-informacion .container a:hover i{
+
+.turismo-informacion .container a:hover i {
     color: #ffffff;
 }
-.turismo-informacion .container a:hover p{
+
+.turismo-informacion .container a:hover p {
     color: #ffffff;
 }
+
 .turismo {
     background-color: #f0f4f7;
 }
@@ -853,7 +870,6 @@ footer h5 {
 .turismo-galeria {
     position: relative;
     display: grid;
-
     max-width: 100%;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     grid-template-rows: minmax(250px, auto);
@@ -890,10 +906,11 @@ footer h5 {
 /* 
 ------Pagina alcaldia----------
 */
-.normas .list-group{
+.normas .list-group {
     height: 80%;
     overflow-y: scroll;
 }
+
 .organigrama {
     background-color: #f0f4f7;
 }
@@ -942,7 +959,7 @@ footer h5 {
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
-    background-image: linear-gradient(rgb(0 0 0 / 0%), rgb(0 0 0 / 35%)), url('../img/fijas/Capacho\ Nuevo_15a.JPG');
+    background-image: linear-gradient(rgb(0 0 0 / 0%), rgb(0 0 0 / 35%)), url('../img/fijas/Capacho\ Nuevo_15a.webp');
 }
 
 /* ----------------Pagina entes--------------- */
@@ -1076,6 +1093,10 @@ footer h5 {
         height: 90px;
         width: 100%;
     }
+    #escudo{
+        width: 68px;
+        height: auto;
+    }
 
     .entes-barra {
         width: 19px;
@@ -1098,5 +1119,16 @@ footer h5 {
     .municipio-galeria .caja-galeria {
         grid-row: unset !important;
         grid-column: unset !important;
+    }
+
+    .contenedor-noticia-vista {
+
+        display: block;
+       
+    }
+    
+    .contenedor-noticia-vista .noticia-carta {
+       height: 250px;
+       width: 100%;
     }
 }

@@ -71,7 +71,7 @@ Route::group(['middleware'=>'auth'],function(){
      Route::post('/perfil/actualizar/{id}', [UsuariosController::class, 'actualizarPerfil'])->name('perfil.actualizar');
      Route::get('/usuarios', [UsuariosController::class, 'usuarios'])->name('usuarios')->middleware('adm');
      Route::get('/usuarios/crear', [UsuariosController::class, 'crear_formulario'])->name('usuarios.crear.formulario')->middleware('adm');
-     Route::post('/usuarios/guardar', [UsuariosController::class, 'crear'])->name('usuarios.crear')->middleware('adm');
+     Route::post('/usuarios/guardar', [UsuariosController::class, 'crear'])->name('usuarios.crear');
      Route::get('/usuarios/vista/{id}', [UsuariosController::class, 'usuarios_vista'])->name('usuarios.actualizar.formulario')->middleware('adm');
      Route::post('/usuarios/actualizar/{id}', [UsuariosController::class, 'actualizar_usuario'])->name('usuarios.actualizar')->middleware('adm');
      Route::get('/usuarios/borrar/{id}', [UsuariosController::class, 'borrar_usuario'])->name('usuarios.borrar')->middleware('adm');

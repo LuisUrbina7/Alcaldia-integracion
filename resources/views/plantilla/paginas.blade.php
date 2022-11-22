@@ -13,22 +13,22 @@
 
 <body>
 <div class="contenedor-cargando">
-    <div class="lds-facebook"><div></div><div></div><div></div></div>
+   <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
 
 </div>
     <!--  -->
     <header>
         <div class=" d-flex align-items-center" style="background: #f6f8ff;">
-            <img src="{{asset('img/fijas/Logo-puro.png')}}" alt="Escudo" width="100px" height="auto" id="pagina-inicial-escudo">
+            <img src="{{asset('img/fijas/Logo-puro.webp')}}" alt="Escudo" width="100px" height="99.14px" id="escudo">
             <div class="titulo-encabezado lh-1 d-flex w-100">
                 <h1 id="membrete" class="mx-auto"> ALCALDIA BOLIVARIANA DEL MUNICIPIO <br> <small class="h3">CAPACHO NUEVO DEL ESTADO TACHIRA</small> </h1>
             </div>
-            <img src="{{asset('img/fijas/luis_mendoza.png')}}" alt="LuisGomez" width="90px" height="auto" id="membreteLuisMendoza" class="d-none d-md-block">
+            <img src="{{asset('img/fijas/luis_mendoza.webp')}}" alt="LuisGomez" width="90px" height="109px" id="membreteLuisMendoza" class="d-none d-md-block">
         </div>
         <nav class="menu-pegajoso-inicio">
             <!--   -----Menu Horizontal---- -->
             <div class="container navegador">
-                <button class="navbar-toggler d-md-none d-block" type="button" data-bs-toggle="offcanvas" data-bs-target="#ejemplo" aria-controls="ejemplo"><i class="las la-bars"></i></button>
+                <button class="navbar-toggler d-md-none d-block" type="button" data-bs-toggle="offcanvas" data-bs-target="#ejemplo" aria-controls="ejemplo"><i class="las la-bars fs-1"></i></button>
                 <ul class="nav justify-content-center ">
                     <li class="nav-item"><a href="{{ route('inicio')}}" class="nav-link text-light">Inicio</a></li>
                     <li class="nav-item"><a href="{{route('noticias')}}" class="nav-link">Noticias</a></li>

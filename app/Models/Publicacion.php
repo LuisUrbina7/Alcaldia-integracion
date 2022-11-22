@@ -13,7 +13,7 @@ class Publicacion extends Model
         'titulo',  'sinopsis','slug','detalles', 'img','fecha','categoria','idUsuario',
     ];
     public function Categoria(){
-        return $this->belongsTo(Categoria::class,'idCategoria');
+        return $this->belongsTo(Categoria::class,'categoria');
     }
     public function Usuarios(){
         return $this->belongsTo(User::class,'idUsuario');

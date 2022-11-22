@@ -25,9 +25,9 @@
                             <a href="https://www.facebook.com/sharer/sharer.php?u=http://municipiocapachonuevo.000webhostapp.com/Paginas/alcaldia.php" class="btn rounded-circle mx-3 facebook shadow"> <i class="lab la-facebook-f fs-3"></i></a>
                             <a href="https://twitter.com/intent/tweet?url=https://parzibyte.me/blog&text=Prueba" class="btn rounded-circle twitter shadow"><i class="lab la-twitter fs-3"></i></a> -->
                           
-                            <a href="https://api.whatsapp.com/send?text=Aprendiendo a compartir desde {{route('noticias.articulo',$articulo->slug)}}" class="btn rounded-circle whatsapp shadow"><i class="lab la-whatsapp fs-3"></i></a>
-                            <a href="https://www.facebook.com/sharer/sharer.php?u={{route('noticias.articulo',$articulo->slug)}}" class="btn rounded-circle mx-3 facebook shadow"> <i class="lab la-facebook-f fs-3"></i></a>
-                            <a href="https://twitter.com/intent/tweet?url={{route('noticias.articulo',$articulo->slug)}}&text={{$articulo->titulo}}" class="btn rounded-circle twitter shadow"><i class="lab la-twitter fs-3"></i></a>
+                            <a href="https://api.whatsapp.com/send?text=Aprendiendo a compartir desde {{route('noticias.articulo',$articulo->slug)}}" class="btn  whatsapp "><i class="lab la-whatsapp fs-3"></i></a>
+                            <a href="https://www.facebook.com/sharer/sharer.php?u={{route('noticias.articulo',$articulo->slug)}}" class= "btn mx-1 facebook"> <i class="lab la-facebook-f fs-3"></i></a>
+                            <a href="https://twitter.com/intent/tweet?url={{route('noticias.articulo',$articulo->slug)}}&text={{$articulo->titulo}}" class="btn twitter"><i class="lab la-twitter fs-3"></i></a>
                         </div>
 
                     </div>
