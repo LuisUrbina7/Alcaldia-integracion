@@ -53,14 +53,14 @@
             <h2>Sitios Turísticos..</h2>
             <div class="row align-items-center py-5 pt-4">
                 <div class="col-md-6 text-center">
-                    <img src="img/mercado.jpg" alt="mercado" width="350px">
+                    <img src="img/fijas/mercado.webp" alt="mercado" width="350px">
                 </div>
                 <div class="col-md-6">
                     <h3>Mercado Municipal</h3>
                     <p>Declarado en el año 1997 como Monumento Arquitéctonico Cultural de la Nación. Fue donado por Cipriano Castro en 1907, realizado como réplica de una de las Estaciones de Tren en Europa, destacan los Leones de Bronce traídos desde Francia, ubicado en la carrera 6 con calle 7 y 8, Capacho Nuevo. </p>
                 </div>
                 <div class="col-md-6 text-center">
-                    <img src="img/alcaldia.jpg" alt="mercado" width="350px">
+                    <img src="img/fijas/alcaldia.webp" alt="mercado" width="350px">
                 </div>
                 <div class="col-md-6">
                     <h3>Alcaldia</h3>
@@ -71,14 +71,14 @@
                     <p>Lugar donde se puede admirar reliquias en cuanto a escrituras y utensilios pertenecientes al General, Carrera 6, Capacho Nuevo </p>
                 </div>
                 <div class="col-md-6  text-center">
-                    <img src="img/Museo.jpg" alt="mercado" width="350px">
+                    <img src="img/fijas/Museo.webp" alt="mercado" width="350px">
                 </div>
                 <div class="col-md-6 text-end">
                     <h3>Iglesia San Pedro Apóstol</h3>
                     <p> Es una edificación de tipo religioso que data de la fundación de Capacho Independencia. La primera piedra de este templo parroquial fue bendecida e impuesta el 31 de enero de 1875. </p>
                 </div>
                 <div class="col-md-6  text-center">
-                    <img src="img/Capacho Nuevo_0.jpg" alt="mercado" width="350px">
+                    <img src="img/fijas/Capacho Nuevo_0.webp" alt="mercado" width="350px">
                 </div>
             </div>
             <div class="row text-center">
@@ -86,26 +86,26 @@
             <p>Es un pueblo pequeño, pero muy bonito. Lo que lo hace interesante es el estilo colonial de sus casas, las calles empedradas, su arquitectura y su hermosa iglesia. Las casas pintadas impecablemente con llamativos colores y nos ofrecen sus balcones con lindas flores.</p>
             <div class="turismo-galeria py-4">
                 <div class="caja-galeria">
-                    <img src="img/fijas/peribeca-01.jpg" alt="">
+                    <img src="img/fijas/peribeca-01.webp" alt="peribeca">
                 </div>
                 <div class="caja-galeria">
-                    <img src="img/fijas/peribeca-02.jpg" alt="">
+                    <img src="img/fijas/peribeca-02.webp" alt="peribeca">
                 </div>
                 <div class="caja-galeria">
-                    <img src="img/fijas/peribeca-03.jpg" alt="">
+                    <img src="img/fijas/peribeca-03.webp" alt="peribeca">
                 </div>
                 <div class="caja-galeria">
-                    <img src="img/fijas/peribeca-08.jpg" alt="">
+                    <img src="img/fijas/peribeca-08.webp" alt="peribeca">
                 </div>
                 <div class="caja-galeria">
-                    <img src="img/fijas/peribeca-05.jpg" alt="">
+                    <img src="img/fijas/peribeca-05.webp" alt="peribeca">
                 </div>
                 <div class="caja-galeria">
-                    <img src="img/fijas/peribeca-06.jpg" alt="">
+                    <img src="img/fijas/peribeca-06.webp" alt="peribeca">
                 </div>
                 
                 <div class="caja-galeria">
-                    <img src="img/fijas/peribeca-07.jpg" alt="">
+                    <img src="img/fijas/peribeca-07.webp" alt="peribeca">
                 </div>
             </div>
             </div>

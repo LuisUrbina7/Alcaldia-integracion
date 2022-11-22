@@ -12,6 +12,10 @@ a {
   overflow: hidden;
 }
 
+.blog-contenedor{
+  height: 100vh;
+  overflow-y: scroll;
+}
 .opciones-menu ul {
   list-style: none;
 }

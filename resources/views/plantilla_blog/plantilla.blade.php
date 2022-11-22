@@ -62,7 +62,7 @@
       </div>
     </div>
     <!--  ------contenedor de contenido-------- -->
-    <div class="content w-100">
+    <div class="blog-contenedor w-100">
       <nav class="bg-dark">
         <div class="container d-flex d-md-block justify-content-between">
         <button class="navbar-toggler d-md-none d-block" type="button" data-bs-toggle="offcanvas" data-bs-target="#ejemplo" aria-controls="ejemplo"><i class="las la-ellipsis-v text-light"></i></button>

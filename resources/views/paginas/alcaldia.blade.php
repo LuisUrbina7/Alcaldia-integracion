@@ -10,10 +10,10 @@
                 <div class="col-md-6">
                     <h2>Luis Mendoza</h2>
                     <h3 class="mb-3">Alcalde</h3>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorum soluta, deleniti dignissimos voluptates voluptas ratione architecto eveniet. Earum, qui amet officia laudantium nisi at. Error doloremque eius iste nulla dolorem.Facere sed dicta facilis quo cupiditate sapiente soluta natus maxime nobis molestiae magnam doloremque debitis ipsa, corrupti quas quasi aliquid inventore ullam ratione nesciunt similique voluptatibus sequi quos accusamus! Mollitia!</p>
+                    <p>Es la máxima autoridad de la Municipalidad y su principal deber, es administrar la Comuna, para satisfacer las necesidades locales y promover el desarrollo y progreso económico, social y cultural de la Comuna.</p>
                 </div>
                 <div class="col-md-6">
-                    <img src="img/fijas/alcalde.jpg" alt="alcalde" height="360px" width="auto">
+                    <img src="img/fijas/alcalde.webp" alt="alcalde" height="360px" width="auto" loading="lazy">
 
                 </div>
             </div>
@@ -29,7 +29,7 @@
                 </div>
                
                 <div class="col-md-8">
-                    <iframe src="" frameborder="0" width="100%" height="450px" id="visor-pdf"></iframe>
+                    <iframe src="" frameborder="0" width="100%" height="450px" id="visor-pdf" title="iframe-decretos"></iframe>
                 </div>
                 <div class="col-md-4">
                     <h3 class="text-dark">Ultimos Decretos...</h3>
@@ -49,7 +49,7 @@
                 <div class="col-12 h-100 ">
                     <a data-bs-toggle="modal" data-bs-target="#modalOrganigrama">
                         <div class="shadow-sm bg-light contenedor-organigrama h-50 border rounded">
-                            <img src="img/fijas/organigrama-real.png" alt="organigrama" width="100%">
+                            <img src="img/fijas/organigrama-real.webp" alt="organigrama" width="100%" loading="lazy">
                         </div>
                     </a>
                 </div>
@@ -125,11 +125,10 @@
         <div class="modal-dialog modal-fullscreen">
             <div class="modal-content">
                 <div class="modal-header">
-
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <img src="img/fijas/organigrama-real.png" alt="organigrama" width="100%">
+                    <img src="img/fijas/organigrama-real.webp" alt="organigrama" width="100%" loading="lazy">
                 </div>
             </div>
         </div>

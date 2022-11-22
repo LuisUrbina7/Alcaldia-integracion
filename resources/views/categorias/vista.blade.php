@@ -19,6 +19,7 @@
                 </div>
                 @endif
                 <h4 class="text-muted text-center"> Categorias <a href="" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#exampleModal"> + Agregar</a></h4>
+                <p class="text-danger"> Ojo : La primera categoria registrada debe ser llamada "Proyectos" para que éstas noticias se muestren en el apartado proyecto de la pagina principal.</p>
                 <div class="col-md-10 ">
                     <table class="table">
                         <thead>

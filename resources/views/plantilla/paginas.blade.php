@@ -3,12 +3,15 @@
 
 <head>
     <meta charset="utf-8">
+    <meta name="keywords" content="Capacho, Capacho Independencia, Capacho Nuevo">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Derechos reservados">
+    @yield('meta')
+    <link rel="shortcut icon" href="{{asset('img/fijas/Logo-puro.webp')}}" type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
     @yield('css')
-
 </head>
 
 <body>
@@ -19,18 +22,18 @@
     <!--  -->
     <header>
         <div class=" d-flex align-items-center" style="background: #f6f8ff;">
-            <img src="{{asset('img/fijas/Logo-puro.webp')}}" alt="Escudo" width="100px" height="99.14px" id="escudo">
+            <img src="{{asset('img/fijas/Logo-puro.webp')}}" alt="Escudo" width="100px" height="99.14px" id="escudo" loading="lazy">
             <div class="titulo-encabezado lh-1 d-flex w-100">
                 <h1 id="membrete" class="mx-auto"> ALCALDIA BOLIVARIANA DEL MUNICIPIO <br> <small class="h3">CAPACHO NUEVO DEL ESTADO TACHIRA</small> </h1>
             </div>
-            <img src="{{asset('img/fijas/luis_mendoza.webp')}}" alt="LuisGomez" width="90px" height="109px" id="membreteLuisMendoza" class="d-none d-md-block">
+            <img src="{{asset('img/fijas/luis_mendoza.webp')}}" alt="LuisGomez" width="90px" height="109px" id="membreteLuisMendoza" class="d-none d-md-block" loading="lazy">
         </div>
         <nav class="menu-pegajoso-inicio">
             <!--   -----Menu Horizontal---- -->
             <div class="container navegador">
                 <button class="navbar-toggler d-md-none d-block" type="button" data-bs-toggle="offcanvas" data-bs-target="#ejemplo" aria-controls="ejemplo"><i class="las la-bars fs-1"></i></button>
                 <ul class="nav justify-content-center ">
-                    <li class="nav-item"><a href="{{ route('inicio')}}" class="nav-link text-light">Inicio</a></li>
+                    <li class="nav-item"><a href="{{ route('inicio')}}" class="nav-link text-light"><i class="las la-house-damage"></i> Inicio</a></li>
                     <li class="nav-item"><a href="{{route('noticias')}}" class="nav-link">Noticias</a></li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown-alcaldia" role="button" data-bs-toggle="dropdown" aria-expanded="false">

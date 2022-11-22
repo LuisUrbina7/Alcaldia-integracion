@@ -25,7 +25,7 @@
 
                 </div>
                 <div class="col-md-8">
-                    <iframe src="" frameborder="0" width="100%" height="450px" id="visor-pdf"></iframe>
+                    <iframe src="" frameborder="0" width="100%" height="450px" id="visor-pdf" title="iframe-normas" ></iframe>
                 </div>
             </div>
         </div>

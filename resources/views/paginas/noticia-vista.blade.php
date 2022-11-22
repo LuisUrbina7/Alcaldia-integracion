@@ -1,4 +1,8 @@
 @extends('Plantilla.paginas')
+@section('meta')
+<meta name="description" content="{{$articulo->sinopsis}}">
+<meta property="og:image" content="{{asset($articulo->img)}}" />
+@endsection
 @section('css')
 <title>{{$articulo->titulo}}</title>
 @endsection
@@ -8,7 +12,7 @@
         <div class="container">
             <div class="row  p-md-4">
                 <div class="col-md-9">
-                    <div class="d-flex vista-titulo-noticia px-4 align-items-center">
+                    <div class="d-flex vista-titulo-noticia px-md-4 align-items-center">
                         <span class=" rounded "></span>
                         <div class="p-3">
                             <h3 class="color-oscuro h3 mb-0"> {{$articulo->titulo}} </h3>

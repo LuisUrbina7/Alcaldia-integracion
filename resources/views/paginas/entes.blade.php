@@ -11,7 +11,7 @@
                 <div class="col-12 col-md-5">
                     <h3>Fundaindependencia</h3>
                     <div class="text-center">
-                        <img src="img/fijas/FUNDAINDEPENDENCIA.png" alt="Logo" width="auto" height="185px">
+                        <img src="img/fijas/FUNDAINDEPENDENCIA.webp" alt="Logo" width="auto" height="185px">
                     </div>
                 </div>
                 <div class="col-1">
@@ -29,7 +29,7 @@
                         <p>Lograr la excelencia de la fundación para el desarrollo social del Municipio Capacho Nuevo, en el marco de ejecución de programas y proyectos sociales sustentables, a través de la gestión pública, efectiva, eficiente, suficiente y eficaz, como órgano de sensibilidad social en beneficio de la población, coadyuvando a elevar la calidad de vida.</p>
                     </div>
                 </div>
-                <div class="d-md-none d-block">
+              <!--   <div class="d-md-none d-block">
                     <h3>Instituto de Cultura y Turismo</h3>
                     <div class="text-center">
                         <img src="img/fijas/Logo-planificacion-publica.jpg" alt="Logo" width="100%" height="185px">
@@ -55,7 +55,7 @@
                     <div class="text-center">
                         <img src="falta" alt="Logo" width="100%" height="185px">
                     </div>
-                </div>
+                </div> -->
             </div>
 
 
@@ -68,7 +68,7 @@
                 <h3 class="text-center mb-3 color-oscuro h1" id="entes-efecto-titulo">Consejo Local de Planificación Pública</h3>
                 <div class="col-md-12">
                     <div class="text-center">
-                        <img src="img/fijas/Logo-planificacion-publica.png" alt="Logo" width="350px" height="auto">
+                        <img src="img/fijas/Logo-planificacion-publica.webp" alt="Logo" width="350px" height="auto">
                     </div>
                     <p class="text-center">Teléfono: 0276-7881617 / 0424:7210804. Correo electrónico: c.l.p.p.capachon@gmail.com</p>
                     <div class="entes-cartas ">
@@ -99,7 +99,7 @@
                 <div class="col-md-5">
                     <h3>Instituto de Deporte Recreacion y juventud</h3>
                     <div class="text-center">
-                        <img src="img/fijas/logo-nuevo-deporte.png" alt="Logo" width="100%" height="100%">
+                        <img src="img/fijas/logo-nuevo-deporte.webp" alt="Logo" width="100%" height="100%">
                     </div>
                 </div>
                 <div class="col-1">

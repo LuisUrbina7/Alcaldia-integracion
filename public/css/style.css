@@ -241,6 +241,9 @@ nav a {
 .nav .dropdown-menu .dropdown-item {
     color: white;
 }
+.nav .dropdown-menu .dropdown-item:hover {
+    color: rgb(0, 0, 0);
+}
 
 
 /* Menu lateral */
@@ -270,7 +273,7 @@ nav a {
 
 .lista-redes {
     position: fixed;
-    right: -77px;
+    right: -80px;
     bottom: 40%;
     z-index: 100;
     padding: 0;
@@ -288,6 +291,7 @@ nav a {
     transition: left 1s;
     display: flex;
     align-items: center;
+    padding-right: 8px;
 }
 
 .lista-redes li a:hover {
@@ -346,6 +350,8 @@ nav a {
 .noticia-carta:nth-child(2) h1,.noticia-carta:nth-child(3) h1{
     font-size: 1.5rem;
 }
+
+
 .carta-cuerpo a {
    text-decoration: none;
    padding: 9px 30px;
@@ -1094,7 +1100,7 @@ footer h5 {
         width: 100%;
     }
     #escudo{
-        width: 68px;
+        width: 55px;
         height: auto;
     }
 
@@ -1126,9 +1132,15 @@ footer h5 {
         display: block;
        
     }
-    
     .contenedor-noticia-vista .noticia-carta {
        height: 250px;
        width: 100%;
+    }
+    .carta-cuerpo{
+        padding: 10px;
+        align-items: center;
+    }
+    .noticia-carta  p{
+        font-size: 1rem;
     }
 }

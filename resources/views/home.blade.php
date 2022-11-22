@@ -1,5 +1,9 @@
 @extends('Plantilla.paginas')
+@section('meta')
+<meta name="description" content="Alcaldia del municipio capacho nuevo.">
+@endsection
 @section('css')
+
 <title>Inicio</title>
 @endsection
 @section('contenido')
@@ -31,11 +35,11 @@
 @endforeach -->
         <div class="contenedor-noticia-vista px-md-4">
         @foreach($noticias as $recientes)
-            <div class="noticia-carta img-noticia"><img src="{{asset($recientes->img)}}" alt="foto" width="100%" height="100%">
+            <div class="noticia-carta img-noticia  my-2 my-md-0"><img src="{{asset($recientes->img)}}" alt="foto" width="100%" height="100%">
                 <div class="carta-cuerpo">
                     <div class="carta-texto w-100">
                         <h1 class="text-white">{{$recientes->titulo}}</h1>
-                        <p class="text-light fs-5">{{$recientes->sinopsis}}.</p>
+                        <p class="text-light">{{$recientes->sinopsis}}.</p>
                         <a href="{{route('noticias.articulo',$recientes->slug)}}"> Visualizar</a>
                     </div>
                 </div>
@@ -44,7 +48,7 @@
             @endforeach
         </div>
     </section>
-    <section>
+    <section class="d-md-block d-none">
         <div class="d-flex justify-content-center">
             <div class="spinner-border" role="status" id="cargando-publicidad">
             </div>
@@ -71,7 +75,7 @@
                     </div>
                 </div>
                 <div class="col-md-5  p-0 position-relative">
-                    <img src="img/fijas/alcalde02.webp" alt="foto" class="d-none d-md-block position-absolute" width="450px" height="450px">
+                    <img src="img/fijas/alcalde02.webp" alt="foto" class="d-none d-md-block position-absolute" width="450px" height="450px" loading="lazy">
                 </div>
             </div>
         </div>
@@ -88,8 +92,8 @@
                     <div class="carta p-4 ">
                         <p class="d-flex justify-content-center align-items-center"><span class="servicios-figura"><i class="las la-universal-access"></i></span></p>
                         <h3 class="h5">Catastro</h3>
-                        <p class="textos text-light">La Dirección de Catastro está encargada del censo estadístico de todos los bienes inmuebles de la población,</p>
-                        <a href="Paginas/Servicios-vista.php" class="btn btn-danger">ver</a>
+                        <p class="textos text-light">La Dirección de Catastro está encargada del censo estadístico de todos los bienes inmuebles de la población.</p>
+                        <a href="{{route('catastro')}}" class="btn btn-danger">ver</a>
                     </div>
                 </div>
                 <div class="col-md-4 px-md-4 mb-2">
@@ -97,7 +101,7 @@
                         <p class="d-flex justify-content-center align-items-center"><span class="servicios-figura"><i class="las la-sign-language"></i></span></p>
                         <h3 class="h5">Registro Civil</h3>
                         <p class="textos text-light">Dirección mediante el cual se materializa el derecho constitucional a la identidad de todas las personas.</p>
-                        <a href="Paginas/Servicios-vista.php" class="btn btn-danger">ver</a>
+                        <a href="{{route('registro.civil')}}" class="btn btn-danger">ver</a>
                     </div>
                 </div>
                 <div class="col-md-4 px-md-4 mb-2">
@@ -105,7 +109,7 @@
                         <p class="d-flex justify-content-center align-items-center"><span class="servicios-figura"><i class="las la-city"></i></span></p>
                         <h3 class="h5">Hacienda</h3>
                         <p class="textos text-light">Registra y controla los bienes del dominio público municipal, así como mantiene actualizado el inventario de los mismos.</p>
-                        <a href="Paginas/servicios-hacienda.php" class="btn btn-danger">ver</a>
+                        <a href="{{route('hacienda.municipal')}}" class="btn btn-danger">ver</a>
                     </div>
                 </div>
                 <div>
@@ -260,7 +264,7 @@
     </section>
     <section class="mapa">
         <div class="lh-1">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63242.64468534074!2d-72.37228766875002!3d7.825205700000016!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e666a3d6ebccb91%3A0x6ffe72e7abf9b009!2sAlcald%C3%ADa%20Municipio%20Independencia!5e0!3m2!1ses-419!2sve!4v1666016303907!5m2!1ses-419!2sve" width="100%" height="254px" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63242.64468534074!2d-72.37228766875002!3d7.825205700000016!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e666a3d6ebccb91%3A0x6ffe72e7abf9b009!2sAlcald%C3%ADa%20Municipio%20Independencia!5e0!3m2!1ses-419!2sve!4v1666016303907!5m2!1ses-419!2sve" width="100%" height="254px" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="geolocalizacion-capacho"></iframe>
         </div>
     </section>
 </main>
@@ -273,7 +277,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <img src="{{asset('img/fijas/Foto-bienvenida.webp')}}" alt="bienvenida" width="100%">
+                <img src="{{asset('img/fijas/Foto-bienvenida.webp')}}" alt="bienvenida" width="100%" loading="lazy">
             </div>
         </div>
     </div>
