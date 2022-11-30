@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="keywords" content="Capacho, Capacho Independencia, Capacho Nuevo">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="author" content="Derechos reservados">
+    <meta name="author" content="Ing Luis Urbina">
     @yield('meta')
     <link rel="shortcut icon" href="{{asset('img/fijas/Logo-puro.webp')}}" type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -15,10 +15,15 @@
 </head>
 
 <body>
-<div class="contenedor-cargando">
-   <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
+    <div class="contenedor-cargando">
+        <div class="lds-ring">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
 
-</div>
+    </div>
     <!--  -->
     <header>
         <div class=" d-flex align-items-center" style="background: #f6f8ff;">
@@ -43,11 +48,12 @@
                             <li><a class="dropdown-item" href="{{route('alcaldia')}}">+ Nostros - Decretos</a></li>
                             <li><a class="dropdown-item" href="{{route('concejo.municipal')}}">+ Concejo Municipal - Ordenanzas</a></li>
                             <li><a class="dropdown-item" href="{{route('entes')}}">+ Entes de Gobierno</a></li>
+                            <li><a class="dropdown-item" href="{{route('entes')}}">+ Mision y Grandes Misiones</a></li>
+                            <li><a class="dropdown-item" href="{{route('sala.situacional')}}">+ Sala Situacional</a></li>
                         </ul>
                     </li>
                     <li class="nav-item"><a href="{{route('municipio')}}" class="nav-link">Municipio</a></li>
                     <li class="nav-item"><a href="{{route('turismo')}}" class="nav-link">Turismo</a></li>
-
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Servicios
@@ -57,6 +63,15 @@
                             <li><a class="dropdown-item" href="{{route('registro.civil')}}">+ Registro Civil</a></li>
                             <li><a class="dropdown-item" href="{{route('hacienda.municipal')}}">+ Hacienda Municipal</a></li>
                             <li><a class="dropdown-item" href="{{route('sindicatura')}}">+ Sindicatura</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Bono Patria
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="{{route('catastro')}}">+ Somos VZLA</a></li>
+                            <li><a class="dropdown-item" href="{{route('registro.civil')}}">+ MIsion Vivienda</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -79,15 +94,24 @@
                                     <li><a class="dropdown-item" href="{{route('alcaldia')}}">+ Nostros - Decretos</a></li>
                                     <li><a class="dropdown-item" href="{{route('concejo.municipal')}}">+ Concejo Municipal - Ordenanzas</a></li>
                                     <li><a class="dropdown-item" href="{{route('entes')}}">+ Entes de Gobierno</a></li>
+                                    <li><a class="dropdown-item" href="{{route('entes')}}">+ Mision y Grandes Misiones</a></li>
                                 </ul>
                             </div>
                         </div>
-                        
                         <li><a href="{{route('municipio')}}">Municipio</a></li>
+                        <div>
+                            <a class="collapsed  btn btn-danger" type="button" data-bs-toggle="collapse" data-bs-target="#dos" aria-expanded="false">Bonos Patria</a>
+                            <div id="dos" class="collapse">
+                                <ul>
+                                    <li><a class="dropdown-item" href="{{route('alcaldia')}}">+ Somos VZLA</a></li>
+                                    <li><a class="dropdown-item" href="{{route('concejo.municipal')}}">+ Mision Vivienda</a></li>
+                                </ul>
+                            </div>
+                        </div>
                         <li><a href="{{route('turismo')}}">Turismo</a></li>
                         <div>
-                            <a class=" collapsed w-100 btn btn-danger" type="button" data-bs-toggle="collapse" data-bs-target="#dos" aria-expanded="false">Planillas de Solictud</a>
-                            <div id="dos" class="collapse">
+                            <a class=" collapsed w-100 btn btn-danger" type="button" data-bs-toggle="collapse" data-bs-target="#tres" aria-expanded="false">Planillas de Solictud</a>
+                            <div id="tres" class="collapse">
                                 <ul>
                                     <li><a class="dropdown-item" href="{{route('catastro')}}">+ Catastro</a></li>
                                     <li><a class="dropdown-item" href="{{route('registro.civil')}}">+ Registro Civil</a></li>
@@ -119,13 +143,11 @@
                 <div class="col-md-8">
                     <h5 class="text-light">Lema</h5>
                     <h2 class="text-light lh-sm h3">En Capacho Nuevo... Renace la Esperanza!!!</h2>
-
                 </div>
                 <div class="col-md-4">
                     <h5 class="text-light">Horarios de atencion al ciudadano.</h5>
                     <p class="text-light lh-sm"> Lunes - Viernes. <br> <strong class="text-light"> 8:00 AM - 01:00
                             PM</strong></p>
-
                 </div>
                 <div class="col-12 text-center text-light">
                     Copyright 2022-2023

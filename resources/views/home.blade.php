@@ -3,7 +3,6 @@
 <meta name="description" content="Alcaldia del municipio capacho nuevo.">
 @endsection
 @section('css')
-
 <title>Inicio</title>
 @endsection
 @section('contenido')

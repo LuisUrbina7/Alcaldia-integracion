@@ -33,6 +33,14 @@ Route::get('/entes',[PaginasController::class,'entes'])->name('entes');
 Route::get('/turismo',[PaginasController::class,'turismo'])->name('turismo');
 Route::get('/servicios',[PaginasController::class,'servicios'])->name('servicios');
 
+/* -----paginas de informacion----- */
+
+Route::get('/sala-situacional', function () {
+    return view('paginas.sala-situacional');
+})->name('sala.situacional');
+
+
+
 /* -----seccion planilla----- */
 Route::get('/catastro', function () {
     return view('paginas.servicios-catastro');

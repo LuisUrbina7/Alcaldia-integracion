@@ -359,7 +359,7 @@ nav a {
   
 }
 
-/* -------publicidad---------- */
+/* publicidad*/
 .img-publicidad {
     background-image: url('../publicidad/gifuno.gif');
     background-size: cover;
@@ -378,7 +378,7 @@ nav a {
 }
 
 
-/* -----modal de bienvenida------ */
+/* modal de bienvenida */
 .modal-bienvenida {
     background-color: transparent;
     border: 0;
@@ -481,7 +481,7 @@ nav a {
     filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.2));
 }
 
-/* Seccon servicios */
+/* Seccion servicios */
 
 .servicios {
     width: 100%;
@@ -542,12 +542,7 @@ nav a {
     background-color: var(--color-secundario);
 }
 
-/* 
-entes */
-
-/* .entes img {
- 
-} */
+/* entes */
 
 .entes .servicios-entes-figura {
     position: relative;
@@ -758,7 +753,7 @@ footer h5 {
     background-color: #1780c5;
 }
 
-/* ------comentarios------- */
+/* comentarios*/
 .comentarios {
     border-top: 1px solid rgba(0, 0, 0, .125);
 }
@@ -767,6 +762,15 @@ footer h5 {
     max-width: 702px;
 }
 
+/* ------Pagina atencion al ciudadano--------- */
+.btn-wp-atencion-ciudadano{
+    background-color: #25D366;
+    color: white;
+}
+.btn-wp-atencion-ciudadano:hover{
+    background-color: #1faa52;
+    color: white;
+}
 /* ------Pagina servicio--------- */
 .servicios-carta-cuerpo {
     bottom: 0;

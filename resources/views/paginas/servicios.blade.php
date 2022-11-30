@@ -14,7 +14,7 @@
                         <div class=" position-relative">
                             <img src="img/fijas/catastro_1.webp" alt="" width="100%" height="272px">
                             <div class="servicios-carta-cuerpo position-absolute">
-                                <h3 class="h4 text-light">Catastro</h3>
+                                <h3 class="h4 text-light">Dirección de Urbanismo y Catastro</h3>
                             </div>
                         </div>
                     </a>
@@ -36,7 +36,7 @@
                         <div class=" position-relative">
                             <img src="img/fijas/hacienda-municipal.webp" alt="" width="100%" height="272px">
                             <div class="servicios-carta-cuerpo position-absolute">
-                                <h3 class="h4 text-light">Direcciòn de Hacienda Municipal</h3>
+                                <h3 class="h4 text-light">Dirección de Hacienda Municipal</h3>
                             </div>
                         </div>
                     </a>
@@ -47,7 +47,7 @@
                         <div class=" position-relative">
                             <img src="img/fijas/proteccion-civil.webp" alt="" width="100%" height="272px">
                             <div class="servicios-carta-cuerpo position-absolute">
-                                <h3 class="h4 text-light">Protecciòn Civil</h3>
+                                <h3 class="h4 text-light">Dirección de Protección Civil</h3>
                             </div>
                         </div>
                     </a>
@@ -66,9 +66,29 @@
                 <div class="carta-servicios col-md-4 text-center mb-3">
                     <a href="#" class="text-decoration-none">
                         <div class=" position-relative">
-                            <img src="img/fijas/Capacho Nuevo_0.webp" alt="" width="100%" height="272px">
+                            <img src="img/fijas/desarrollo-social.webp" alt="" width="100%" height="272px">
                             <div class="servicios-carta-cuerpo position-absolute">
-                                <h3 class="h4 text-light">Otro</h3>
+                                <h3 class="h4 text-light">Dirección de Desarrollo Social</h3>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="carta-servicios col-md-4 text-center mb-3">
+                    <a href="#" class="text-decoration-none">
+                        <div class=" position-relative">
+                            <img src="img/fijas/servicios-generales.webp" alt="" width="100%" height="272px">
+                            <div class="servicios-carta-cuerpo position-absolute">
+                                <h3 class="h4 text-light">Dirección de Servicios Generales</h3>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="carta-servicios col-md-4 text-center mb-3">
+                    <a href="#" class="text-decoration-none">
+                        <div class=" position-relative">
+                            <img src="img/fijas/obras-publicas.webp" alt="" width="100%" height="272px">
+                            <div class="servicios-carta-cuerpo position-absolute">
+                                <h3 class="h4 text-light">Dirección de Obras Públicas</h3>
                             </div>
                         </div>
                     </a>

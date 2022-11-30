@@ -20,14 +20,13 @@
         </div>
     </section>
     <section class="normas">
-
         <div class="container">
             <div class="row py-4">
                 <div class="d-flex justify-content-center">
                     <div class="spinner-border" role="status" id="cargando-pdf">
                     </div>
                 </div>
-               
+
                 <div class="col-md-8">
                     <iframe src="" frameborder="0" width="100%" height="450px" id="visor-pdf" title="iframe-decretos"></iframe>
                 </div>
@@ -90,7 +89,6 @@
                     </ul>
                 </div>
             </div>
-
         </div>
     </section>
     <section class="mision-vision">
@@ -118,7 +116,26 @@
 
         </div>
     </section>
+   
+    <section>
+        <div class="container">
+            <div class="row py-5">
+                <div class="col-md-4">
+                    <h2>Atención al Ciudadano</h2>
+                    <h3>Número  de contacto:</h3>   
+                    <a href="" class="btn btn-wp-atencion-ciudadano my-2"><i class="lab la-whatsapp fs-4"></i>Whatsapp</a>
+                    <h3>Correo:</h3>
+                    <p>alcaldiacapachonuevo2021@gmail.com</p>
+                    <h3>Teléfono fijo:</h3>
+                    <p>(0276) 7881617</p>
 
+                </div>
+                <div class="col-md-8 text-center">
+                    <img src="{{asset('img/fijas/atencion-ciudadano.webp')}}" alt="guia" width="50%">
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Modal -->
     <div class="modal fade" id="modalOrganigrama" tabindex="-1" aria-labelledby="modalOrganigrama" aria-hidden="true">
