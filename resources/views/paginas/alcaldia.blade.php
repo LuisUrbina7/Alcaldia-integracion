@@ -116,13 +116,13 @@
 
         </div>
     </section>
-   
+
     <section>
         <div class="container">
             <div class="row py-5">
                 <div class="col-md-4">
                     <h2>Atención al Ciudadano</h2>
-                    <h3>Número  de contacto:</h3>   
+                    <h3>Número de contacto:</h3>
                     <a href="" class="btn btn-wp-atencion-ciudadano my-2"><i class="lab la-whatsapp fs-4"></i>Whatsapp</a>
                     <h3>Correo:</h3>
                     <p>alcaldiacapachonuevo2021@gmail.com</p>
@@ -132,6 +132,7 @@
                 </div>
                 <div class="col-md-8 text-center">
                     <img src="{{asset('img/fijas/atencion-ciudadano.webp')}}" alt="guia" width="50%">
+                    <h3 class="mt-3">1.4600 personas atendidas en el Mes.</h3>
                 </div>
             </div>
         </div>

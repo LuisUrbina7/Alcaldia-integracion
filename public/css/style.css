@@ -188,7 +188,9 @@ nav {
 nav a {
     font-size: 17px;
 }
-
+.nav-link:focus, .nav-link:hover {
+    color: var(--color-primario);
+}
 .menu-fijo {
     position: fixed;
     width: 100%;
@@ -241,8 +243,9 @@ nav a {
 .nav .dropdown-menu .dropdown-item {
     color: white;
 }
-.nav .dropdown-menu .dropdown-item:hover {
+.nav .dropdown-menu .dropdown-item:hover,.dropdown-item:focus {
     color: rgb(0, 0, 0);
+    background-color: white;
 }
 
 
@@ -1082,7 +1085,7 @@ footer h5 {
 
 }
 
-@media(max-width:520px) {
+@media(max-width:767px) {
     .entes .servicios-entes-figura::before {
         display: none;
     }

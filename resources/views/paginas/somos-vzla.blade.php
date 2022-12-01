@@ -11,11 +11,15 @@
           <div class="d-flex vista-titulo-noticia px-4 align-items-center">
             <span class=" rounded bg-warning"></span>
             <div class="p-3">
-              <h3 class="color-oscuro h3 mb-0"> Dirección de Desarrollo Social. </h3>
+              <h3 class="color-oscuro h3 mb-0"> Somos Venezuela. </h3>
               <p> <small class="text-muted "> Todos los procesos relacionados al servicios..</small> </p>
             </div>
           </div>
           <div class="px-md-5">
+            <div class="text-center">
+
+              <img src="{{asset('img/fijas/Somos-vzla.webp')}}" alt="Somos Venezuela" width="250px" height="auto">
+            </div>
             <div class="accordion" id="accordionPanelsStayOpenExample">
               <div class="accordion-item">
                 <h4 class="accordion-header" id="panelsStayOpen-headingOne">

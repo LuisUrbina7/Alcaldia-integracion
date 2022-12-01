@@ -54,7 +54,7 @@ class CategoriasController extends Controller
             return response()->json(['msg'=>'excelente']);
         }
         catch(Exception $e){  
-            return response()->json(['msg'=>'Paso algo en la actualizacion']);
+            return response()->json(['msg'=>$e]);
         }
     }
     public function cargar_categorias(){

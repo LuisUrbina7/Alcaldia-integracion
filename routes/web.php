@@ -38,6 +38,13 @@ Route::get('/servicios',[PaginasController::class,'servicios'])->name('servicios
 Route::get('/sala-situacional', function () {
     return view('paginas.sala-situacional');
 })->name('sala.situacional');
+Route::get('/misiones', function () {
+    return view('paginas.misiones');
+})->name('misiones');
+
+Route::get('/somos-vzla', function () {
+    return view('paginas.somos-vzla');
+})->name('somosvzla');
 
 
 
@@ -54,6 +61,13 @@ Route::get('/hacienda-municipal', function () {
 Route::get('/sindicatura', function () {
     return view('paginas.servicios-sindicatura');
 })->name('sindicatura');
+Route::get('/proteccion-civil', function () {
+    return view('paginas.servicios-proteccion-civil');
+})->name('proteccion.civil');
+
+Route::get('/desarrollo-social', function () {
+    return view('paginas.servicios-desarrollo-social');
+})->name('desarrollo.social');
 
 /* 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

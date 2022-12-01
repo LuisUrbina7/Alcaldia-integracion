@@ -454,7 +454,7 @@
             </div>
 
             <div class="col-md-6">
-                <h3 class="mb-3">UBCHE</h3>
+                <h3 class="mb-3">UBCH</h3>
                 <table class=" table table-bordered  table-hover ">
                     <thead class="text-white bg-warning">
                         <tr>

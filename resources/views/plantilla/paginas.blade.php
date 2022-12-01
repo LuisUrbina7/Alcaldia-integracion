@@ -48,7 +48,7 @@
                             <li><a class="dropdown-item" href="{{route('alcaldia')}}">+ Nostros - Decretos</a></li>
                             <li><a class="dropdown-item" href="{{route('concejo.municipal')}}">+ Concejo Municipal - Ordenanzas</a></li>
                             <li><a class="dropdown-item" href="{{route('entes')}}">+ Entes de Gobierno</a></li>
-                            <li><a class="dropdown-item" href="{{route('entes')}}">+ Mision y Grandes Misiones</a></li>
+                            <li><a class="dropdown-item" href="{{route('misiones')}}">+ Mision y Grandes Misiones</a></li>
                             <li><a class="dropdown-item" href="{{route('sala.situacional')}}">+ Sala Situacional</a></li>
                         </ul>
                     </li>
@@ -62,7 +62,9 @@
                             <li><a class="dropdown-item" href="{{route('catastro')}}">+ Catastro</a></li>
                             <li><a class="dropdown-item" href="{{route('registro.civil')}}">+ Registro Civil</a></li>
                             <li><a class="dropdown-item" href="{{route('hacienda.municipal')}}">+ Hacienda Municipal</a></li>
-                            <li><a class="dropdown-item" href="{{route('sindicatura')}}">+ Sindicatura</a></li>
+                            <li><a class="dropdown-item" href="{{route('sindicatura')}}">+ Sindicatura Municipal</a></li>
+                            <li><a class="dropdown-item" href="{{route('proteccion.civil')}}">+ Protección Civil</a></li>
+                            <li><a class="dropdown-item" href="{{route('desarrollo.social')}}">+ Desarrollo Social</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
@@ -70,8 +72,8 @@
                             Bono Patria
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="{{route('catastro')}}">+ Somos VZLA</a></li>
-                            <li><a class="dropdown-item" href="{{route('registro.civil')}}">+ MIsion Vivienda</a></li>
+                            <li><a class="dropdown-item" href="{{route('somosvzla')}}">+ Somos VZLA</a></li>
+                            <li><a class="dropdown-item" href="{{route('registro.civil')}}">+ Mision Vivienda</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -103,7 +105,7 @@
                             <a class="collapsed  btn btn-danger" type="button" data-bs-toggle="collapse" data-bs-target="#dos" aria-expanded="false">Bonos Patria</a>
                             <div id="dos" class="collapse">
                                 <ul>
-                                    <li><a class="dropdown-item" href="{{route('alcaldia')}}">+ Somos VZLA</a></li>
+                                <li><a class="dropdown-item" href="{{route('somosvzla')}}">+ Somos VZLA</a></li>
                                     <li><a class="dropdown-item" href="{{route('concejo.municipal')}}">+ Mision Vivienda</a></li>
                                 </ul>
                             </div>
@@ -117,6 +119,8 @@
                                     <li><a class="dropdown-item" href="{{route('registro.civil')}}">+ Registro Civil</a></li>
                                     <li><a class="dropdown-item" href="{{route('hacienda.municipal')}}">+ Hacienda Municipal</a></li>
                                     <li><a class="dropdown-item" href="{{route('sindicatura')}}">+ Sindicatura</a></li>
+                                    <li><a class="dropdown-item" href="{{route('proteccion.civil')}}">+ Protección Civil</a></li>
+                                    <li><a class="dropdown-item" href="{{route('desarrollo.social')}}">+ Desarrollo Social</a></li>
                                 </ul>
                             </div>
                         </div>

@@ -158,7 +158,7 @@
         event.preventDefault();
         Swal.fire({
                 title: '¿Segur@?',
-                text: "Se borrará todo!",
+                text: "Advertencia, se borrarán todas las publicaciones dentro de ésta categoria. Sólo los administradores tienen permitido esta acción.",
                 icon: 'warning',
                 showCancelButton: true,
                 confirmButtonColor: '#3085d6',
@@ -172,7 +172,8 @@
                         type: 'GET',
                         url: $url,
                         success: function(response) {
-                            if (response.msg == 'Bien') {
+                            console.log(response);
+                            if (response.msg == 'excelente') {
                                 Swal.fire(
                                     'Excelente',
                                     'Borrado Correctamente',
@@ -186,6 +187,8 @@
                                     'danger'
                                 )
                             }
+                        },error:function(response){
+                            console.log(response);
                         }
                     });
                 }

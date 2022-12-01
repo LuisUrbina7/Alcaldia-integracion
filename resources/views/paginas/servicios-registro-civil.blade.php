@@ -81,7 +81,7 @@
               <div class="accordion-item">
                 <h4 class="accordion-header" id="panelsStayOpen-headingThree">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
-                    UEH.
+                    UEHA.
                   </button>
                 </h4>
                 <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
