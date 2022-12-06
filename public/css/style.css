@@ -686,10 +686,7 @@ footer h5 {
     color: var(--color-titulo);
 }
 
-.ventana-twitter div {
-    height: 450px;
-    overflow-x: hidden;
-}
+
 
 .card:hover img {
     filter: blur(1px);

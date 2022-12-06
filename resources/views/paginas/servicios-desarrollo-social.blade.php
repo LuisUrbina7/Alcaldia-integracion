@@ -79,7 +79,7 @@
             <div class="ventana-twitter">
               <h3>twitter</h3>
               <div>
-                <a class="twitter-timeline" href="https://twitter.com/luismendozach?lang=es">Luis Mendoza</a>
+              <a class="twitter-timeline" data-lang="en" data-width="241" data-height="450" href="https://twitter.com/LuisMendozaCh?ref_src=twsrc%5Etfw"  data-tweet-limit="5">Luis Mendoza</a>
                 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
               </div>
             </div>

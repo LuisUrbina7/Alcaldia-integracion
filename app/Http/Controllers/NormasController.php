@@ -20,7 +20,7 @@ class NormasController extends Controller
     }
     public function insertar(Request $request)
     {
-       /*  dd($request->all()); */
+        /*  dd($request->all()); */
         $validator  = Validator::make($request->all(), [
             'titulo' => ['required', 'string', 'max:255'],
             'archivo' => ['required'],
@@ -52,16 +52,15 @@ class NormasController extends Controller
         }
     }
     public function actualizar_vista($id)
-    {   
-        $norma= Normas::find($id);
-
-        return view('normas.actualizar',compact('norma'));
-   
-    }
-    public function actualizar(Request $request,$id)
     {
-       /*  dd($request->all()); */
-      try {
+        $norma = Normas::find($id);
+
+        return view('normas.actualizar', compact('norma'));
+    }
+    public function actualizar(Request $request, $id)
+    {
+        /*  dd($request->all()); */
+        try {
             $informacion = Normas::find($id);
             $informacion->titulo = $request->input('titulo');
             if ($request->hasFile('archivo')) {
@@ -69,7 +68,7 @@ class NormasController extends Controller
                 unlink($base);
                 $archivo = $request->file('archivo');
                 $destino = 'normas_archivos/';
-                $archivoNombre = time() . '-' .$archivo->getClientOriginalName();
+                $archivoNombre = time() . '-' . $archivo->getClientOriginalName();
                 $mover = $request->file('archivo')->move($destino, $archivoNombre);
                 $informacion->enlace = $destino . $archivoNombre;
             }
@@ -79,33 +78,33 @@ class NormasController extends Controller
             return redirect()->back()->with('success', 'excelente publicidad actualizada.');
         } catch (Exception $e) {
             return redirect()->back()->with('danger', 'inténtalo de nuevo más tarde.');
-            } 
+        }
     }
     public function borrar($id)
     {
-        try{
+        try {
             $norma = Normas::find($id);
             $norma->delete();
             $base = public_path($norma->enlace);
-            if(file_exists($base)){
-                  unlink($base);
-                }
-                return response()->json(['msg'=>'bien']);
-        }catch(Exception $e){
-            return response()->json(['msg'=>'error']);
-
+            if (file_exists($base)) {
+                unlink($base);
+            }
+            return response()->json(['msg' => 'bien']);
+        } catch (Exception $e) {
+            return response()->json(['msg' => 'error']);
         }
-       
     }
 
-    public function cargar_decretos(){
-        $decretos = Normas::where('tipo','Decreto')->get();
-    /*     dd($decretos); */
+    public function cargar_decretos()
+    {
+        $decretos = Normas::where('tipo', 'Decreto')->get();
+        /*     dd($decretos); */
 
         return response()->json($decretos);
     }
-    public function cargar_normas(){
-        $normas = Normas::where('tipo','Ordenanza')->get();
+    public function cargar_normas()
+    {
+        $normas = Normas::where('tipo', 'Ordenanza')->get();
         /* dd($normas); */
 
         return response()->json($normas);

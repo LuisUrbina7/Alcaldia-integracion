@@ -7,31 +7,8 @@
 @endsection
 @section('contenido')
 <main>
-    <!--  -----obras publicas, proteccion civil, desarrollo social, Novedades, cultura y turismo, Deporte y recreación,servicios generales---- -->
 
     <section class="deslizador">
- <!--    @foreach($noticias as $recientes)
-
-@if($noticias[0]['id']==$recientes->id)
-<div class="carousel-item active">
-    <img src="{{$recientes->img}}" class="d-block w-100" alt="foto">
-    <div class="carousel-caption d-md-block">
-        <h3 class="fs-1">{{$recientes->titulo}}</h3>
-        <p class="text-light fs-5">{{$recientes->sinopsis}}</p>
-        <a href="{{route('noticias.articulo',$recientes->slug)}}"> Visualizar</a>
-    </div>
-</div>
-@else
-<div class="carousel-item">
-    <img src="{{$recientes->img}}" class="d-block w-100" alt="foto">
-    <div class="carousel-caption d-md-block">
-        <h3 class="fs-1">{{$recientes->titulo}}</h3>
-        <p class="text-light fs-5">{{$recientes->sinopsis}}</p>
-        <a href="{{route('noticias.articulo',$recientes->slug)}}"> Visualizar</a>
-    </div>
-</div>
-@endif
-@endforeach -->
         <div class="contenedor-noticia-vista px-md-4">
         @foreach($noticias as $recientes)
             <div class="noticia-carta img-noticia  my-2 my-md-0"><img src="{{asset($recientes->img)}}" alt="foto" width="100%" height="100%">

@@ -1,7 +1,6 @@
 @extends('plantilla_blog.plantilla')
 
 @section('contenido')
-<div class="container py-5">
     @if ( session('nombre') )
     <div class="alert alert-success" role="alert">
         <strong>Felicitaciones </strong>
@@ -20,12 +19,10 @@
         {{ session('Clave') }}
     </div>
     @endif
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header d-flex justify-content-between">{{ __('Perfil') }}
+            <div class="card  shadow-sm">
+                <div class="card-header d-flex justify-content-between">Mi Perfil
                     <div class="btn-group">
-                        <a href="{{route('usuarios')}}" class="btn btn-primary">Usuarios</a><a href="{{route('usuarios.crear.formulario')}}" class="btn btn-warning">Registrar</a>
+                        <a href="{{route('usuarios')}}" class="btn btn-primary"><i class="las la-users-cog fs-3"></i></a><a href="{{route('usuarios.crear.formulario')}}" class="btn btn-warning"><i class="las la-plus-circle fs-3"></i></a>
                     </div>
                 </div>
 
@@ -136,7 +133,5 @@
                     </form>
                 </div>
             </div>
-        </div>
-    </div>
-</div>
+      
 @endsection

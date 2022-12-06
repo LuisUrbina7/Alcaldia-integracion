@@ -9,62 +9,64 @@
 
 @section('contenido')
 
-<section>
 
-    <div class="container py-5">
-        <div class="categorias-todos bg-light border">
-            <div class="row p-md-4 justify-content-center">
-                @if (session('msg'))
-                <div class="alert alert-primary" role="alert" id="alerta">
-                    {{session('msg')}}
-                </div>
-                @endif
-                <h4 class="text-muted text-center"> Categorias <a href="" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#exampleModal"> + Agregar</a></h4>
-                <p class="text-danger"> Ojo : La primera categoria registrada debe ser llamada "Proyectos" para que éstas noticias se muestren en el apartado proyecto de la pagina principal.</p>
-                <div class="col-md-10 ">
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th scope="col">#</th>
-                                <th scope="col">Nombre</th>
-                                <th scope="col">Editar</th>
-                                <th scope="col">Borrar</th>
-                            </tr>
-                        </thead>
-                        <tbody>
+<div>
+    <h3>Categorias </h3>
+    <hr>
+</div>
+@if (session('msg'))
+<div class="alert alert-primary" role="alert" id="alerta">
+    {{session('msg')}}
+</div>
+@endif
 
-                            @foreach ($categorias as $categoria )
-                            <tr>
-                                <th scope="row">{{$categoria->id}}</th>
-                                <td>{{$categoria->nombre}}</td>
-                                <td><button value="{{route('categoria.actualizar.formulario',$categoria->id)}}" class="btn btn-primary bottom"><i class="lar la-eye"></i></button></td>
-                                <td><a href="{{route('categoria.borrar',$categoria->id)}}" class="btn btn btn-danger" onclick="borrar(this)"><i class="las la-trash-alt"></i></a></td>
-                            </tr>
-                            @endforeach
-                        </tbody>
-                    </table>
-                    <div class="d-flex justify-content-center">
-                        {{ $categorias->links() }}
-                    </div>
+<div class="panel-carta">
+
+    <h4 class="text-muted text-center"> Categorias <a  class="btn btn-info" data-bs-toggle="modal" data-bs-target="#exampleModal"> + Agregar</a></h4>
+    <p class="text-danger"> Ojo : La primera categoria registrada debe ser llamada "Proyectos" para que éstas noticias se muestren en el apartado proyecto de la pagina principal.</p>
+    <table class="table">
+        <thead class="bg-dark text-white">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Editar</th>
+                <th scope="col">Borrar</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach ($categorias as $categoria )
+            <tr>
+                <th scope="row">{{$categoria->id}}</th>
+                <td>{{$categoria->nombre}}</td>
+                <td><button value="{{route('categoria.actualizar.formulario',$categoria->id)}}" class="btn btn-primary bottom"><i class="lar la-eye"></i></button></td>
+                <td><a href="{{route('categoria.borrar',$categoria->id)}}" class="btn btn btn-danger" onclick="borrar(this)"><i class="las la-trash-alt"></i></a></td>
+            </tr>
+            @endforeach
+        </tbody>
+    </table>
+    <div class="d-flex justify-content-center">
+        {{ $categorias->links() }}
+    </div>
+
+
+    <div class="d-flex justify-content-center">
+        <div class="w-25">
+            <div class="row border mb-3">
+                <div class="col-md-12 mb-3">
+                    <label for="referencia-nombre" class="form-label">Actualizar</label>
+                    <input type="hidden" id="id" name="id">
+                    <input type="text" name="referencia-nombre" class="form-control" id="nombre">
                 </div>
-            </div>
-            <div class="row justify-content-center">
-                <div class="col-md-6">
-                    <div class="row border mb-3">
-                        <div class="col-md-12 mb-3">
-                            <label for="referencia-nombre" class="form-label">Actualizar</label>
-                            <input type="hidden" id="id" name="id">
-                            <input type="text" name="referencia-nombre" class="form-control" id="nombre">
-                        </div>
-                        <div class="col-md-12 mb-3 text-end">
-                            <a class="btn btn-warning" id="btn-actualizar">Actualzar</a>
-                        </div>
-                    </div>
+                <div class="col-md-12 mb-3 text-end">
+                    <a class="btn btn-warning" id="btn-actualizar">Actualzar</a>
                 </div>
             </div>
         </div>
     </div>
-</section>
+</div>
+
+
 
 
 <!-- Modal -->
@@ -154,45 +156,47 @@
             }
         });
     });
-    function borrar($url){
+
+    function borrar($url) {
         event.preventDefault();
         Swal.fire({
-                title: '¿Segur@?',
-                text: "Advertencia, se borrarán todas las publicaciones dentro de ésta categoria. Sólo los administradores tienen permitido esta acción.",
-                icon: 'warning',
-                showCancelButton: true,
-                confirmButtonColor: '#3085d6',
-                cancelButtonColor: '#d33',
-                confirmButtonText: 'Sí, borrar!',
-                cancelButtonText:'Cancelar',
-            }).then((result) => {
-                if (result.isConfirmed) {
+            title: '¿Segur@?',
+            text: "Advertencia, se borrarán todas las publicaciones dentro de ésta categoria. Sólo los administradores tienen permitido esta acción.",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Sí, borrar!',
+            cancelButtonText: 'Cancelar',
+        }).then((result) => {
+            if (result.isConfirmed) {
 
-                    $.ajax({
-                        type: 'GET',
-                        url: $url,
-                        success: function(response) {
-                            console.log(response);
-                            if (response.msg == 'excelente') {
-                                Swal.fire(
-                                    'Excelente',
-                                    'Borrado Correctamente',
-                                    'success'
-                                )
-                                location.reload();
-                            } else {
-                                Swal.fire(
-                                    'Algo ocurrió',
-                                    'Inténtalo más tarde..',
-                                    'danger'
-                                )
-                            }
-                        },error:function(response){
-                            console.log(response);
+                $.ajax({
+                    type: 'GET',
+                    url: $url,
+                    success: function(response) {
+                        console.log(response);
+                        if (response.msg == 'excelente') {
+                            Swal.fire(
+                                'Excelente',
+                                'Borrado Correctamente',
+                                'success'
+                            )
+                            location.reload();
+                        } else {
+                            Swal.fire(
+                                'Algo ocurrió',
+                                'Inténtalo más tarde..',
+                                'danger'
+                            )
                         }
-                    });
-                }
-            })
+                    },
+                    error: function(response) {
+                        console.log(response);
+                    }
+                });
+            }
+        })
     }
 </script>
 

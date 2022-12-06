@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Ciudadanos_atendido;
 use App\Models\Comentario;
 use App\Models\Publicacion;
 use Illuminate\Http\Request;
@@ -36,7 +37,13 @@ class PaginasController extends Controller
         return view('paginas.noticias',compact('noticias','recientes'));
     }
     public function alcaldia(){
-        return view('paginas.alcaldia');
+        $atendidos = Ciudadanos_atendido::select('id','mes','atendidos')->orderBy('id','desc')->get();
+       $referencia=0;
+        /*  dd($atendidos); */
+       if(count($atendidos)>0){
+        $referencia= $atendidos[0]->atendidos;
+       }
+        return view('paginas.alcaldia',compact('atendidos','referencia'));
     }
     public function concejo_municipal(){
         return view('paginas.concejo-municipal');

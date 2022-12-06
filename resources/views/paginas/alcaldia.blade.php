@@ -123,7 +123,7 @@
                 <div class="col-md-4">
                     <h2>Atención al Ciudadano</h2>
                     <h3>Número de contacto:</h3>
-                    <a href="" class="btn btn-wp-atencion-ciudadano my-2"><i class="lab la-whatsapp fs-4"></i>Whatsapp</a>
+                    <a href="https://api.whatsapp.com/send?phone=584147487500" class="btn btn-wp-atencion-ciudadano my-2"><i class="lab la-whatsapp fs-4"></i>Whatsapp</a>
                     <h3>Correo:</h3>
                     <p>alcaldiacapachonuevo2021@gmail.com</p>
                     <h3>Teléfono fijo:</h3>
@@ -132,13 +132,17 @@
                 </div>
                 <div class="col-md-8 text-center">
                     <img src="{{asset('img/fijas/atencion-ciudadano.webp')}}" alt="guia" width="50%">
-                    <h3 class="mt-3">1.4600 personas atendidas en el Mes.</h3>
+                    <h3 class="mt-3">     
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#ciudadanos_atendidos">
+                        {{number_format($referencia)}} Ciudadanos Atendidos en el Último mes.
+                        </button>
+                    </h3>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Modal -->
+    <!-- Modal organigrama-->
     <div class="modal fade" id="modalOrganigrama" tabindex="-1" aria-labelledby="modalOrganigrama" aria-hidden="true">
         <div class="modal-dialog modal-fullscreen">
             <div class="modal-content">
@@ -147,6 +151,42 @@
                 </div>
                 <div class="modal-body">
                     <img src="img/fijas/organigrama-real.webp" alt="organigrama" width="100%" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal Ciudadanos-->
+    <div class="modal fade" id="ciudadanos_atendidos" tabindex="-1" aria-labelledby="ciudadanos atendidos" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Mes</th>
+                                <th>Atendidos</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @php
+                            $contador=0;
+                            @endphp
+                            @foreach($atendidos as $atendido)
+                            @php
+                            $contador+=1;
+                            @endphp
+                            <tr>
+                                <td>{{$contador}}</td>
+                                <td>{{$atendido->mes}}</td>
+                                <td>Ciudadanos Atendidos : {{number_format($atendido->atendidos)}}</td>
+                            </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
