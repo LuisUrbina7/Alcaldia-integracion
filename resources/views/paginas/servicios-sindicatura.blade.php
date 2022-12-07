@@ -3,10 +3,9 @@
 <title>Sindicatura</title>
 @endsection
 @section('contenido')
-<main>
-  <section>
+  <section class="py-5">
     <div class="container">
-      <div class="row py-5 px-md-5">
+      <div class="row px-md-5">
         <div class="col-md-9">
           <div class="d-flex vista-titulo-noticia px-4 align-items-center">
             <span class=" rounded bg-warning"></span>
@@ -140,5 +139,4 @@
       </div>
     </div>
   </section>
-</main>
 @endsection

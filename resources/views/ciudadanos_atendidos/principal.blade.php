@@ -118,7 +118,7 @@
             <div class="modal-body">
                 <form action="{{route('ciudadanos.insertar')}}" method="POST" enctype="multipart/form-data">
                     @csrf
-                    <input type="text" value="{{Auth::user()->name}}" name="idUsuario">
+                    <input type="hidden" value="{{Auth::user()->id}}" name="idUsuario">
                     <div class="row">
                         <div class="col-md-6">
                             <label for="mes" class="form-label">Mes : </label>

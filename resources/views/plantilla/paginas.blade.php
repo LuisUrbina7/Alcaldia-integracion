@@ -64,6 +64,7 @@
                             <li><a class="dropdown-item" href="{{route('sindicatura')}}">+ Sindicatura Municipal</a></li>
                             <li><a class="dropdown-item" href="{{route('proteccion.civil')}}">+ Protección Civil</a></li>
                             <li><a class="dropdown-item" href="{{route('desarrollo.social')}}">+ Desarrollo Social</a></li>
+                            <li><a class="dropdown-item" href="{{route('prefectura')}}">+ Prefectura</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
@@ -72,7 +73,7 @@
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <li><a class="dropdown-item" href="{{route('somosvzla')}}">+ Somos VZLA</a></li>
-                            <li><a class="dropdown-item" href="{{route('registro.civil')}}">+ Mision Vivienda</a></li>
+                            <li><a class="dropdown-item" href="{{route('mision.vivienda')}}">+ Mision Vivienda</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -105,7 +106,7 @@
                             <div id="dos" class="collapse">
                                 <ul>
                                     <li><a class="dropdown-item" href="{{route('somosvzla')}}">+ Somos VZLA</a></li>
-                                    <li><a class="dropdown-item" href="{{route('concejo.municipal')}}">+ Mision Vivienda</a></li>
+                                    <li><a class="dropdown-item" href="{{route('mision.vivienda')}}">+ Mision Vivienda</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -120,6 +121,7 @@
                                     <li><a class="dropdown-item" href="{{route('sindicatura')}}">+ Sindicatura</a></li>
                                     <li><a class="dropdown-item" href="{{route('proteccion.civil')}}">+ Protección Civil</a></li>
                                     <li><a class="dropdown-item" href="{{route('desarrollo.social')}}">+ Desarrollo Social</a></li>
+                                    <li><a class="dropdown-item" href="{{route('prefectura')}}">+ Prefectura</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -137,43 +139,46 @@
             <li><a class="twitter" href="https://twitter.com/luismendozach?lang=es"><i class="lab la-twitter fs-2 text-light p-2"></i> twitter</a> </li>
         </ul>
     </header>
+    <main>
+        <main>
+            @yield('contenido')
+        </main>
 
-    @yield('contenido')
-
-    <footer class="py-2">
-        <div class="container ">
-            <div class="row p-5 pb-4">
-                <div class="col-md-8">
-                    <h5 class="text-light">Lema</h5>
-                    <h2 class="text-light lh-sm h3">En Capacho Nuevo... Renace la Esperanza!!!</h2>
-                </div>
-                <div class="col-md-4">
-                    <h5 class="text-light">Horarios de atencion al ciudadano.</h5>
-                    <p class="text-light lh-sm"> Lunes - Viernes. <br> <strong class="text-light"> 8:00 AM - 01:00
-                            PM</strong></p>
-                </div>
-                <div class="col-12 text-center text-light">
-                    Copyright 2022-2023
+        <footer class="py-2">
+            <div class="container ">
+                <div class="row p-5 pb-4">
+                    <div class="col-md-8">
+                        <h5 class="text-light">Lema</h5>
+                        <h2 class="text-light lh-sm h3">En Capacho Nuevo... Renace la Esperanza!!!</h2>
+                    </div>
+                    <div class="col-md-4">
+                        <h5 class="text-light">Horarios de atencion al ciudadano.</h5>
+                        <p class="text-light lh-sm"> Lunes - Viernes. <br> <strong class="text-light"> 8:00 AM - 01:00
+                                PM</strong></p>
+                    </div>
+                    <div class="col-12 text-center text-light">
+                        <h6>&copy; 2022 Alcaldia de Capacho Nuevo</h6>
+                    </div>
                 </div>
             </div>
-        </div>
-    </footer>
+        </footer>
 
-    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
-    <script src="{{asset('bootstrap/js/bootstrap.bundle.min.js')}}"></script>
-    <script src="{{asset('js/cargando.js')}}"></script>
-    <script>
-        $(document).ready(function() {
-            var menu = $('.menu-pegajoso-inicio').offset().top;
-            $(window).on('scroll', function() {
-                if ($(window).scrollTop() > menu) {
-                    $('.menu-pegajoso-inicio').addClass('menu-fijo');
-                } else {
-                    $('.menu-pegajoso-inicio').removeClass('menu-fijo');
-                }
-            })
-        });
-    </script>
-    @yield('js')
+        <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+        <script src="{{asset('bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+        <script src="{{asset('js/cargando.js')}}"></script>
+        <script>
+            $(document).ready(function() {
+                var menu = $('.menu-pegajoso-inicio').offset().top;
+                $(window).on('scroll', function() {
+                    if ($(window).scrollTop() > menu) {
+                        $('.menu-pegajoso-inicio').addClass('menu-fijo');
+                    } else {
+                        $('.menu-pegajoso-inicio').removeClass('menu-fijo');
+                    }
+                })
+            });
+        </script>
+        @yield('js')
 </body>
+
 </html>

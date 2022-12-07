@@ -47,6 +47,10 @@ Route::get('/somos-vzla', function () {
     return view('paginas.somos-vzla');
 })->name('somosvzla');
 
+Route::get('/mision-vivienda', function () {
+    return view('paginas.mision-vivienda');
+})->name('mision.vivienda');
+
 
 
 /* -----seccion planilla----- */
@@ -69,6 +73,10 @@ Route::get('/proteccion-civil', function () {
 Route::get('/desarrollo-social', function () {
     return view('paginas.servicios-desarrollo-social');
 })->name('desarrollo.social');
+
+Route::get('/prefectura', function () {
+    return view('paginas.servicios-prefectura');
+})->name('prefectura');
 
 /* 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

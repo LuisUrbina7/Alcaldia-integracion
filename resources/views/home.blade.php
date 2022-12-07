@@ -109,7 +109,7 @@
                             <div class="carta-carrusel d-flex justify-content-center mb-3">
                                 <div class="row w-75  p-md-3 mb-dm-3 shadow-sm servicios-entes-figura">
                                     <div class="col-md-7 text-center">
-                                        <img src="img/fijas/FUNDAINDEPENDENCIA.webp" alt="logo" width="270px" height="auto">
+                                        <img src="img/fijas/FUNDAINDEPENDENCIA.webp" alt="logo" width="auto" height="200px">
                                     </div>
 
                                     <div class="col-md-5 d-flex align-items-center">
@@ -126,8 +126,8 @@
                         <div class="carousel-item">
                             <div class="carta-carrusel d-flex justify-content-center  mb-3">
                                 <div class="row w-75 p-md-3 mb-dm-3 shadow-sm servicios-entes-figura">
-                                    <div class="col-md-7 text-end">
-                                        <img src="img/fijas/Logo-planificacion-publica.webp" alt="logo" width="100%" height="auto">
+                                    <div class="col-md-7 ">
+                                        <img src="img/fijas/Logo-planificacion-publica.webp" alt="logo" width="100%" height="200px">
 
                                     </div>
                                     <div class="col-md-5 d-flex align-items-center">
@@ -142,8 +142,8 @@
                         <div class="carousel-item">
                             <div class="carta-carrusel d-flex justify-content-center  mb-3">
                                 <div class="row w-75 p-md-3 mb-dm-3 shadow-sm servicios-entes-figura">
-                                    <div class="col-md-7 text-end">
-                                        <img src="img/fijas/logo-nuevo-deporte.webp" alt="logo" width="100%" height="auto">
+                                    <div class="col-md-7">
+                                        <img src="img/fijas/logo-nuevo-deporte.webp" alt="logo" width="100%" height="200px">
                                     </div>
                                     <div class="col-md-5 d-flex align-items-center">
                                         <div>

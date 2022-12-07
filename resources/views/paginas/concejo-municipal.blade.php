@@ -3,35 +3,26 @@
 <title>Alcaldia</title>
 @endsection
 @section('contenido')
-<main>
- 
-    <section class="normas">
-
-        <div class="container">
-            <div class="row py-4">
+<section class="normas">
+    <div class="container">
+        <div class="row py-4">
             <h2>Ordenanzas</h2>
-                <div class="d-flex justify-content-center">
-                    <div class="spinner-border" role="status" id="cargando-pdf">
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <h3 class="text-dark">Ultimos Ordenanzas...</h3>
-
-                    <ul class="list-group">
-
-                    </ul>
-
-
-
-                </div>
-                <div class="col-md-8">
-                    <iframe src="" frameborder="0" width="100%" height="450px" id="visor-pdf" title="iframe-normas" ></iframe>
+            <div class="d-flex justify-content-center">
+                <div class="spinner-border" role="status" id="cargando-pdf">
                 </div>
             </div>
+            <div class="col-md-4">
+                <h3 class="text-dark">Ultimos Ordenanzas...</h3>
+                <ul class="list-group">
+
+                </ul>
+            </div>
+            <div class="col-md-8">
+                <iframe src="" frameborder="0" width="100%" height="450px" id="visor-pdf" title="iframe-normas"></iframe>
+            </div>
         </div>
-    </section>
-   
-</main>
+    </div>
+</section>
 @endsection
 @section('js')
 

@@ -3,13 +3,14 @@
 <title>Atencion al Ciudadano</title>
 @endsection
 @section('contenido')
-<main>
-    <section class="container py-5">
-        <div class="row text-center">
-            <h2>Estadística</h2>
+<section class="container py-5">
+    <div class="row text-center">
 
-            <div class="col-12">
-                <h3 class="mb-3">Claps y UBCH</h3>
+        <h2>Estadística</h2>
+        <div class="col-12">
+            <h3 class="mb-3">Claps y UBCH</h3>
+            <div class="table-responsive">
+
                 <table class="table table-bordered  table-hover">
                     <thead class="text-white bg-danger">
                         <tr>
@@ -233,8 +234,11 @@
                     </tr>
                 </table>
             </div>
-            <div class="col-md-6">
-                <h3 class="mb-3">Comunidades</h3>
+        </div>
+        <div class="col-md-6">
+            <h3 class="mb-3">Comunidades</h3>
+            <div class="table-responsive">
+
                 <table class=" table table-bordered  table-hover ">
                     <thead class="text-white bg-warning">
                         <tr>
@@ -452,9 +456,13 @@
                     </tbody>
                 </table>
             </div>
+        </div>
 
-            <div class="col-md-6">
-                <h3 class="mb-3">UBCH</h3>
+        <div class="col-md-6">
+            <h3 class="mb-3">UBCH</h3>
+            <div class="table-responsive">
+
+
                 <table class=" table table-bordered  table-hover ">
                     <thead class="text-white bg-warning">
                         <tr>
@@ -559,13 +567,10 @@
                     </tbody>
                 </table>
             </div>
-
-
         </div>
 
-    </section>
-</main>
-@endsection
-@section('js')
 
+    </div>
+
+</section>
 @endsection
