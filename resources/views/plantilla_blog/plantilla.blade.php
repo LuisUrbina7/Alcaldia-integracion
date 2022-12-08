@@ -93,7 +93,7 @@
           </ul>
         </div>
       </nav>
-      <div class="px-md-4 pt-4 mb-5">
+      <div class="px-2  px-md-4 pt-4 mb-5">
 
         @yield('contenido')
       </div>

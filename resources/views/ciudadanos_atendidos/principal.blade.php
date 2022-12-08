@@ -25,9 +25,9 @@
 @endif
 <div class="panel-carta">
     <div class="d-flex flex-column justify-content-center">
-        <h4 class="text-muted text-center"> Ciudadanos Atendidos por Mes <a href="" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#exampleModal"> + Agregar</a></h4>
-        <div class="w-50 mb-3">
-            <canvas id="myChart"></canvas>
+        <h4 class="text-muted text-center"> Ciudadanos Atendidos por Mes <a class="btn btn-info" data-bs-toggle="modal" data-bs-target="#exampleModal"> + Agregar</a></h4>
+        <div class=" mb-3">
+            <canvas id="myChart" style="max-height:300px ;"></canvas>
         </div>
         <div class="table-responsive mb-3">
 
@@ -69,7 +69,7 @@
 
     </div>
     <div class="d-flex justify-content-center">
-        <div class="w-50">
+        <div >
             <form action="" method="post" id="formulario-actualizar-atendidos">
                 @csrf
                 <input type="hidden" id="id">

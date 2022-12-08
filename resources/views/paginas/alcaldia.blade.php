@@ -1,4 +1,7 @@
 @extends('Plantilla.paginas')
+@section('meta')
+<meta name="description" content="Personal administrativo y obrero de la Alcaldia Bolivariana de Capacho Nuevo.">
+@endsection
 @section('css')
 <title>Alcaldia</title>
 @endsection
@@ -12,7 +15,7 @@
                 <p>Es la máxima autoridad de la Municipalidad y su principal deber, es administrar la Comuna, para satisfacer las necesidades locales y promover el desarrollo y progreso económico, social y cultural de la Comuna.</p>
             </div>
             <div class="col-md-6">
-                <img src="img/fijas/alcalde.webp" alt="alcalde" height="360px" width="auto" loading="lazy">
+                <img src="img/fijas/alcalde.webp" alt="alcalde" height="360px" width="260px" loading="lazy">
 
             </div>
         </div>
@@ -130,7 +133,7 @@
 
             </div>
             <div class="col-md-8 text-center">
-                <img src="{{asset('img/fijas/atencion-ciudadano.webp')}}" alt="guia" width="50%">
+                <img src="{{asset('img/fijas/atencion-ciudadano.webp')}}" alt="guia" width="368px" height="258px">
                 <h3 class="mt-3">
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#ciudadanos_atendidos">
                         {{number_format($referencia)}} Ciudadanos Atendidos en el Último mes.

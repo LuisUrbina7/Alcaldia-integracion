@@ -7,11 +7,11 @@
     <div class="container">
         <div class="row pt-5">
             <div class="col-md-6 text-center ">
-                <img src="img/fijas/LOGO VERTICAL NUEVO.webp" alt="escudo" width="237px">
+                <img src="img/fijas/LOGO VERTICAL NUEVO.webp" alt="escudo" width="237px" height="305px">
                 <p> <small class="text-muted">Escudo</small></p>
             </div>
             <div class="col-md-6 text-center ">
-                <img src="img/fijas/bandera.webp" alt="bandera" width="350px">
+                <img src="img/fijas/bandera.webp" alt="bandera" width="350px" height="233px">
                 <p> <small class="text-muted">Bandera</small></p>
             </div>
         </div>
@@ -60,7 +60,7 @@
             </div>
             <div class="col-md-6 text-center">
 
-                <img src="img/fijas/Mapa.webp" alt="Mapa" width="210px">
+                <img src="img/fijas/Mapa.webp" alt="Mapa" width="210px" height="233px">
             </div>
 
         </div>
@@ -69,7 +69,7 @@
 </section>
 <section class="municipio-himno">
     <div class="container">
-        <div class="row p-5">
+        <div class="row py-5">
             <div class="col-12 px-md-5">
                 <h2>Himno Municipal</h2>
                 <figure>

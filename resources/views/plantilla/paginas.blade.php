@@ -9,6 +9,7 @@
     @yield('meta')
     <link rel="shortcut icon" href="{{asset('img/fijas/Logo-puro.webp')}}" type="image/x-icon">
     <link href="{{asset('bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+    <script src="{{asset('jquery/jquery-3.6.1.min.js')}}"></script>
     <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
     @yield('css')
@@ -26,11 +27,11 @@
     </div>
     <header>
         <div class=" d-flex align-items-center" style="background: #f6f8ff;">
-            <img src="{{asset('img/fijas/Logo-puro.webp')}}" alt="Escudo" width="100px" height="99.14px" id="escudo" loading="lazy">
+            <img src="{{asset('img/fijas/Logo-puro.webp')}}" alt="Escudo" width="100px" height="100pxpx" id="escudo" loading="lazy">
             <div class="titulo-encabezado lh-1 d-flex w-100">
                 <h1 id="membrete" class="mx-auto"> ALCALDIA BOLIVARIANA DEL MUNICIPIO <br> <small class="h3">CAPACHO NUEVO DEL ESTADO TACHIRA</small> </h1>
             </div>
-            <img src="{{asset('img/fijas/luis_mendoza.webp')}}" alt="LuisGomez" width="90px" height="109px" id="membreteLuisMendoza" class="d-none d-md-block" loading="lazy">
+            <img src="{{asset('img/fijas/luis_mendoza.webp')}}" alt="LuisGomez" width="90px" height="100px" id="membreteLuisMendoza" class="d-none d-md-block" loading="lazy">
         </div>
         <nav class="menu-pegajoso-inicio">
             <!--   -----Menu Horizontal---- -->
@@ -146,7 +147,7 @@
 
         <footer class="py-2">
             <div class="container ">
-                <div class="row p-5 pb-4">
+                <div class="row py-5 pb-4">
                     <div class="col-md-8">
                         <h5 class="text-light">Lema</h5>
                         <h2 class="text-light lh-sm h3">En Capacho Nuevo... Renace la Esperanza!!!</h2>
@@ -163,22 +164,11 @@
             </div>
         </footer>
 
-        <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+      
+       
         <script src="{{asset('bootstrap/js/bootstrap.bundle.min.js')}}"></script>
         <script src="{{asset('js/cargando.js')}}"></script>
-        <script>
-            $(document).ready(function() {
-                var menu = $('.menu-pegajoso-inicio').offset().top;
-                $(window).on('scroll', function() {
-                    if ($(window).scrollTop() > menu) {
-                        $('.menu-pegajoso-inicio').addClass('menu-fijo');
-                    } else {
-                        $('.menu-pegajoso-inicio').removeClass('menu-fijo');
-                    }
-                })
-            });
-        </script>
+        <script src="{{asset('js/menu_pegajoso.js')}}"></script>
         @yield('js')
 </body>
-
 </html>

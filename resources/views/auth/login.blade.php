@@ -20,7 +20,7 @@
         <div class="carta-sesion">
             <div class="carta-sesion-cuerpo shadow-lg">
                 <div class="p-4">
-                    <div class="mb-3 text-center w-100 "><i class="las la-user-circle fs-1 p-4 rounded-circle bg-dark text-white shadow-sm mb-2"></i>
+                    <div class="mb-3 text-center w-100 "><i class="las la-user-circle fs-1 p-4 rounded-circle bg-light bg-gradient shadow-sm mb-2"></i>
                     <h4>Inicio de Sesión</h4></div>
                     <hr>
                    

@@ -26,7 +26,7 @@
 <div class="panel-carta">
     <form action="{{route('publicidad.actualizar.insertar',$publicidad->id)}}" method="post" enctype="multipart/form-data">
         @csrf
-        <div class="row m-3">
+        <div class="row mb-3">
             <div class="col-12">
                 <label for="responsable" class="form-label">Responsable:</label>
                 <input type="text" name="responsable" class="form-control" value="{{ $publicidad->responsable}}">
@@ -37,7 +37,7 @@
                 @enderror
             </div>
         </div>
-        <div class="row m-3">
+        <div class="row mb-3">
             <div class="col-md-6">
                 <label for="enlace" class="form-label">enlace:</label>
                 <input type="text" name="enlace" id="enlace" class="form-control" value="{{ $publicidad->enlace}}">
@@ -60,7 +60,7 @@
                 <img src="{{asset($publicidad->banner)}}" alt="foto" width="200px" height="200px">
             </div>
         </div>
-        <div class="row m-3">
+        <div class="row mb-3">
             <div class="col-md-12">
                 <label for="fecha" class="form-label">Fecha:</label>
                 <input type="date" name="fecha" id="fecha" class="form-control" value="{{ $publicidad->fecha}}">

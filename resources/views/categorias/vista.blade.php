@@ -51,7 +51,7 @@
 
 
     <div class="d-flex justify-content-center">
-        <div class="w-25">
+        <div >
             <div class="row border mb-3">
                 <div class="col-md-12 mb-3">
                     <label for="referencia-nombre" class="form-label">Actualizar</label>

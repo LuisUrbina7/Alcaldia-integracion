@@ -51,17 +51,39 @@
             <div class="accordion-item">
               <h4 class="accordion-header" id="panelsStayOpen-headingThree">
                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
-                  Ayudas Técnicas
+                  Formato Data Social
                 </button>
               </h4>
               <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
                 <div class="accordion-body">
-                  <strong>Requisitos.</strong>
-                  <ul>
-                    <li>Informe Médico. </li>
-                    <li>Copia de Cédula. </li>
-                    <li>Exposición de Motivos.</li>
-                  </ul>
+                  <strong class="text-uppercase text-dark">Descargar :</strong>
+                  <a href="{{asset('planillas/balance-general.xlsx')}}" class="btn btn-danger">Requisitos.</a>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h4 class="accordion-header" id="panelsStayOpen-headingFour">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFour" aria-expanded="false" aria-controls="panelsStayOpen-collapseFour">
+                  Declaración Jurada de Ingreso.
+                </button>
+              </h4>
+              <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingFour">
+                <div class="accordion-body">
+                  <strong class="text-uppercase text-dark">Descargar :</strong>
+                  <a href="{{asset('planillas/balance-general.xlsx')}}" class="btn btn-danger">Requisitos.</a>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h4 class="accordion-header" id="panelsStayOpen-headingFive">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFive" aria-expanded="false" aria-controls="panelsStayOpen-collapseFive">
+                  Declaración Jurada de No poseer Vivienda.
+                </button>
+              </h4>
+              <div id="panelsStayOpen-collapseFive" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingFive">
+                <div class="accordion-body">
+                  <strong class="text-uppercase text-dark">Descargar :</strong>
+                  <a href="{{asset('planillas/balance-general.xlsx')}}" class="btn btn-danger">Requisitos.</a>
                 </div>
               </div>
             </div>

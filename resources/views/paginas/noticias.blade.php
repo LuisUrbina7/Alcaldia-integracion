@@ -1,4 +1,7 @@
 @extends('Plantilla.paginas')
+@section('meta')
+<meta name="description" content="Últimas novedades y proyecto del la gestión de Luis Mendoza.">
+@endsection
 @section('css')
 <title>Noticias</title>
 @endsection

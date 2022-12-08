@@ -5,13 +5,18 @@ namespace App\Http\Controllers;
 use App\Models\Publicidad;
 use Exception;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 
 class PublicidadController extends Controller
 {
     public function index()
     {
-        $banners = Publicidad::select('id', 'responsable', 'enlace', 'banner', 'fecha')->orderby('id', 'desc')->paginate(3);
+        if (Auth::user()->rol == 'adm') {
+            $banners = Publicidad::select('id', 'responsable', 'enlace', 'banner', 'fecha')->orderby('id', 'desc')->paginate(3);
+        } else {
+            $banners = Publicidad::select('id', 'responsable', 'enlace', 'banner', 'fecha', 'idUsuario')->where('idUsuario', Auth::user()->id)->orderby('id', 'desc')->paginate(3);
+        }
         return view('publicidad.principal', compact('banners'));
     }
     public function insertar_vista()
@@ -54,12 +59,12 @@ class PublicidadController extends Controller
     public function actualizar_vista($id)
     {
         $publicidad = Publicidad::find($id);
-       
-       return view('publicidad.actualizar', compact('publicidad'));
+
+        return view('publicidad.actualizar', compact('publicidad'));
     }
     public function actualizar(Request $request, $id)
     {
-       /*  dd($request->all()); */
+        /*  dd($request->all()); */
         try {
             $publicidad = Publicidad::find($id);
             $publicidad->responsable = $request->input('responsable');
@@ -72,7 +77,6 @@ class PublicidadController extends Controller
                 $fotoNombre = time() . '-' . $foto->getClientOriginalName();
                 $mover = $request->file('banner')->move($destino, $fotoNombre);
                 $publicidad->banner = $destino . $fotoNombre;
-
             }
             $publicidad->fecha = $request->input('fecha');
             $publicidad->update();
@@ -83,24 +87,23 @@ class PublicidadController extends Controller
     }
     public function borrar($id)
     {
-        try{
+        try {
             $publicidad = Publicidad::find($id);
             $publicidad->delete();
             $base = public_path($publicidad->banner);
-            if(file_exists($base)){
-                  unlink($base);
-                }
-                return response()->json(['msg'=>'bien']);
-        }catch(Exception $e){
-            return response()->json(['msg'=>'error']);
-
+            if (file_exists($base)) {
+                unlink($base);
+            }
+            return response()->json(['msg' => 'bien']);
+        } catch (Exception $e) {
+            return response()->json(['msg' => 'error']);
         }
-       
     }
 
-    public function cargar_publicidad(){
-        $publicidad = Publicidad::select('enlace','banner')->get();
-            /* dd($publicidad); */
-            return response()->json($publicidad);
+    public function cargar_publicidad()
+    {
+        $publicidad = Publicidad::select('enlace', 'banner')->get();
+        /* dd($publicidad); */
+        return response()->json($publicidad);
     }
 }

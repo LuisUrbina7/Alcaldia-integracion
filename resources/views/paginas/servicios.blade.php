@@ -58,11 +58,21 @@
                 </a>
             </div>
             <div class="carta-servicios col-md-4 text-center mb-3">
-                <a href="#" class="text-decoration-none">
+                <a href="{{route('desarrollo.social')}}" class="text-decoration-none">
                     <div class=" position-relative">
                         <img src="img/fijas/desarrollo-social.webp" alt="" width="100%" height="272px">
                         <div class="servicios-carta-cuerpo position-absolute">
                             <h3 class="h4 text-light">Dirección de Desarrollo Social</h3>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="carta-servicios col-md-4 text-center mb-3">
+                <a href="{{route('prefectura')}}" class="text-decoration-none">
+                    <div class=" position-relative">
+                        <img src="img/fijas/desarrollo-social.webp" alt="" width="100%" height="272px">
+                        <div class="servicios-carta-cuerpo position-absolute">
+                            <h3 class="h4 text-light">Prefectura</h3>
                         </div>
                     </div>
                 </a>

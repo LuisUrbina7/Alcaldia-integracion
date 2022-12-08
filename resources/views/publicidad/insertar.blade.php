@@ -27,7 +27,7 @@
     <form action="{{route('publicidad.insertar')}}" method="post" enctype="multipart/form-data">
         @csrf
         <input type="hidden" value=" {{ Auth::user()->id }}" name="idUsuario">
-        <div class="row m-3">
+        <div class="row mb-3">
             <div class="col-12">
                 <label for="responsable" class="form-label">Responsable:</label>
                 <input type="text" name="responsable" class="form-control" required>
@@ -38,7 +38,7 @@
                 @enderror
             </div>
         </div>
-        <div class="row m-3">
+        <div class="row mb-3">
             <div class="col-md-6">
                 <label for="enlace" class="form-label">enlace:</label>
                 <input type="text" name="enlace" id="enlace" class="form-control" required>
@@ -58,7 +58,7 @@
                 @enderror
             </div>
         </div>
-        <div class="row m-3">
+        <div class="row mb-3">
             <div class="col-md-12">
                 <label for="fecha" class="form-label">Fecha:</label>
                 <input type="date" name="fecha" id="fecha" class="form-control" required>

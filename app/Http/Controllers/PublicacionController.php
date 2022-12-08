@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\Categoria;
 use App\Models\Publicacion;
+use App\Models\User;
 use Exception;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
 
@@ -13,9 +15,17 @@ class PublicacionController extends Controller
 {
     public function index()
     {
-        $publicaciones = Publicacion::select('id', 'img', 'titulo')->orderby('id', 'desc')->paginate(11);
+        $contador = ['publicaciones' => Publicacion::count(), 'categorias' => Categoria::count(), 'usuarios' => User::count()];
 
-        return view('publicaciones.vista', compact('publicaciones'));
+        /*  dd($datos); */
+        if (Auth::user()->rol ==  'adm') {
+
+            $publicaciones = Publicacion::select('id', 'img', 'titulo')->orderby('id', 'desc')->paginate(11);
+        } else {
+            $publicaciones = Publicacion::select('id', 'img', 'titulo', 'idUsuario')->where('idUsuario', Auth::user()->id)->orderby('id', 'desc')->paginate(11);
+        }
+
+        return view('publicaciones.vista', compact('publicaciones', 'contador'));
     }
     public function insertarVista()
     {
@@ -24,7 +34,7 @@ class PublicacionController extends Controller
     }
     public function insertar(Request $request)
     {
-       /*  dd($request->all()); */
+        /*  dd($request->all()); */
         $validado = Validator::make($request->all(), [
             'idUsuario' =>  'required',
             'titulo' =>  'required',
@@ -114,16 +124,15 @@ class PublicacionController extends Controller
     {
         if ($request->hasFile('upload')) {
             $Original = $request->file('upload')->getClientOriginalName();
-            $Info = pathinfo($Original,PATHINFO_FILENAME);
+            $Info = pathinfo($Original, PATHINFO_FILENAME);
             $extension =  $request->file('upload')->getClientOriginalExtension();
-            $Info=$Info.'-'.time().'.'.$extension;
+            $Info = $Info . '-' . time() . '.' . $extension;
             $destino = 'img/noticias/';
             $request->file('upload')->move(public_path($destino), $Info);
-            $url= asset('img/noticias/'.$Info);
+            $url = asset('img/noticias/' . $Info);
 
-            return response()->json(['fileName'=>$Info,'uploaded'=>1,'url'=>$url]);
+            return response()->json(['fileName' => $Info, 'uploaded' => 1, 'url' => $url]);
         }
-
     }
     public function noticias_recientes()
     {

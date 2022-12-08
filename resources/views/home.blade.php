@@ -10,7 +10,7 @@
 
     <section class="deslizador">
         <div class="contenedor-noticia-vista px-md-4">
-        @foreach($noticias as $recientes)
+            @foreach($noticias as $recientes)
             <div class="noticia-carta img-noticia  my-2 my-md-0"><img src="{{asset($recientes->img)}}" alt="foto" width="100%" height="100%">
                 <div class="carta-cuerpo">
                     <div class="carta-texto w-100">
@@ -20,7 +20,7 @@
                     </div>
                 </div>
             </div>
-           
+
             @endforeach
         </div>
     </section>
@@ -109,7 +109,7 @@
                             <div class="carta-carrusel d-flex justify-content-center mb-3">
                                 <div class="row w-75  p-md-3 mb-dm-3 shadow-sm servicios-entes-figura">
                                     <div class="col-md-7 text-center">
-                                        <img src="img/fijas/FUNDAINDEPENDENCIA.webp" alt="logo" width="auto" height="200px">
+                                        <img src="img/fijas/FUNDAINDEPENDENCIA.webp" alt="logo" width="auto" height="200px " loading="lazy">
                                     </div>
 
                                     <div class="col-md-5 d-flex align-items-center">
@@ -127,7 +127,7 @@
                             <div class="carta-carrusel d-flex justify-content-center  mb-3">
                                 <div class="row w-75 p-md-3 mb-dm-3 shadow-sm servicios-entes-figura">
                                     <div class="col-md-7 ">
-                                        <img src="img/fijas/Logo-planificacion-publica.webp" alt="logo" width="100%" height="200px">
+                                        <img src="img/fijas/Logo-planificacion-publica.webp" alt="logo" width="100%" height="200px" loading="lazy">
 
                                     </div>
                                     <div class="col-md-5 d-flex align-items-center">
@@ -143,7 +143,7 @@
                             <div class="carta-carrusel d-flex justify-content-center  mb-3">
                                 <div class="row w-75 p-md-3 mb-dm-3 shadow-sm servicios-entes-figura">
                                     <div class="col-md-7">
-                                        <img src="img/fijas/logo-nuevo-deporte.webp" alt="logo" width="100%" height="200px">
+                                        <img src="img/fijas/logo-nuevo-deporte.webp" alt="logo" width="100%" height="200px" loading="lazy">
                                     </div>
                                     <div class="col-md-5 d-flex align-items-center">
                                         <div>
@@ -171,7 +171,7 @@
     <section class="datos">
         <div class="container p-md-5">
             <div class="row text-center py-4">
-                <div class="col-md-3 px-5 mb-2">
+                <div class="col-6 col-md-3 px-5 mb-2">
                     <h3 class="h1 text-light ">
                         50k+
                     </h3>
@@ -179,7 +179,7 @@
                     <h3 class="text-light">Poblacion
                     </h3>
                 </div>
-                <div class="col-md-3 px-5 mb-2">
+                <div class="col-6 col-md-3 px-5 mb-2">
                     <h3 class="h1 text-light ">2
                         <ul class="d-none">
                             <li><a href="https://www.google.com/maps/search/hospitales+de+capacho+nuevo/@7.8237536,-72.3336357,14z" class="text-decoration-none text-light" target="_blank">Ambulatorio Capacho Nuevo</a> </li>
@@ -189,7 +189,7 @@
                     <hr>
                     <h3 class="text-light">Hospitales</h3>
                 </div>
-                <div class="col-md-3 px-5 mb-2">
+                <div class="col-6 col-md-3 px-5 mb-2">
                     <h3 class="h1 text-light ">3
                         <ul class="d-none">
                             <li><a href="https://www.google.com/maps/place/Escuela+Basica+Estado+Miranda/@7.8232101,-72.3218516,16z/data=!4m9!1m2!2m1!1sescuela+de+capacho+nuevo!3m5!1s0x8e666a172a3b0fbd:0x96d6da1dc0eaf7f6!8m2!3d7.8248087!4d-72.3130413!15sChhlc2N1ZWxhIGRlIGNhcGFjaG8gbnVldm-SAQZzY2hvb2zgAQA" class="text-decoration-none text-light" target="_blank">Escuela Basica Estado Miranda</a> </li>
@@ -201,7 +201,7 @@
                     <hr>
                     <h3 class="text-light">Escuelas</h3>
                 </div>
-                <div class="col-md-3 px-5 mb-2">
+                <div class="col-6 col-md-3 px-5 mb-2">
                     <h3 class="h1 text-light ">2
                         <ul class="d-none">
                             <li><a href="https://www.google.com/maps/place/Iglesia+de+San+Pedro+de+Independencia/@7.8238967,-72.3148397,16z/data=!4m9!1m2!2m1!1siglesia+de+capacho+nuevo!3m5!1s0x8e666a3d9b68cd83:0x8c8689d0c87abb0c!8m2!3d7.8238967!4d-72.3066!15sChhpZ2xlc2lhIGRlIGNhcGFjaG8gbnVldm-SAQZjaHVyY2jgAQA" class="text-decoration-none text-light" target="_blank">Iglesia de San Pedro de Independencia</a> </li>
@@ -229,7 +229,7 @@
                     <a href="{{route('noticias.articulo',$proyecto->slug)}}">
                         <div class="carta-noticia text-center shadow">
                             <span class="noticia-figura-1 pt-2">{{$proyecto->titulo}}</span>
-                            <img src="{{$proyecto->img}}" alt="proyecto" width="100%" height="237px">
+                            <img src="{{$proyecto->img}}" alt="proyecto" width="100%" height="237px" loading="lazy">
                             <span class="noticia-figura-2 pt-2">#Proyectos.</span>
                         </div>
                     </a>

@@ -22,14 +22,14 @@ a {
 
 .btn-sesion{
   width: 100%;
-  background-color: #ab49cc;
+  background-color: #7f00b2;
   color: #ffff;
   border: 0;
   padding: 8px 10px;
   border-radius: 10px;
 }
 .btn-sesion:hover{
-  background-color: #7f00b2;
+  background-color: #5b027e;
 }
 
 #sidebar {
@@ -104,6 +104,14 @@ a {
   height: 200px;
   object-fit: cover;
 
+}
+.contenedor-carta {
+  padding: 5px 10px;
+  border-radius: 5px;
+  height: 120px;
+  overflow: hidden;
+  color: rgb(243, 243, 243);
+  background-color: #7f00b2;
 }
 
 .publicaciones-todos span {

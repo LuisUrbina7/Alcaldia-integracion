@@ -16,7 +16,7 @@ function cargar_publicidad() {
             $('#cargando-publicidad').toggleClass('spinner-border');
             let contenido_publicidad = '';
             $(response).each(function(index, item) {
-                contenido_publicidad += '<div class="col-md-2 col-6"><a href="'+item['enlace']+'"><img src="'+item['banner']+'" alt="gid" width="100%" height="120px"></a></div>';
+                contenido_publicidad += '<div class="col-md-2 col-6"><a href="'+item['enlace']+'"><img src="'+item['banner']+'" alt="gid" width="100%" height="120px" loading="lazy"></a></div>';
             });
             $('.espacio-publicitario').html(contenido_publicidad);
             console.log(response);

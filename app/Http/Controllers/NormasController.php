@@ -5,13 +5,20 @@ namespace App\Http\Controllers;
 use App\Models\Normas;
 use Exception;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 
 class NormasController extends Controller
 {
     public function index()
     {
-        $normas = Normas::select('id', 'titulo', 'enlace', 'tipo', 'fecha')->orderby('id', 'desc')->paginate(4);
+        if (Auth::user()->rol == 'adm') {
+
+            $normas = Normas::select('id', 'titulo', 'enlace', 'tipo', 'fecha')->orderby('id', 'desc')->paginate(4);
+        } else {
+
+            $normas = Normas::select('id', 'titulo', 'enlace', 'tipo', 'fecha', 'idUsuario')->where('idUsuario', Auth::user()->id)->orderby('id', 'desc')->paginate(4);
+        }
         return view('normas.principal', compact('normas'));
     }
     public function insertar_vista()

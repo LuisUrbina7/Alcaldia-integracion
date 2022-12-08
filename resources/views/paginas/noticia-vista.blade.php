@@ -58,11 +58,11 @@
 </section>
 <section>
     <div class="container">
-        <div class="px-4 contenedor-ancho">
+        <div class="px-3 contenedor-ancho">
 
             @foreach ($comentarios as $comentario )
             <div class="comentarios p-3 d-flex align-items-center ">
-                <img src="{{asset('img/fijas/Logo-puro.png')}}" alt="" width="90px" class="d-none d-md-block">
+                <img src="{{asset('img/fijas/Logo-puro.webp')}}" alt="" width="90px" class="d-none d-md-block">
                 <div class="p-2">
                     <p class="text-muted comentario-titulo h5">{{$comentario->nombre}}</p>
                     <p class="comentario-cuerpo mb-1 lh-base">{{$comentario->mensaje}} </p>
@@ -73,7 +73,7 @@
             @endforeach
 
         </div>
-        <div class="p-4">
+        <div class="py-4">
             <p> Escribe un Comentario...</p>
             <form action="{{route('comentario.insertar')}}" class="contenedor-ancho px-md-5" method="POST" enctype="multipart/form-data">
                 @csrf
